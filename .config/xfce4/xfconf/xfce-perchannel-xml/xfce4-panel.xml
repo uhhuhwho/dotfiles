@@ -16,6 +16,7 @@
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
+        <value type="int" value="17"/>
         <value type="int" value="8"/>
         <value type="int" value="2"/>
         <value type="int" value="9"/>
@@ -72,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="org.gnome.Boxes.desktop"/>
-        <value type="string" value="com.discordapp.Discord.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="com.valvesoftware.Steam.desktop"/>
-        <value type="string" value="gparted.desktop"/>
-        <value type="string" value="blueman-manager.desktop"/>
-        <value type="string" value="blueman-adapters.desktop"/>
-        <value type="string" value="xfce4-clipman.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="xfce-mouse-settings.desktop"/>
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
+        <value type="string" value="xfce4-appfinder.desktop"/>
+        <value type="string" value="org.gnome.baobab.desktop"/>
+        <value type="string" value="blender.desktop"/>
+        <value type="string" value="org.kde.krita.desktop"/>
+        <value type="string" value="org.kde.isoimagewriter.desktop"/>
+        <value type="string" value="xfburn.desktop"/>
+        <value type="string" value="org.qbittorrent.qBittorrent.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -89,6 +90,7 @@
       <property name="show-button-title" type="bool" value="false"/>
       <property name="button-single-row" type="bool" value="false"/>
       <property name="sort-categories" type="bool" value="true"/>
+      <property name="show-command-suspend" type="bool" value="true"/>
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -120,7 +122,7 @@
         <property name="enabled" type="bool" value="false"/>
       </property>
       <property name="swap" type="empty">
-        <property name="enabled" type="bool" value="false"/>
+        <property name="enabled" type="bool" value="true"/>
       </property>
       <property name="cpu" type="empty">
         <property name="label" type="string" value="CPU"/>
@@ -136,6 +138,8 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="configuring wi-fi network connection “badreddine px6p”…"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (81%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (54%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (75%)"/>
         <value type="string" value="blueman"/>
@@ -223,6 +227,11 @@
     <property name="clipman" type="empty">
       <property name="tweaks" type="empty">
         <property name="never-confirm-history-clear" type="bool" value="false"/>
+      </property>
+    </property>
+    <property name="plugin-17" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17384258443.desktop"/>
       </property>
     </property>
   </property>

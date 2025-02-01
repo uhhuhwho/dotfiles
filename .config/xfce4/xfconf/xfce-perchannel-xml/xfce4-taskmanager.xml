@@ -16,6 +16,6 @@
     <property name="column-uid" type="bool" value="false"/>
     <property name="column-priority" type="bool" value="false"/>
     <property name="sort-type" type="uint" value="1"/>
-    <property name="sort-id" type="uint" value="10"/>
+    <property name="sort-id" type="uint" value="6"/>
   </property>
 </channel>
