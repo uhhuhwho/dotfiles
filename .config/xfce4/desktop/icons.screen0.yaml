@@ -96,9 +96,6 @@ configs:
       row: 0
       col: 2
       last_seen: 1737831694198251
-    "/home/badreddine/Desktop/2025-01-23 18-13-57.mkv":
-      row: 2
-      col: 4
     "/home/badreddine/Desktop/org.kde.kdenlive.desktop":
       row: 2
       col: 1
@@ -116,6 +113,9 @@ configs:
       row: 6
       col: 0
       last_seen: 1737824326911606
+    "/home/badreddine/Desktop/2025-01-23 18-13-57.mkv":
+      row: 2
+      col: 4
     "/home/badreddine/Desktop/Bups":
       row: 3
       col: 14

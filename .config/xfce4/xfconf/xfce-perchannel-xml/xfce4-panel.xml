@@ -74,15 +74,15 @@
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
         <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="org.mozilla.firefox.desktop"/>
+        <value type="string" value="com.valvesoftware.Steam.desktop"/>
+        <value type="string" value="com.discordapp.Discord.desktop"/>
+        <value type="string" value="com.github.tchx84.Flatseal.desktop"/>
+        <value type="string" value="eu.betterbird.Betterbird.desktop"/>
+        <value type="string" value="xfce4-notes.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
         <value type="string" value="xfce4-appfinder.desktop"/>
-        <value type="string" value="org.gnome.baobab.desktop"/>
-        <value type="string" value="blender.desktop"/>
-        <value type="string" value="org.kde.krita.desktop"/>
-        <value type="string" value="org.kde.isoimagewriter.desktop"/>
-        <value type="string" value="xfburn.desktop"/>
-        <value type="string" value="org.qbittorrent.qBittorrent.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>

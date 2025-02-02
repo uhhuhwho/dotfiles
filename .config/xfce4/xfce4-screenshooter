@@ -3,10 +3,10 @@ custom_action_command=/usr/lib/xfce4/screenshooter/scripts/imgur-upload.sh %f %i
 last_user=
 last_extension=png
 show_in_folder=false
-screenshot_dir=file:/home/badreddine/Pictures/Screenshots
+screenshot_dir=file:/home/badreddine/Pictures
 action=1
 delay=0
-region=3
+region=1
 show_mouse=1
 show_border=1
 
