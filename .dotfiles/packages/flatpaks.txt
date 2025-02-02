@@ -1,0 +1,55 @@
+Discord	com.discordapp.Discord	0.0.74	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
+OBS Studio	com.obsproject.Studio	31.0.1	stable	system
+Bottles	com.usebottles.bottles	51.18	stable	system
+Steam	com.valvesoftware.Steam	1.0.0.81	stable	system
+Betterbird	eu.betterbird.Betterbird	128.6.1esr-bb21	stable	system
+Mousam	io.github.amit9838.mousam	1.4.0	stable	system
+PeaZip	io.github.peazip.PeaZip	10.2.0	stable	system
+peazip i386 addon	io.github.peazip.PeaZip.Addon.i386	1.0.0	stable	system
+Mission Center	io.missioncenter.MissionCenter	0.6.2	stable	system
+FreeCAD	org.freecad.FreeCAD	1.0.0	stable	system
+TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	23.08	system
+TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	24.08	system
+SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	23.08	system
+SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	24.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.27	23.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.10	24.08	system
+i386	org.freedesktop.Platform.Compat.i386		24.08	system
+Mesa	org.freedesktop.Platform.GL.default	24.3.1	23.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.1	23.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	24.3.1	24.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.1	24.08extra	system
+nvidia-565-77	org.freedesktop.Platform.GL.nvidia-565-77		1.4	system
+Mesa	org.freedesktop.Platform.GL32.default	24.3.1	24.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL32.default	24.3.1	24.08extra	system
+nvidia-565-77	org.freedesktop.Platform.GL32.nvidia-565-77		1.4	system
+FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		24.08	system
+i386	org.freedesktop.Platform.ffmpeg_full.i386		24.08	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
+GNU Image Manipulation Program	org.gimp.GIMP	2.10.38	stable	system
+Calculator	org.gnome.Calculator	47.1	stable	system
+Characters	org.gnome.Characters	47.alpha	stable	system
+Logs	org.gnome.Logs	45.0	stable	system
+GNOME Application Platform version 46	org.gnome.Platform		46	system
+GNOME Application Platform version 47	org.gnome.Platform		47	system
+i386	org.gnome.Platform.Compat.i386		47	system
+Disk Usage Analyzer	org.gnome.baobab	47.0	stable	system
+Clocks	org.gnome.clocks	47.0	stable	system
+Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system
+KDE Application Platform	org.kde.Platform		5.15-24.08	system
+KDE Application Platform	org.kde.Platform		6.6	system
+KDE Application Platform	org.kde.Platform		6.7	system
+KDE Application Platform	org.kde.Platform		6.8	system
+ISO Image Writer	org.kde.isoimagewriter	24.12.1	stable	system
+Kdenlive	org.kde.kdenlive	24.12.1	stable	system
+KPatience	org.kde.kpat	24.12.1	stable	system
+Krita	org.kde.krita	5.2.6	stable	system
+LibreOffice	org.libreoffice.LibreOffice	25.2.0.3	stable	system
+Firefox	org.mozilla.firefox	134.0.2	stable	system
+Parabolic	org.nickvision.tubeconverter	2025.1.4	stable	system
+qBittorrent	org.qbittorrent.qBittorrent	5.0.3	stable	system
+VLC	org.videolan.VLC	3.0.21	stable	system
+gecko	org.winehq.Wine.gecko		stable-24.08	system
+mono	org.winehq.Wine.mono		stable-24.08	system
