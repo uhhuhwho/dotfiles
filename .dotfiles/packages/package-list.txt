@@ -1,109 +1,105 @@
-appstream-glib
-base
-base-devel
-blueman
-bluez
-bluez-deprecated-tools
-bluez-utils
-broadcom-wl-dkms
-clang
-cmake
-dialog
-efibootmgr
-exo
-fastfetch
-flatpak
-garcon
-git
-glew
-gparted
-grub
-gufw
-gvfs
-gvfs-mtp
-htop
-intel-ucode
-linux
-linux-firmware
-linux-headers
-man-db
-man-pages
-mousepad
-mtpfs
-neovim
-network-manager-applet
-networkmanager
-ninja
-noto-fonts
-ntfs-3g
-nvidia
-nvidia-settings
-os-prober
-parole
-pavucontrol
-pipewire
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
-redshift
-ripgrep
-ristretto
-rsync
-sassc
-sof-firmware
-sudo
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
-tlp
-tlp-rdw
-tumbler
-ufw
-unzip
-xdg-user-dirs
-xfburn
-xfce4-appfinder
-xfce4-artwork
-xfce4-battery-plugin
-xfce4-clipman-plugin
-xfce4-cpufreq-plugin
-xfce4-cpugraph-plugin
-xfce4-dict
-xfce4-diskperf-plugin
-xfce4-eyes-plugin
-xfce4-fsguard-plugin
-xfce4-genmon-plugin
-xfce4-mailwatch-plugin
-xfce4-mount-plugin
-xfce4-mpc-plugin
-xfce4-netload-plugin
-xfce4-notes-plugin
-xfce4-notifyd
-xfce4-panel
-xfce4-places-plugin
-xfce4-power-manager
-xfce4-pulseaudio-plugin
-xfce4-screensaver
-xfce4-screenshooter
-xfce4-sensors-plugin
-xfce4-session
-xfce4-settings
-xfce4-smartbookmark-plugin
-xfce4-systemload-plugin
-xfce4-taskmanager
-xfce4-terminal
-xfce4-time-out-plugin
-xfce4-timer-plugin
-xfce4-verve-plugin
-xfce4-wavelan-plugin
-xfce4-weather-plugin
-xfce4-whiskermenu-plugin
-xfce4-xkb-plugin
-xfconf
-xfdesktop
-xfwm4
-xfwm4-themes
-xorg-server
-yay-debug
-zip
+appstream-glib 0.8.3-2
+base 3-2
+base-devel 1-2
+blueman 2.4.3-2
+bluez 5.79-1
+bluez-deprecated-tools 5.79-1
+bluez-utils 5.79-1
+broadcom-wl-dkms 6.30.223.271-38
+clang 19.1.7-1
+cmake 3.31.5-1
+dialog 1:1.3_20240619-2
+efibootmgr 18-3
+exo 4.20.0-2
+fastfetch 2.35.0-1
+flatpak 1:1.16.0-1
+garcon 4.20.0-2
+git 2.48.1-1
+glew 2.2.0-7
+gparted 1.6.0-2
+grub 2:2.12-3
+gufw 24.04-3
+gvfs 1.56.1-2
+gvfs-mtp 1.56.1-2
+htop 3.3.0-3
+intel-ucode 20241112-1
+linux 6.12.10.arch1-1
+linux-firmware 20250109.7673dffd-1
+linux-headers 6.12.10.arch1-1
+man-db 2.13.0-1
+man-pages 6.10-1
+mousepad 0.6.3-2
+mtpfs 1.1-5
+neovim 0.10.4-1
+network-manager-applet 1.36.0-1
+networkmanager 1.50.2-1
+ninja 1.12.1-2
+noto-fonts 1:2025.02.01-1
+ntfs-3g 2022.10.3-1
+nvidia 565.77-12
+nvidia-settings 565.57.01-1
+os-prober 1.81-2
+parole 4.18.2-1
+pavucontrol 1:6.1-1
+pipewire 1:1.2.7-1
+pulseaudio 17.0+r43+g3e2bb8a1e-1
+pulseaudio-alsa 1:1.2.12-4
+pulseaudio-bluetooth 17.0+r43+g3e2bb8a1e-1
+redshift 1.12-14
+ripgrep 14.1.1-1
+ristretto 0.13.3-1
+rsync 3.4.1-1
+sassc 3.6.2-5
+sof-firmware 2024.09.2-1
+sudo 1.9.16.p2-2
+thunar 4.20.1-1
+thunar-archive-plugin 0.5.3-1
+thunar-media-tags-plugin 0.5.0-1
+thunar-volman 4.20.0-2
+tlp 1.7.0-1
+tlp-rdw 1.7.0-1
+tumbler 4.20.0-2
+ufw 0.36.2-5
+unzip 6.0-22
+xdg-user-dirs 0.18-2
+xfce4-appfinder 4.20.0-2
+xfce4-artwork 0.1.1a_git20110420-6
+xfce4-battery-plugin 1.1.6-1
+xfce4-clipman-plugin 1.6.7-1
+xfce4-cpufreq-plugin 1.2.9-1
+xfce4-cpugraph-plugin 1.2.11-1
+xfce4-dict 0.8.8-2
+xfce4-diskperf-plugin 2.7.1-1
+xfce4-fsguard-plugin 1.1.4-1
+xfce4-genmon-plugin 4.2.1-1
+xfce4-mailwatch-plugin 1.3.2-1
+xfce4-mount-plugin 1.1.7-1
+xfce4-mpc-plugin 0.5.5-1
+xfce4-netload-plugin 1.4.2-1
+xfce4-notes-plugin 1.11.2-1
+xfce4-notifyd 0.9.6-5
+xfce4-panel 4.20.0-4
+xfce4-places-plugin 1.8.4-1
+xfce4-power-manager 4.20.0-3
+xfce4-pulseaudio-plugin 0.4.9-2
+xfce4-screensaver 4.18.4-2
+xfce4-screenshooter 1.11.1-3
+xfce4-sensors-plugin 1.4.5-1
+xfce4-session 4.20.0-5
+xfce4-settings 4.20.0-3
+xfce4-smartbookmark-plugin 0.5.3-1
+xfce4-systemload-plugin 1.3.3-1
+xfce4-taskmanager 1.5.8-1
+xfce4-terminal 1.1.4-1
+xfce4-time-out-plugin 1.1.4-1
+xfce4-timer-plugin 1.7.3-1
+xfce4-verve-plugin 2.0.4-1
+xfce4-wavelan-plugin 0.6.4-1
+xfce4-whiskermenu-plugin 2.9.0-1
+xfce4-xkb-plugin 0.8.5-1
+xfconf 4.20.0-2
+xfdesktop 4.20.0-7
+xfwm4 4.20.0-2
+xfwm4-themes 4.10.0-6
+xorg-server 21.1.15-1
+zip 3.0-11

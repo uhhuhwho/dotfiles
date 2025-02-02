@@ -17,4 +17,7 @@
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_48"/>
   <property name="misc-full-path-in-tab-title" type="bool" value="false"/>
   <property name="tree-icon-emblems" type="bool" value="true"/>
+  <property name="hidden-bookmarks" type="array">
+    <value type="string" value="recent:///"/>
+  </property>
 </channel>

@@ -21,7 +21,6 @@
         <value type="int" value="2"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
-        <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
@@ -73,16 +72,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
+        <value type="string" value="org.localsend.localsend_app.desktop"/>
+        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="gufw.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="org.kde.isoimagewriter.desktop"/>
+        <value type="string" value="xfce-settings-manager.desktop"/>
+        <value type="string" value="eu.betterbird.Betterbird.desktop"/>
         <value type="string" value="org.mozilla.firefox.desktop"/>
         <value type="string" value="com.valvesoftware.Steam.desktop"/>
         <value type="string" value="com.discordapp.Discord.desktop"/>
-        <value type="string" value="com.github.tchx84.Flatseal.desktop"/>
-        <value type="string" value="eu.betterbird.Betterbird.desktop"/>
-        <value type="string" value="xfce4-notes.desktop"/>
-        <value type="string" value="xfce-keyboard-settings.desktop"/>
-        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
-        <value type="string" value="xfce4-appfinder.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -113,7 +112,6 @@
       <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-10" type="string" value="separator"/>
-    <property name="plugin-11" type="string" value="netload"/>
     <property name="plugin-12" type="string" value="systemload">
       <property name="network" type="empty">
         <property name="enabled" type="bool" value="false"/>
@@ -138,6 +136,7 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (42%)"/>
         <value type="string" value="configuring wi-fi network connection “badreddine px6p”…"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (81%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (54%)"/>
@@ -183,6 +182,7 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="NA6OLe3oxF"/>
         <value type="string" value="blueman"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="qBittorrent"/>
@@ -207,6 +207,7 @@
     <property name="plugin-22" type="string" value="clock">
       <property name="timezone" type="string" value="Africa/Algiers"/>
       <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-date-font" type="string" value="Sans 9"/>
     </property>
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>

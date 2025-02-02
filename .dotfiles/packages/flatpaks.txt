@@ -47,6 +47,7 @@ Kdenlive	org.kde.kdenlive	24.12.1	stable	system
 KPatience	org.kde.kpat	24.12.1	stable	system
 Krita	org.kde.krita	5.2.6	stable	system
 LibreOffice	org.libreoffice.LibreOffice	25.2.0.3	stable	system
+LocalSend	org.localsend.localsend_app	1.16.1	stable	system
 Firefox	org.mozilla.firefox	134.0.2	stable	system
 Parabolic	org.nickvision.tubeconverter	2025.1.4	stable	system
 qBittorrent	org.qbittorrent.qBittorrent	5.0.3	stable	system
