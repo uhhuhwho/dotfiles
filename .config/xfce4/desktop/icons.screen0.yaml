@@ -37,11 +37,8 @@ configs:
     "/home/badreddine":
       row: 0
       col: 0
-    "/home/badreddine/Desktop/Bottles.desktop":
-      row: 6
-      col: 0
     "/home/badreddine/Desktop/nvim-sandbox":
-      row: 2
+      row: 1
       col: 0
     "/home/badreddine/Desktop/Mount Disk":
       row: 3
@@ -62,6 +59,9 @@ configs:
     "/home/badreddine/Desktop/fontconfig":
       row: 6
       col: 0
+    "/home/badreddine/Desktop/cc":
+      row: 2
+      col: 2
     "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend@":
       row: 0
       col: 1
@@ -83,15 +83,15 @@ configs:
     "/home/badreddine/Desktop/Mount Disk.txt":
       row: 3
       col: 14
-    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
-      row: 0
-      col: 1
-    "/home/badreddine/Desktop/SSD":
-      row: 2
-      col: 2
     "/home/badreddine/Desktop/Steam.desktop":
       row: 2
       col: 0
+    "/home/badreddine/Desktop/SSD":
+      row: 2
+      col: 2
+    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/com.obsproject.Studio.desktop":
       row: 1
       col: 1
@@ -103,45 +103,44 @@ configs:
       row: 2
       col: 1
     "/home/badreddine/Desktop/SDL3 Sandbox":
-      row: 1
+      row: 2
       col: 0
     "22E5EBCC5EC68572":
       row: 1
       col: 1
       last_seen: 1737667735177519
-    "/home/badreddine/Desktop/Blender0.desktop":
-      row: 4
-      col: 0
+    "/home/badreddine/Desktop/ISO":
+      row: 1
+      col: 1
     "3fcc1fdb-1bcd-41d0-8313-aea6fd85dd03":
       row: 6
       col: 0
       last_seen: 1737824326911606
-    "/home/badreddine/Desktop/cc":
-      row: 2
-      col: 2
     "/home/badreddine/Desktop/Bups":
       row: 3
       col: 14
+    "/home/badreddine/Desktop/Blender0.desktop":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/OBS Studio.desktop":
       row: 0
       col: 1
-    "/home/badreddine/Desktop/Firefox.desktop":
-      row: 1
-      col: 0
     "/home/badreddine/Desktop/FreeCAD.desktop":
       row: 5
       col: 0
-    "/":
-      row: 0
-      col: 0
-    "DEE2CFABE2CF866D":
-      row: 0
-      col: 1
-      last_seen: 1737673330060095
     "2024-11-09-10-10-58-00":
       row: 3
       col: 0
       last_seen: 1738501341165803
+    "/home/badreddine/Desktop/Start Redshift.desktop":
+      row: 2
+      col: 14
+    "/home/badreddine/Desktop/Firefox.desktop":
+      row: 1
+      col: 0
+    "/":
+      row: 0
+      col: 0
     "trash:///":
       row: 6
       col: 14
@@ -151,23 +150,24 @@ configs:
     "/home/badreddine/Desktop/2025-01-23 18-13-57.mkv":
       row: 2
       col: 4
-    "/home/badreddine/Desktop/Discord.desktop":
-      row: 3
-      col: 0
+    "DEE2CFABE2CF866D":
+      row: 0
+      col: 1
+      last_seen: 1737673330060095
     "cdb31d2b-03ff-4491-90e9-49a17294b9db":
       row: 6
       col: 1
       last_seen: 1737833580192685
-    "/home/badreddine/Desktop/ISO":
-      row: 1
-      col: 1
-    "/home/badreddine/Desktop/Start Redshift.desktop":
-      row: 2
-      col: 14
-    "/home/badreddine/Desktop/Blender.desktop":
-      row: 3
-      col: 3
+    "/home/badreddine/Desktop/Bottles.desktop":
+      row: 6
+      col: 0
     "fb197b6e-989e-491e-9850-3c3cc66d36da":
       row: 6
       col: 0
       last_seen: 1737833493801737
+    "/home/badreddine/Desktop/Blender.desktop":
+      row: 3
+      col: 3
+    "/home/badreddine/Desktop/Discord.desktop":
+      row: 3
+      col: 0
