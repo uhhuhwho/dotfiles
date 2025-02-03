@@ -20,4 +20,6 @@
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="recent:///"/>
   </property>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,254,50,50,1283,50,50,444,50,50,96,50,499"/>
 </channel>
