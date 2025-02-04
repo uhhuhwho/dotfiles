@@ -13,10 +13,12 @@ efibootmgr 18-3
 exo 4.20.0-2
 fastfetch 2.35.0-1
 flatpak 1:1.16.0-1
+gamemode 1.8.2-1
 garcon 4.20.0-2
 gdm 47.0-2
 git 2.48.1-1
 glew 2.2.0-7
+goverlay 1.2-1
 gparted 1.7.0-1
 grub 2:2.12-3
 gufw 24.04-3
@@ -24,11 +26,14 @@ gvfs 1.56.1-2
 gvfs-mtp 1.56.1-2
 htop 3.3.0-3
 intel-ucode 20241112-1
+lib32-gamemode 1.8.2-1
+lib32-mangohud 0.7.2-1
 linux 6.13.1.arch1-1
 linux-firmware 20250109.7673dffd-1
 linux-headers 6.13.1.arch1-1
 man-db 2.13.0-1
 man-pages 6.10-1
+mangohud 0.7.2-2
 mousepad 0.6.3-2
 mtpfs 1.1-5
 neovim 0.10.4-1
@@ -40,6 +45,7 @@ noto-fonts 1:2025.02.01-1
 ntfs-3g 2022.10.3-1
 nvidia 570.86.16-2
 nvidia-settings 570.86.16-1
+octopi 0.16.2-2
 os-prober 1.81-2
 parole 4.18.2-1
 pavucontrol 1:6.1-1
@@ -84,7 +90,7 @@ xfce4-mpc-plugin 0.5.5-1
 xfce4-netload-plugin 1.4.2-1
 xfce4-notes-plugin 1.11.2-1
 xfce4-notifyd 0.9.6-5
-xfce4-panel 4.20.2-1
+xfce4-panel 4.20.3-1
 xfce4-places-plugin 1.8.4-1
 xfce4-power-manager 4.20.0-3
 xfce4-pulseaudio-plugin 0.4.9-2

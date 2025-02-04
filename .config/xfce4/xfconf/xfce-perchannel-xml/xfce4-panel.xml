@@ -72,16 +72,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="xfce4-power-manager-settings.desktop"/>
-        <value type="string" value="org.gnome.Boxes.desktop"/>
+        <value type="string" value="io.github.amit9838.mousam.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="com.discordapp.Discord.desktop"/>
-        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="org.gnome.Logs.desktop"/>
+        <value type="string" value="octopi.desktop"/>
+        <value type="string" value="xfce4-power-manager-settings.desktop"/>
         <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="xfce4-taskmanager.desktop"/>
         <value type="string" value="com.valvesoftware.Steam.desktop"/>
-        <value type="string" value="xfce-session-settings.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="noisetorch.desktop"/>
+        <value type="string" value="xfce4-session-logout.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>

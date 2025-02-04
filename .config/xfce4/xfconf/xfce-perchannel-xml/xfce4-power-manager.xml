@@ -17,5 +17,6 @@
     <property name="sleep-button-action" type="uint" value="0"/>
     <property name="power-button-action" type="uint" value="3"/>
     <property name="profile-on-ac" type="string" value="balanced"/>
+    <property name="profile-on-battery" type="string" value="balanced"/>
   </property>
 </channel>

@@ -37,6 +37,9 @@ configs:
     "/home/badreddine":
       row: 0
       col: 0
+    "/home/badreddine/Desktop/Bottles.desktop":
+      row: 6
+      col: 0
     "/home/badreddine/Desktop/nvim-sandbox":
       row: 1
       col: 0
@@ -45,9 +48,6 @@ configs:
       col: 14
     "/home/badreddine/Desktop/Backup Commands.txt":
       row: 2
-      col: 14
-    "trash:///":
-      row: 6
       col: 14
     "/home/badreddine/Desktop/HELL YEAH.jpg":
       row: 6
@@ -128,6 +128,9 @@ configs:
     "/home/badreddine/Desktop/cc":
       row: 2
       col: 2
+    "/home/badreddine/Desktop/Start Redshift.desktop":
+      row: 2
+      col: 14
     "/":
       row: 0
       col: 0
@@ -135,38 +138,35 @@ configs:
       row: 0
       col: 1
       last_seen: 1737673330060095
-    "/home/badreddine/Desktop/FreeCAD.desktop":
-      row: 5
-      col: 0
-    "2024-11-09-10-10-58-00":
-      row: 3
-      col: 0
-      last_seen: 1738501341165803
+    "trash:///":
+      row: 6
+      col: 14
     "/home/badreddine/Desktop/Blender0.desktop":
       row: 4
       col: 0
-    "/home/badreddine/Desktop/Firefox.desktop":
-      row: 1
+    "/home/badreddine/Desktop/FreeCAD.desktop":
+      row: 5
       col: 0
-    "/home/badreddine/Desktop/Start Redshift.desktop":
-      row: 2
-      col: 14
+    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
+      row: 6
+      col: 1
+      last_seen: 1737833580192685
     "/home/badreddine/Desktop/Discord.desktop":
       row: 3
       col: 0
     "/home/badreddine/Desktop/Krita.desktop":
       row: 0
       col: 1
+    "/home/badreddine/Desktop/Firefox.desktop":
+      row: 1
+      col: 0
+    "2024-11-09-10-10-58-00":
+      row: 3
+      col: 0
+      last_seen: 1738501341165803
     "/home/badreddine/Desktop/Blender.desktop":
       row: 3
       col: 3
-    "/home/badreddine/Desktop/Bottles.desktop":
-      row: 6
-      col: 0
-    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
-      row: 6
-      col: 1
-      last_seen: 1737833580192685
     "fb197b6e-989e-491e-9850-3c3cc66d36da":
       row: 6
       col: 0
