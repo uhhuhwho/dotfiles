@@ -49,6 +49,7 @@ ISO Image Writer	org.kde.isoimagewriter	24.12.1	stable	system
 Kdenlive	org.kde.kdenlive	24.12.1	stable	system
 KPatience	org.kde.kpat	24.12.1	stable	system
 Krita	org.kde.krita	5.2.6	stable	system
+Okular	org.kde.okular	24.12.1	stable	system
 LibreOffice	org.libreoffice.LibreOffice	25.2.0.3	stable	system
 LocalSend	org.localsend.localsend_app	1.16.1	stable	system
 Firefox	org.mozilla.firefox	134.0.2	stable	system
