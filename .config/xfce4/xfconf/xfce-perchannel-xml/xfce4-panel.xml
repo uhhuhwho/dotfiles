@@ -72,12 +72,12 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="com.valvesoftware.Steam.desktop"/>
+        <value type="string" value="xfce-settings-manager.desktop"/>
         <value type="string" value="xfce-display-settings.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
+        <value type="string" value="com.valvesoftware.Steam.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="xfce-settings-manager.desktop"/>
         <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="nvidia-settings.desktop"/>
         <value type="string" value="org.mozilla.firefox.desktop"/>
