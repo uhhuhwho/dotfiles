@@ -5,7 +5,7 @@
   <property name="Notify" type="int" value="1"/>
   <property name="AutoEnableProfiles" type="int" value="3"/>
   <property name="Default" type="empty">
-    <property name="eDP-1" type="string" value="Laptop">
+    <property name="DP-2" type="string" value="LG Display 15&quot;">
       <property name="Active" type="bool" value="true"/>
       <property name="EDID" type="string" value="a0fa0b0cb33acb9e11c9409bf5292aeae0d37f0c"/>
       <property name="Resolution" type="string" value="1920x1080"/>
