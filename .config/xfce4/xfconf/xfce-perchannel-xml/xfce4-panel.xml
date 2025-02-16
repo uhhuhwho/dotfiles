@@ -26,6 +26,7 @@
         <value type="int" value="14"/>
         <value type="int" value="1"/>
         <value type="int" value="16"/>
+        <value type="int" value="3"/>
         <value type="int" value="18"/>
         <value type="int" value="19"/>
         <value type="int" value="20"/>
@@ -72,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="xfce-settings-manager.desktop"/>
-        <value type="string" value="xfce-display-settings.desktop"/>
+        <value type="string" value="xfce-mouse-settings.desktop"/>
+        <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
         <value type="string" value="com.valvesoftware.Steam.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="eu.betterbird.Betterbird.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="xfce-wm-settings.desktop"/>
-        <value type="string" value="nvidia-settings.desktop"/>
-        <value type="string" value="org.mozilla.firefox.desktop"/>
-        <value type="string" value="org.gnome.Calculator.desktop"/>
+        <value type="string" value="org.gnome.Characters.desktop"/>
+        <value type="string" value="io.github.amit9838.mousam.desktop"/>
+        <value type="string" value="blender.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -136,6 +137,7 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (55%)"/>
         <value type="string" value="configuring wi-fi network connection “tenda_d98fb8”…"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (93%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (73%)"/>
@@ -242,5 +244,6 @@
         <value type="string" value="17384258443.desktop"/>
       </property>
     </property>
+    <property name="plugin-3" type="string" value="notification-plugin"/>
   </property>
 </channel>

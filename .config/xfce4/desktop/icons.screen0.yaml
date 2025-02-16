@@ -19,9 +19,103 @@ configs:
       width: 1920
       height: 1080
   icons:
-    "/home/badreddine/Desktop/polybar":
-      row: 6
+    "/home/badreddine/Desktop/Blender.desktop":
+      row: 3
+      col: 3
+    "/home/badreddine/Desktop/2025-01-23 18-13-57.mkv":
+      row: 2
+      col: 4
+    "/home/badreddine/Desktop/nvim-sandbox":
+      row: 1
+      col: 0
+    "520E32656860CB16":
+      row: 3
+      col: 0
+      last_seen: 1738775686981688
+    "481A9A2128EB9D05":
+      row: 4
+      col: 0
+      last_seen: 1738929749076085
+    "/home/badreddine/Desktop/OBS Studio.desktop":
+      row: 0
       col: 1
+    "/home/badreddine/Desktop/Start Redshift.desktop":
+      row: 2
+      col: 14
+    "0863-D7C0":
+      row: 5
+      col: 0
+      last_seen: 1739324366496881
+    "22E5EBCC5EC68572":
+      row: 1
+      col: 1
+      last_seen: 1737667735177519
+    "/home/badreddine/Desktop/Steam.desktop":
+      row: 2
+      col: 0
+    "/home/badreddine/Desktop/Discord.desktop":
+      row: 3
+      col: 0
+    "1A0D-1B23":
+      row: 0
+      col: 1
+      last_seen: 1738408534473401
+    "/home/badreddine/Desktop/VP-":
+      row: 5
+      col: 2
+    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend@":
+      row: 0
+      col: 1
+    "/home/badreddine/Desktop/IMG_20250213_151055.jpg":
+      row: 6
+      col: 0
+    "/home/badreddine/Desktop/xxxx":
+      row: 3
+      col: 1
+    "6F2BCBBD51263183":
+      row: 4
+      col: 0
+      last_seen: 1739324482696652
+    "/home/badreddine/Desktop/VID_20250206_165242.mp4":
+      row: 5
+      col: 0
+    "/home/badreddine/Desktop/Firefox.desktop":
+      row: 1
+      col: 0
+    "/home/badreddine/Desktop/Blockout.blend":
+      row: 6
+      col: 0
+    "/home/badreddine/Desktop/Elden Ring Backups":
+      row: 1
+      col: 2
+    "/home/badreddine/Desktop/07803.vp6":
+      row: 5
+      col: 0
+    "/home/badreddine/Desktop/ss.txt":
+      row: 2
+      col: 14
+    "3fcc1fdb-1bcd-41d0-8313-aea6fd85dd03":
+      row: 6
+      col: 0
+      last_seen: 1737824326911606
+    "/home/badreddine/Desktop/IMG_20250213_151057.jpg":
+      row: 1
+      col: 1
+    "/home/badreddine/Desktop/Windows Games":
+      row: 2
+      col: 14
+    "/home/badreddine/Desktop/VID_20250206_165353.mp4":
+      row: 4
+      col: 0
+    "/":
+      row: 0
+      col: 0
+    "/home/badreddine/Desktop/Krita.desktop":
+      row: 0
+      col: 1
+    "/home/badreddine/Desktop/Stop Redshift.desktop":
+      row: 1
+      col: 14
     "/home/badreddine/Desktop/sdl3-sandbox":
       row: 1
       col: 14
@@ -29,29 +123,100 @@ configs:
       row: 3
       col: 0
       last_seen: 1738775668943118
-    "/home/badreddine/Desktop/Windows Games":
+    "088856B58856A14C":
+      row: 5
+      col: 0
+      last_seen: 1739324267916826
+    "/home/badreddine/Desktop/ISO":
+      row: 1
+      col: 1
+    "/home/badreddine/Desktop/org.kde.kdenlive.desktop":
       row: 2
-      col: 14
-    "520E32656860CB16":
-      row: 3
-      col: 0
-      last_seen: 1738775686981688
-    "/home/badreddine":
-      row: 0
-      col: 0
+      col: 1
     "/home/badreddine/Desktop/SDL3":
       row: 2
       col: 0
+    "/home/badreddine/Desktop/FreeCAD.desktop":
+      row: 5
+      col: 0
+    "/home/badreddine/Desktop/polybar":
+      row: 6
+      col: 1
+    "trash:///":
+      row: 6
+      col: 14
+    "fb197b6e-989e-491e-9850-3c3cc66d36da":
+      row: 6
+      col: 0
+      last_seen: 1737833493801737
+    "2024-11-09-10-10-58-00":
+      row: 3
+      col: 0
+      last_seen: 1738501341165803
+    "/home/badreddine/Desktop/Sera9":
+      row: 4
+      col: 0
+    "/home/badreddine/Desktop/cc":
+      row: 2
+      col: 2
+    "/home/badreddine/Desktop/com.obsproject.Studio.desktop":
+      row: 1
+      col: 1
+    "/home/badreddine/Desktop/Bups":
+      row: 3
+      col: 14
+    "/home/badreddine/Desktop/Blender0.desktop":
+      row: 4
+      col: 0
+    "/home/badreddine":
+      row: 0
+      col: 0
+    "/home/badreddine/Desktop/2025-01-29 17-46-51.mkv":
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/GNU Image Manipulation Program.desktop":
       row: 6
       col: 0
-    "/home/badreddine/Desktop/nvim-sandbox":
-      row: 1
+    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
+      row: 0
+      col: 1
+    "/home/badreddine/Desktop/aa":
+      row: 4
+      col: 0
+    "/home/badreddine/Desktop/IMG_20250213_151056.jpg":
+      row: 0
+      col: 1
+    "/home/badreddine/Desktop/Mount Disk":
+      row: 3
+      col: 14
+    "/home/badreddine/Desktop/SSD":
+      row: 2
+      col: 2
+    "DEE2CFABE2CF866D":
+      row: 0
+      col: 1
+      last_seen: 1737673330060095
+    "7ABA-252E":
+      row: 0
+      col: 2
+      last_seen: 1737831694198251
+    "/home/badreddine/Desktop/Recovered Videos":
+      row: 3
+      col: 0
+    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
+      row: 6
+      col: 1
+      last_seen: 1737833580192685
+    "/home/badreddine/Desktop/VID_20250206_165353-30fps.mp4":
+      row: 2
+      col: 1
+    "/home/badreddine/Desktop/Blender":
+      row: 2
       col: 0
     "/home/badreddine/Desktop/Backup Commands.txt":
       row: 2
       col: 14
-    "/home/badreddine/Desktop/Mount Disk":
+    "/home/badreddine/Desktop/Mount Disk.txt":
       row: 3
       col: 14
     "/home/badreddine/Desktop/HELL YEAH.jpg":
@@ -60,142 +225,12 @@ configs:
     "/home/badreddine/Desktop/fontconfig":
       row: 6
       col: 0
-    "088856B58856A14C":
-      row: 4
-      col: 0
-      last_seen: 1739209495579129
-    "1A0D-1B23":
-      row: 0
-      col: 1
-      last_seen: 1738408534473401
-    "/home/badreddine/Desktop/Elden Ring Backups":
-      row: 1
-      col: 2
-    "/home/badreddine/Desktop/VP6":
-      row: 5
-      col: 0
-    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend@":
-      row: 0
-      col: 1
-    "/home/badreddine/Desktop/ss.txt":
-      row: 2
-      col: 14
-    "/home/badreddine/Desktop/Stop Redshift.desktop":
-      row: 1
-      col: 14
-    "481A9A2128EB9D05":
-      row: 4
-      col: 0
-      last_seen: 1738929749076085
-    "/home/badreddine/Desktop/07803.vp6":
-      row: 5
-      col: 0
-    "/home/badreddine/Desktop/2025-01-29 17-46-51.mkv":
-      row: 0
-      col: 1
-    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
-      row: 6
-      col: 1
-      last_seen: 1737833580192685
-    "/home/badreddine/Desktop/Blender":
-      row: 2
-      col: 0
-    "/home/badreddine/Desktop/Blockout.blend":
-      row: 6
-      col: 0
-    "/home/badreddine/Desktop/Steam.desktop":
-      row: 2
-      col: 0
-    "/home/badreddine/Desktop/SSD":
-      row: 2
-      col: 2
-    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
-      row: 0
-      col: 1
-    "/home/badreddine/Desktop/com.obsproject.Studio.desktop":
-      row: 1
-      col: 1
-    "7ABA-252E":
-      row: 0
-      col: 2
-      last_seen: 1737831694198251
-    "/home/badreddine/Desktop/2025-01-23 18-13-57.mkv":
-      row: 2
-      col: 4
-    "/home/badreddine/Desktop/org.kde.kdenlive.desktop":
-      row: 2
-      col: 1
-    "/home/badreddine/Desktop/VP-":
-      row: 5
-      col: 2
-    "/home/badreddine/Desktop/Mount Disk.txt":
-      row: 3
-      col: 14
-    "/home/badreddine/Desktop/SDL3 Sandbox":
-      row: 3
-      col: 0
-    "/home/badreddine/Desktop/cc":
-      row: 2
-      col: 2
-    "22E5EBCC5EC68572":
-      row: 1
-      col: 1
-      last_seen: 1737667735177519
-    "/home/badreddine/Desktop/Blender0.desktop":
-      row: 4
-      col: 0
-    "3fcc1fdb-1bcd-41d0-8313-aea6fd85dd03":
-      row: 6
-      col: 0
-      last_seen: 1737824326911606
-    "/home/badreddine/Desktop/Bups":
-      row: 3
-      col: 14
-    "/home/badreddine/Desktop/OBS Studio.desktop":
-      row: 0
-      col: 1
-    "/home/badreddine/Desktop/FreeCAD.desktop":
-      row: 5
-      col: 0
-    "/home/badreddine/Desktop/Start Redshift.desktop":
-      row: 2
-      col: 14
-    "/":
-      row: 0
-      col: 0
-    "/home/badreddine/Desktop/Firefox.desktop":
-      row: 1
-      col: 0
-    "2024-11-09-10-10-58-00":
-      row: 3
-      col: 0
-      last_seen: 1738501341165803
-    "/home/badreddine/Desktop/ISO":
-      row: 1
-      col: 1
-    "/home/badreddine/Desktop/Recovered Videos":
-      row: 2
-      col: 0
-    "/home/badreddine/Desktop/Discord.desktop":
-      row: 3
-      col: 0
-    "DEE2CFABE2CF866D":
-      row: 0
-      col: 1
-      last_seen: 1737673330060095
-    "/home/badreddine/Desktop/Blender.desktop":
-      row: 3
-      col: 3
-    "trash:///":
-      row: 6
-      col: 14
-    "fb197b6e-989e-491e-9850-3c3cc66d36da":
-      row: 6
-      col: 0
-      last_seen: 1737833493801737
-    "/home/badreddine/Desktop/Krita.desktop":
-      row: 0
-      col: 1
     "/home/badreddine/Desktop/Bottles.desktop":
       row: 6
+      col: 0
+    "/home/badreddine/Desktop/SDL3 Sandbox":
+      row: 2
+      col: 0
+    "/home/badreddine/Desktop/VP6":
+      row: 5
       col: 0

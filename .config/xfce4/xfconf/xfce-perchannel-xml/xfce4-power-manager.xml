@@ -18,6 +18,6 @@
     <property name="power-button-action" type="uint" value="3"/>
     <property name="profile-on-ac" type="string" value="balanced"/>
     <property name="profile-on-battery" type="string" value="power-saver"/>
-    <property name="inactivity-on-ac" type="uint" value="47"/>
+    <property name="inactivity-on-ac" type="uint" value="0"/>
   </property>
 </channel>
