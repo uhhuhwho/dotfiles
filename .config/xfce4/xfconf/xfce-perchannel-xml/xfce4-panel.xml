@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="org.mozilla.firefox.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
         <value type="string" value="thunar.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="com.valvesoftware.Steam.desktop"/>
         <value type="string" value="eu.betterbird.Betterbird.desktop"/>
         <value type="string" value="org.kde.okular.desktop"/>
         <value type="string" value="org.openshot.OpenShot.desktop"/>
         <value type="string" value="thunar-volman-settings.desktop"/>
-        <value type="string" value="sniffnet.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>

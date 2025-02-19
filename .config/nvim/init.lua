@@ -1,5 +1,19 @@
--- Mapleader aka main key
+----------------------------------------------------------------------------------------------------------------------------------
+--------- https://github.com/nvim-tree/nvim-tree.lua
+----------------------------------------------------------------------------------------------------------------------------------
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+----------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------
+--------- Mapleader aka main key
 vim.g.mapleader = ","  -- Set Leader key to , (space is problematic)
+vim.opt.number = true  -- Enable line numbers
+----------------------------------------------------------------------------------------------------------------------------------
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -12,18 +26,18 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
 require("lazy").setup({
-	{"folke/tokyonight.nvim"},          -- Theme
+	{"folke/tokyonight.nvim"},          -- Tokyo night theme
     {"nvim-tree/nvim-tree.lua"},        -- A file explorer tree for neovim written in lua.
     {"nvim-tree/nvim-web-devicons"},    -- Install the web devicons plugin (For icons etc...)
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},  -- Ensure Treesitter updates automatically
     {"nvim-telescope/telescope.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
-    {"akinsho/bufferline.nvim", dependencies = 'nvim-tree/nvim-web-devicons'},        -- A snazzy buffer line (with tabpage integration) for Neovim built using lua.
+    {"akinsho/bufferline.nvim"},        -- A snazzy buffer line (with tabpage integration) for Neovim built using lua.
     {'akinsho/toggleterm.nvim', version = "*", config = true}, -- A neovim plugin to persist and toggle multiple terminals during an editing session.
     {'windwp/nvim-autopairs',event = "InsertEnter",config = true},
     {"nvim-lualine/lualine.nvim"},      -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
     {"neovim/nvim-lspconfig"},          -- Add lspconfig plugin
     {"hrsh7th/nvim-cmp"},               -- Completion plugin
-    {"hrsh7th/cmp-nvim-lsp"}           -- LSP completion source for nvim-cmp
+    {"hrsh7th/cmp-nvim-lsp"}            -- LSP completion source for nvim-cmp
 })
 
 -- Theme setup
@@ -32,10 +46,23 @@ require("tokyonight").setup({
     transparent = false,      -- Set to true for a transparent background
     terminal_colors = true,  -- Apply colors to the terminal
 })
-vim.cmd.colorscheme("tokyonight") -- This commands set the theme to the select one.
+vim.cmd.colorscheme("tokyonight") -- This commands set the theme to the selected one.
 
 -- Ensure nvim-tree is set up properly
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 25,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
 -- Treesitter setup
 require("nvim-treesitter.configs").setup {
@@ -43,10 +70,15 @@ require("nvim-treesitter.configs").setup {
     indent = { enable = true },
     ensure_installed =
     {
+        "glsl",
+        "hlsl",
+        "make",
+        "ninja",
+        "slang",
         "bash",
         "c",
         "cpp",
-        -- "c-sharp",
+        "c_sharp",
         "html",
         "javascript",
         "json",
@@ -64,6 +96,7 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
+vim.opt.termguicolors = true -- https://github.com/akinsho/bufferline.nvim?tab=readme-ov-file#usage
 -- bufferline.nvim
 require("bufferline").setup({
   options = {
@@ -75,6 +108,16 @@ require("bufferline").setup({
     show_buffer_icons = true,  -- Show file type icons
     show_tab_indicators = true,  -- Show tab indicators
     persist_buffer_sort = true,  -- Keep buffer order when switching tabs
+    offsets = 
+    {
+        {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory",
+            text_align = "center",
+            separator = true  -- Adds a separator between sidebar and tabs
+        }
+    }
   }
 })
 
@@ -83,16 +126,29 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    section_separators = {'', ''},
-    component_separators = {'|', '|'},
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
+    }
   },
     sections = {
         lualine_a = {'mode'},  -- Mode (normal, insert, etc.)
-        lualine_b = {'branch'},  -- Git branch
+        lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {'filename'},  -- File name
         lualine_x = {'filetype', 'encoding', 'location'},  -- Filetype, Encoding, Location (Line:Col)
         lualine_y = {'progress'},  -- Progress percentage
-        lualine_z = {'date'},  -- Show date/time
+        lualine_z = {'locations'},
   },
     inactive_sections = {
         lualine_a = {},
@@ -102,6 +158,10 @@ require('lualine').setup {
         lualine_y = {},
         lualine_z = {}
   },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
 }
 
 -- Setup clangd for C language
