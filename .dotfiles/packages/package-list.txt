@@ -13,6 +13,7 @@ efibootmgr 18-3
 exo 4.20.0-2
 fastfetch 2.37.0-1
 fd 10.2.0-1
+ffmpegthumbnailer 2.2.3-3
 flatpak 1:1.16.0-1
 gamemode 1.8.2-1
 garcon 4.20.0-2

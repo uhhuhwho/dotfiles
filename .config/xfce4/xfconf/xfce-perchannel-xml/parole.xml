@@ -5,14 +5,17 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/badreddine/Videos"/>
+    <property name="last-used-media" type="string" value="/home/badreddine/Videos/Ubuntu"/>
   </property>
   <property name="window" type="empty">
-    <property name="maximized" type="bool" value="true"/>
-    <property name="width" type="int" value="1920"/>
-    <property name="height" type="int" value="982"/>
+    <property name="maximized" type="bool" value="false"/>
+    <property name="width" type="int" value="1221"/>
+    <property name="height" type="int" value="550"/>
   </property>
   <property name="audio" type="empty">
     <property name="volume" type="int" value="50"/>
+  </property>
+  <property name="parole" type="empty">
+    <property name="plugins" type="string" value="tray-icon.so;parole-notify.so"/>
   </property>
 </channel>
