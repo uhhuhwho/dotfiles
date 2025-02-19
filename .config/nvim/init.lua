@@ -1,5 +1,5 @@
 -- Mapleader aka main key
-vim.g.mapleader = " "  -- Set Leader key to space
+vim.g.mapleader = ","  -- Set Leader key to , (space is problematic)
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
