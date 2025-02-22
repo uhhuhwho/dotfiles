@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
---------- https://github.com/nvim-tree/nvim-tree.lua
+-- https://github.com/nvim-tree/nvim-tree.lua
 ----------------------------------------------------------------------------------------------------------------------------------
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
@@ -10,9 +10,16 @@ vim.opt.termguicolors = true
 ----------------------------------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------------
---------- Mapleader aka main key
+-- Mapleader aka main key
 vim.g.mapleader = ","  -- Set Leader key to , (space is problematic)
 vim.opt.number = true  -- Enable line numbers
+----------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------
+-- Set tab size to 4 spaces
+vim.opt.tabstop = 4       -- Number of visual spaces per tab
+vim.opt.shiftwidth = 4    -- Number of spaces for each indentation level
+vim.opt.expandtab = true  -- Use spaces instead of tabs
 ----------------------------------------------------------------------------------------------------------------------------------
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -236,8 +243,3 @@ vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>')
 -- Close the current buffer
 vim.keymap.set('n', '<leader>bc', ':bdelete<CR>')
-
--- Set tab size to 4 spaces
-vim.opt.tabstop = 4       -- Number of visual spaces per tab
-vim.opt.shiftwidth = 4    -- Number of spaces for each indentation level
-vim.opt.expandtab = true  -- Use spaces instead of tabs

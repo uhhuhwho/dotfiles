@@ -8,7 +8,7 @@ bluez-utils 5.79-1
 broadcom-wl-dkms 6.30.223.271-41
 clang 19.1.7-1
 cmake 3.31.5-1
-dialog 1:1.3_20240619-2
+dialog 1:1.3_20250116-1
 efibootmgr 18-3
 exo 4.20.0-2
 fastfetch 2.37.0-1
@@ -17,7 +17,6 @@ ffmpegthumbnailer 2.2.3-3
 flatpak 1:1.16.0-1
 gamemode 1.8.2-1
 garcon 4.20.0-2
-gdm 47.0-2
 git 2.48.1-2
 glew 2.2.0-7
 goverlay 1.2-2
@@ -30,11 +29,14 @@ htop 3.3.0-3
 intel-ucode 20250211-1
 lib32-gamemode 1.8.2-1
 lib32-mangohud 0.8.0-1
-linux 6.13.2.arch1-1
+lightdm 1:1.32.0-6
+lightdm-gtk-greeter 1:2.0.9-1
+lightdm-gtk-greeter-settings 1.2.3-3
+linux 6.13.3.arch1-1
 linux-firmware 20250210.5bc5868b-1
-linux-headers 6.13.2.arch1-1
+linux-headers 6.13.3.arch1-1
 man-db 2.13.0-1
-man-pages 6.10-1
+man-pages 6.11-1
 mangohud 0.8.0-2
 mousepad 0.6.3-2
 mpv 1:0.39.0-4
@@ -46,8 +48,9 @@ ninja 1.12.1-2
 noisetorch 0.12.2-4
 noto-fonts 1:2025.02.01-1
 ntfs-3g 2022.10.3-1
-nvidia 570.86.16-5
+nvidia 570.86.16-6
 nvidia-settings 570.86.16-1
+ollama 0.5.11-1
 os-prober 1.81-2
 parole 4.18.2-1
 pavucontrol 1:6.1-1
@@ -113,7 +116,7 @@ xfce4-time-out-plugin 1.1.4-1
 xfce4-timer-plugin 1.7.3-1
 xfce4-verve-plugin 2.0.4-1
 xfce4-wavelan-plugin 0.6.4-1
-xfce4-whiskermenu-plugin 2.9.1-1
+xfce4-whiskermenu-plugin 2.9.2-1
 xfce4-xkb-plugin 0.8.5-1
 xfconf 4.20.0-2
 xfdesktop 4.20.1-1
