@@ -49,8 +49,8 @@ require("lazy").setup({
 
 -- Theme setup
 require("tokyonight").setup({
-    style = "moon",           -- Available styles: "night", "storm", "moon", "day"
-    transparent = false,      -- Set to true for a transparent background
+    style = "night",           -- Available styles: "night", "storm", "moon", "day"
+    transparent = true,      -- Set to true for a transparent background
     terminal_colors = true,  -- Apply colors to the terminal
 })
 vim.cmd.colorscheme("tokyonight") -- This commands set the theme to the selected one.

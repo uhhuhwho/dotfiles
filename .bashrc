@@ -14,19 +14,35 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
-
-alias update-grub="grub-mkconfig -o /boot/grub/grub.cfg"
-alias bashrc="source ~/.bashrc"
-
-# Show fan RPM and CPU celsius
-alias heat="sensors | grep -E 'Package id 0|fan' | awk -F':' '{print \$1 \" =>\" \$2}'"
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
+# Show fan RPM and CPU celsius
+# alias heat="sensors | grep -E 'Package id 0|fan' | awk -F':' '{gsub(/Package id 0/, \"CPU Temp\"); gsub(/fan1/, \"FAN 1 (CPU)\"); gsub(/fan2/, \"FAN 2 (GPU)\"); print \$1 \":\" \$2}'"
+
+# Function to display CPU temperature, fan speeds, and GPU temperature
+heat()
+{
+    echo "GPU Temp: $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
+    sensors | grep -E 'Package id 0|fan' | awk -F':' '{
+        gsub(/Package id 0/, "CPU Temp");
+        gsub(/fan1/, "FAN 1 (CPU)");
+        gsub(/fan2/, "FAN 2 (GPU)");
+        print $1 ": " $2
+    }'
+}
+
+alias update-grub="grub-mkconfig -o /boot/grub/grub.cfg"
+alias bashrc="source ~/.bashrc"
+
 alias vim='nvim'
 alias vi='nvim'
-alias nv='nvim'
+alias v='nvim'
+
 alias ff='fastfetch'
+
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+alias rs='redshift -O 4500'
+alias xrs='redshift -x'
