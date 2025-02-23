@@ -22,6 +22,9 @@ configs:
     "/home/badreddine/Desktop/Blender.desktop":
       row: 3
       col: 3
+    "/home/badreddine/Desktop/SDL3 Cmake Sandbox (copy 1)":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/Elden Ring":
       row: 5
       col: 0
@@ -66,9 +69,6 @@ configs:
       row: 0
       col: 1
       last_seen: 1738408534473401
-    "/home/badreddine/Desktop/IMG_20250213_151055.jpg":
-      row: 6
-      col: 0
     "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend@":
       row: 0
       col: 1
@@ -76,6 +76,9 @@ configs:
       row: 4
       col: 0
       last_seen: 1739816324665569
+    "/home/badreddine/Desktop/IMG_20250213_151055.jpg":
+      row: 6
+      col: 0
     "/home/badreddine/Desktop/xxxx":
       row: 3
       col: 1
@@ -181,12 +184,12 @@ configs:
     "/home/badreddine/Desktop/2025-01-29 17-46-51.mkv":
       row: 0
       col: 1
-    "/home/badreddine/Desktop/autoexec.cfg":
-      row: 3
-      col: 0
     "/home/badreddine/Desktop/GNU Image Manipulation Program.desktop":
       row: 6
       col: 0
+    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/aa":
       row: 4
       col: 0
@@ -199,6 +202,9 @@ configs:
     "/home/badreddine/Desktop/SSD":
       row: 2
       col: 2
+    "/home/badreddine/Desktop/autoexec.cfg":
+      row: 3
+      col: 0
     "DEE2CFABE2CF866D":
       row: 0
       col: 1
@@ -207,9 +213,6 @@ configs:
       row: 0
       col: 2
       last_seen: 1737831694198251
-    "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend":
-      row: 0
-      col: 1
     "/home/badreddine/Desktop/Recovered Videos":
       row: 3
       col: 0
