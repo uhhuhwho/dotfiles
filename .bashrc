@@ -12,7 +12,8 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # git dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias gm='dotfiles commit -a -m'
+# dotfiles git commit, don't forget to add a comment in "".
+alias dgc='dotfiles commit -a -m'
 
 # Alias
 alias cp="cp -i"
