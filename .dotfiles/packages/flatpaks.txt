@@ -1,17 +1,16 @@
+AnyDesk	com.anydesk.Anydesk	6.4.0	stable	system
 Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
-OBS Studio	com.obsproject.Studio	31.0.1	stable	system
 Steam	com.valvesoftware.Steam	1.0.0.81	stable	system
 Betterbird	eu.betterbird.Betterbird	128.7.0esr-bb22	stable	system
 Mousam	io.github.amit9838.mousam	1.4.0	stable	system
 Mission Center	io.missioncenter.MissionCenter	0.6.2	stable	system
 Lutris	net.lutris.Lutris	0.5.17	stable	system
-FreeCAD	org.freecad.FreeCAD	1.0.0	stable	system
 TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	23.08	system
 TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	24.08	system
 SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	23.08	system
 SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	24.08	system
 Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.28	23.08	system
-Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.11	24.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.12	24.08	system
 i386	org.freedesktop.Platform.Compat.i386		24.08	system
 Mesa	org.freedesktop.Platform.GL.default	24.3.4	23.08	system
 Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.4	23.08-extra	system
@@ -29,33 +28,20 @@ i386	org.freedesktop.Platform.ffmpeg_full.i386		23.08	system
 i386	org.freedesktop.Platform.ffmpeg_full.i386		24.08	system
 openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
 openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
-GNU Image Manipulation Program	org.gimp.GIMP	2.10.38	stable	system
 Boxes	org.gnome.Boxes	47.0	stable	system
 GNOME Boxes Osinfo DB	org.gnome.Boxes.Extension.OsinfoDb	20250124	stable	system
-Calculator	org.gnome.Calculator	47.1	stable	system
-Characters	org.gnome.Characters	47.alpha	stable	system
-Logs	org.gnome.Logs	45.0	stable	system
 GNOME Application Platform version 46	org.gnome.Platform		46	system
 GNOME Application Platform version 47	org.gnome.Platform		47	system
 i386	org.gnome.Platform.Compat.i386		46	system
 i386	org.gnome.Platform.Compat.i386		47	system
-Disk Usage Analyzer	org.gnome.baobab	47.0	stable	system
-Clocks	org.gnome.clocks	47.0	stable	system
 Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system
 KDE Application Platform	org.kde.Platform		5.15-24.08	system
-KDE Application Platform	org.kde.Platform		6.6	system
 KDE Application Platform	org.kde.Platform		6.7	system
 KDE Application Platform	org.kde.Platform		6.8	system
 ISO Image Writer	org.kde.isoimagewriter	24.12.2	stable	system
-KPatience	org.kde.kpat	24.12.2	stable	system
-Krita	org.kde.krita	5.2.9	stable	system
-Okular	org.kde.okular	24.12.2	stable	system
-LibreOffice	org.libreoffice.LibreOffice	25.2.0.3	stable	system
 LocalSend	org.localsend.localsend_app	1.17.0	stable	system
 Firefox	org.mozilla.firefox	135.0.1	stable	system
 Parabolic	org.nickvision.tubeconverter	2025.1.4	stable	system
-OpenShot Video Editor	org.openshot.OpenShot	3.3.0	stable	system
-qBittorrent	org.qbittorrent.qBittorrent	5.0.4	stable	system
 DXVK	org.winehq.Wine.DLLs.dxvk	2.4.1	stable-23.08	system
 Gecko	org.winehq.Wine.gecko		stable-23.08	system
 gecko	org.winehq.Wine.gecko		stable-24.08	system

@@ -7,6 +7,8 @@
 
 PS1='[\u@\h \W]\$ '
 
+alias bashrc="source ~/.bashrc"
+
 # For PKG to be found
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
@@ -39,14 +41,18 @@ heat()
     }'
 }
 
-alias update-grub="grub-mkconfig -o /boot/grub/grub.cfg"
-alias bashrc="source ~/.bashrc"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias vim='nvim'
-alias vi='nvim'
 alias v='nvim'
+alias sv='sudo nvim'
 
 alias ff='fastfetch'
 
 alias rs='redshift -O 4500'
 alias xrs='redshift -x'
+
+# Zswap statistics
+alias zsstats='sudo grep -r . /sys/kernel/debug/zswap/'
+
+# Pacman sync refresh upgrade
+alias syu="sudo pacman -Syu"

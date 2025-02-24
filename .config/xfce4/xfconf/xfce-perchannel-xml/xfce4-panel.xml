@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="org.openshot.OpenShot.desktop"/>
-        <value type="string" value="blender.desktop"/>
-        <value type="string" value="bssh.desktop"/>
-        <value type="string" value="org.kde.isoimagewriter.desktop"/>
-        <value type="string" value="nvidia-settings.desktop"/>
-        <value type="string" value="xfce4-taskmanager.desktop"/>
-        <value type="string" value="com.valvesoftware.Steam.desktop"/>
-        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
-        <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="xfce4-screensaver-preferences.desktop"/>
+        <value type="string" value="org.gnome.clocks.desktop"/>
+        <value type="string" value="org.gnome.Characters.desktop"/>
+        <value type="string" value="org.gnome.Calculator.desktop"/>
+        <value type="string" value="org.gnome.baobab.desktop"/>
+        <value type="string" value="org.kde.kpat.desktop"/>
+        <value type="string" value="io.github.amit9838.mousam.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
+        <value type="string" value="org.freecad.FreeCAD.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -137,6 +137,11 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="anydesk"/>
+        <value type="string" value="blueman-tray"/>
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (43%)"/>
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (45%)"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (60%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (59%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (58%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (62%)"/>
