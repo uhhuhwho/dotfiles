@@ -22,6 +22,8 @@ FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		23.08	s
 FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		24.08	system
 i386	org.freedesktop.Platform.ffmpeg_full.i386		23.08	system
 i386	org.freedesktop.Platform.ffmpeg_full.i386		24.08	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
 Boxes	org.gnome.Boxes	47.0	stable	system
 GNOME Boxes Osinfo DB	org.gnome.Boxes.Extension.OsinfoDb	20250124	stable	system
 GNOME Application Platform version 46	org.gnome.Platform		46	system

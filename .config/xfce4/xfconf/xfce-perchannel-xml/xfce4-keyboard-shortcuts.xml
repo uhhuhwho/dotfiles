@@ -44,7 +44,6 @@
       <property name="&lt;Alt&gt;F3" type="string" value="xfce4-appfinder">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="&lt;Primary&gt;Escape" type="string" value="xfdesktop --menu"/>
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xfce4-session-logout"/>
@@ -63,6 +62,7 @@
       <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="Launch2" type="string" value="xfce4-terminal"/>
       <property name="Calculator" type="string" value="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=missioncenter io.missioncenter.MissionCenter"/>
+      <property name="Print" type="string" value="bash -c &quot;/usr/bin/flameshot full -p $HOME/Pictures&quot;"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
