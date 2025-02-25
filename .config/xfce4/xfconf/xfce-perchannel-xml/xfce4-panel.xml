@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
+        <value type="string" value="org.flameshot.Flameshot.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="xfce4-power-manager-settings.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="xfce-mouse-settings.desktop"/>
         <value type="string" value="lstopo.desktop"/>
         <value type="string" value="org.kde.isoimagewriter.desktop"/>
         <value type="string" value="xfce4-screensaver-preferences.desktop"/>
         <value type="string" value="org.gnome.clocks.desktop"/>
         <value type="string" value="org.gnome.Characters.desktop"/>
-        <value type="string" value="org.gnome.Calculator.desktop"/>
-        <value type="string" value="org.gnome.baobab.desktop"/>
-        <value type="string" value="org.kde.kpat.desktop"/>
-        <value type="string" value="io.github.amit9838.mousam.desktop"/>
-        <value type="string" value="xfce-session-settings.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -200,6 +200,7 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="flameshot"/>
         <value type="string" value="NA6OLe3oxF"/>
         <value type="string" value="blueman"/>
         <value type="string" value="chrome_status_icon_1"/>
