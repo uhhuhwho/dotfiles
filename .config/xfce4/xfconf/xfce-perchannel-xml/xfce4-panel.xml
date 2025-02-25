@@ -73,6 +73,8 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
+        <value type="string" value="lstopo.desktop"/>
+        <value type="string" value="org.kde.isoimagewriter.desktop"/>
         <value type="string" value="xfce4-screensaver-preferences.desktop"/>
         <value type="string" value="org.gnome.clocks.desktop"/>
         <value type="string" value="org.gnome.Characters.desktop"/>
@@ -81,8 +83,6 @@
         <value type="string" value="org.kde.kpat.desktop"/>
         <value type="string" value="io.github.amit9838.mousam.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
-        <value type="string" value="org.freecad.FreeCAD.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>

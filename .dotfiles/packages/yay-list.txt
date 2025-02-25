@@ -1,0 +1,6 @@
+noisetorch 0.12.2-4
+noisetorch-debug 0.12.2-4
+ttf-ms-fonts 2.0-12
+ttf-tahoma 9.0-1
+yay 12.4.2-1
+yay-debug 12.4.2-1

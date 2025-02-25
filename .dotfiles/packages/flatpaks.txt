@@ -5,10 +5,6 @@ Betterbird	eu.betterbird.Betterbird	128.7.0esr-bb22	stable	system
 Mousam	io.github.amit9838.mousam	1.4.0	stable	system
 Mission Center	io.missioncenter.MissionCenter	0.6.2	stable	system
 Lutris	net.lutris.Lutris	0.5.17	stable	system
-TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	23.08	system
-TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	24.08	system
-SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	23.08	system
-SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	24.08	system
 Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.28	23.08	system
 Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.12	24.08	system
 i386	org.freedesktop.Platform.Compat.i386		24.08	system
@@ -26,24 +22,14 @@ FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		23.08	s
 FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		24.08	system
 i386	org.freedesktop.Platform.ffmpeg_full.i386		23.08	system
 i386	org.freedesktop.Platform.ffmpeg_full.i386		24.08	system
-openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
-openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
 Boxes	org.gnome.Boxes	47.0	stable	system
 GNOME Boxes Osinfo DB	org.gnome.Boxes.Extension.OsinfoDb	20250124	stable	system
 GNOME Application Platform version 46	org.gnome.Platform		46	system
 GNOME Application Platform version 47	org.gnome.Platform		47	system
 i386	org.gnome.Platform.Compat.i386		46	system
-i386	org.gnome.Platform.Compat.i386		47	system
 Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system
-KDE Application Platform	org.kde.Platform		5.15-24.08	system
-KDE Application Platform	org.kde.Platform		6.7	system
-KDE Application Platform	org.kde.Platform		6.8	system
-ISO Image Writer	org.kde.isoimagewriter	24.12.2	stable	system
-LocalSend	org.localsend.localsend_app	1.17.0	stable	system
 Firefox	org.mozilla.firefox	135.0.1	stable	system
 Parabolic	org.nickvision.tubeconverter	2025.1.4	stable	system
 DXVK	org.winehq.Wine.DLLs.dxvk	2.4.1	stable-23.08	system
 Gecko	org.winehq.Wine.gecko		stable-23.08	system
-gecko	org.winehq.Wine.gecko		stable-24.08	system
 Mono	org.winehq.Wine.mono		stable-23.08	system
-mono	org.winehq.Wine.mono		stable-24.08	system
