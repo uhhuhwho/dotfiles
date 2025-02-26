@@ -226,6 +226,9 @@ configs:
     "/home/badreddine/Desktop/Blender":
       row: 2
       col: 0
+    "/home/badreddine/Desktop/Ubisoft Connect.lnk":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/Backup Commands.txt":
       row: 2
       col: 14
@@ -250,4 +253,7 @@ configs:
       col: 0
     "/home/badreddine/Desktop/VP6":
       row: 5
+      col: 0
+    "/home/badreddine/Desktop/Epic Games Launcher.lnk":
+      row: 3
       col: 0

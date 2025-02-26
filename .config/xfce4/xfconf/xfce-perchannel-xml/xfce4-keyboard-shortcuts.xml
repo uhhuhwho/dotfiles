@@ -61,7 +61,6 @@
       <property name="override" type="bool" value="true"/>
       <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="Launch2" type="string" value="xfce4-terminal"/>
-      <property name="Calculator" type="string" value="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=missioncenter io.missioncenter.MissionCenter"/>
       <property name="Print" type="string" value="bash -c &quot;/usr/bin/flameshot full -p $HOME/Pictures&quot;"/>
     </property>
   </property>
