@@ -82,3 +82,7 @@ alias removebashtemp='rm ~/.bash_history-*.tmp'
 alias mountntfs='sudo mount -t ntfs-3g'
 
 alias removeunsedflatpaks='flatpak uninstall --unused'
+
+alias rebuildfontscach='fc-cache -f -v'
+
+alias deepseek='ollama run deepseek-r1:8b'

@@ -36,7 +36,7 @@ require("lazy").setup({
 	{"folke/tokyonight.nvim"},          -- Tokyo night theme
     {"nvim-tree/nvim-tree.lua"},        -- A file explorer tree for neovim written in lua.
     {"nvim-tree/nvim-web-devicons"},    -- Install the web devicons plugin (For icons etc...)
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},  -- Ensure Treesitter updates automatically
+    {"nvim-treesitter/nvim-treesitter"},  -- Treesitter
     {"nvim-telescope/telescope.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
     {"akinsho/bufferline.nvim"},        -- A snazzy buffer line (with tabpage integration) for Neovim built using lua.
     {'akinsho/toggleterm.nvim', version = "*", config = true}, -- A neovim plugin to persist and toggle multiple terminals during an editing session.

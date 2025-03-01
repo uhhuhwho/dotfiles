@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
+        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
+        <value type="string" value="org.godotengine.Godot.desktop"/>
+        <value type="string" value="org.kde.okular.desktop"/>
+        <value type="string" value="lstopo.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="net.lutris.Lutris.desktop"/>
+        <value type="string" value="protonvpn.desktop"/>
+        <value type="string" value="sniffnet.desktop"/>
+        <value type="string" value="steam.desktop"/>
         <value type="string" value="firefox.desktop"/>
-        <value type="string" value="com.valvesoftware.Steam.desktop"/>
-        <value type="string" value="org.gnome.Calculator.desktop"/>
-        <value type="string" value="xfce4-file-manager.desktop"/>
-        <value type="string" value="com.obsproject.Studio.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="org.kde.kpat.desktop"/>
-        <value type="string" value="org.kde.krita.desktop"/>
-        <value type="string" value="xfce-wmtweaks-settings.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -205,6 +205,7 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="proton-vpn-app"/>
         <value type="string" value="net.lutris.Lutris"/>
         <value type="string" value="flameshot"/>
         <value type="string" value="NA6OLe3oxF"/>

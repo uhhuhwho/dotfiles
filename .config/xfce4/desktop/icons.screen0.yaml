@@ -213,6 +213,9 @@ configs:
       row: 0
       col: 2
       last_seen: 1737831694198251
+    "/home/badreddine/Desktop/steam.desktop":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/Recovered Videos":
       row: 3
       col: 0
@@ -239,6 +242,9 @@ configs:
       row: 3
       col: 0
       last_seen: 1740262049036489
+    "/home/badreddine/Desktop/Steam":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/HELL YEAH.jpg":
       row: 6
       col: 0
