@@ -12,6 +12,10 @@ alias bashrc="source ~/.bashrc"
 # For PKG to be found
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
+# dotnet
+export PATH="$HOME/.dotnet/tools:$PATH"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # git dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # dotfiles git commit, don't forget to add a comment in "".

@@ -16,7 +16,7 @@
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
-        <value type="int" value="17"/>
+        <value type="int" value="15"/>
         <value type="int" value="8"/>
         <value type="int" value="2"/>
         <value type="int" value="9"/>
@@ -74,14 +74,15 @@
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
         <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="firefox.desktop"/>
-        <value type="string" value="xfce-keyboard-settings.desktop"/>
-        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
-        <value type="string" value="xfce4-taskmanager.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="designer.desktop"/>
+        <value type="string" value="com.valvesoftware.Steam.desktop"/>
         <value type="string" value="org.gnome.Calculator.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="org.kde.kpat.desktop"/>
+        <value type="string" value="org.kde.krita.desktop"/>
+        <value type="string" value="xfce-wmtweaks-settings.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -138,6 +139,7 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (69%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (60%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (65%)"/>
         <value type="string" value="anydesk"/>
@@ -253,11 +255,11 @@
         <property name="never-confirm-history-clear" type="bool" value="false"/>
       </property>
     </property>
-    <property name="plugin-17" type="string" value="launcher">
+    <property name="plugin-3" type="string" value="notification-plugin"/>
+    <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17384258443.desktop"/>
+        <value type="string" value="17407956781.desktop"/>
       </property>
     </property>
-    <property name="plugin-3" type="string" value="notification-plugin"/>
   </property>
 </channel>
