@@ -1,5 +1,9 @@
+libopenrazer 0.3.0-1
+libopenrazer-debug 0.3.0-1
 noisetorch 0.12.2-4
 noisetorch-debug 0.12.2-4
+razergenie 1.2.0-1
+razergenie-debug 1.2.0-1
 ttf-ms-fonts 2.0-12
 ttf-tahoma 9.0-1
 yay 12.4.2-1
