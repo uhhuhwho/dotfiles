@@ -36,19 +36,20 @@ alias q='exit'
 # Function to display CPU temperature, fan speeds, and GPU temperature
 temp()
 {
-    echo "GPU Temp: $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
-
     echo "---"
-
+    echo "Power Profile: $(powerprofilesctl get)"
+    echo "---"
+    echo "GPU Temp: $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
+    echo "---"
     echo "CPU(s) scaling MHz: $(lscpu | grep 'CPU(s) scaling MHz' | awk '{print $NF}')"
     echo "CPU(s) scaling GHz: $(awk -v max_mhz=$(lscpu | grep "CPU max MHz" | awk '{print $NF}') -v scale=$(lscpu | grep "CPU(s) scaling MHz" | awk '{print $NF}' | tr -d '%') 'BEGIN {printf "%.2f", (max_mhz * scale / 100) / 1000}') GHz"
-
     sensors | grep -E 'Package id 0|fan' | awk -F':' '{
         gsub(/Package id 0/, "CPU Temp");
         gsub(/fan1/, "FAN 1 (CPU)");
         gsub(/fan2/, "FAN 2 (GPU)");
         print $1 ": " $2
     }'
+    echo "---"
 }
 
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -60,6 +61,9 @@ alias ff='fastfetch'
 
 alias rs='redshift -O 4500'
 alias xrs='redshift -x'
+
+alias nt='noisetorch -i'
+alias xnt='noisetorch -u'
 
 # Zswap statistics
 alias zsstats='sudo grep -r . /sys/kernel/debug/zswap/'

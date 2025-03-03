@@ -74,15 +74,15 @@
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
         <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
-        <value type="string" value="org.godotengine.Godot.desktop"/>
-        <value type="string" value="org.kde.okular.desktop"/>
-        <value type="string" value="lstopo.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="protonvpn.desktop"/>
         <value type="string" value="sniffnet.desktop"/>
         <value type="string" value="steam.desktop"/>
-        <value type="string" value="firefox.desktop"/>
+        <value type="string" value="code-oss.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="xyz.z3ntu.razergenie.desktop"/>
+        <value type="string" value="noisetorch.desktop"/>
+        <value type="string" value="org.kde.krita.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -242,7 +242,7 @@
     </property>
     <property name="notes" type="empty">
       <property name="global" type="empty">
-        <property name="version" type="string" value="1.11.1"/>
+        <property name="version" type="string" value="1.11.2"/>
         <property name="font-description" type="string" value="Sans 10"/>
         <property name="background-color" type="string" value="#C1ECB0"/>
       </property>

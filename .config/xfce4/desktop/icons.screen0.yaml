@@ -111,6 +111,9 @@ configs:
     "/home/badreddine/Desktop/IMG_20250213_151057.jpg":
       row: 1
       col: 1
+    "/home/badreddine/Desktop/chadvim or whatever":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/Windows Games":
       row: 2
       col: 14
