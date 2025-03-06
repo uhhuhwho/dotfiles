@@ -1,6 +1,5 @@
 AnyDesk	com.anydesk.Anydesk	6.4.0	stable	system
 Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
-Betterbird	eu.betterbird.Betterbird	128.7.0esr-bb22	stable	system
 Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.13	24.08	system
 Mesa	org.freedesktop.Platform.GL.default	24.3.4	24.08	system
 Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.4	24.08extra	system

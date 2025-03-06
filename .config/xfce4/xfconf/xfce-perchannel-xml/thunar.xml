@@ -7,8 +7,8 @@
   <property name="last-window-maximized" type="bool" value="true"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="last-show-hidden" type="bool" value="true"/>
-  <property name="last-window-width" type="int" value="1483"/>
-  <property name="last-window-height" type="int" value="693"/>
+  <property name="last-window-width" type="int" value="1103"/>
+  <property name="last-window-height" type="int" value="708"/>
   <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
   <property name="shortcuts-icon-emblems" type="bool" value="true"/>
   <property name="misc-symbolic-icons-in-sidepane" type="bool" value="false"/>

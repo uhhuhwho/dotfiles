@@ -30,9 +30,6 @@ alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias q='exit'
 
-# Show fan RPM and CPU celsius
-# alias heat="sensors | grep -E 'Package id 0|fan' | awk -F':' '{gsub(/Package id 0/, \"CPU Temp\"); gsub(/fan1/, \"FAN 1 (CPU)\"); gsub(/fan2/, \"FAN 2 (GPU)\"); print \$1 \":\" \$2}'"
-
 # Function to display CPU temperature, fan speeds, and GPU temperature
 temp()
 {
@@ -43,8 +40,14 @@ temp()
     echo "---"
     echo "CPU(s) scaling MHz: $(lscpu | grep 'CPU(s) scaling MHz' | awk '{print $NF}')"
     echo "CPU(s) scaling GHz: $(awk -v max_mhz=$(lscpu | grep "CPU max MHz" | awk '{print $NF}') -v scale=$(lscpu | grep "CPU(s) scaling MHz" | awk '{print $NF}' | tr -d '%') 'BEGIN {printf "%.2f", (max_mhz * scale / 100) / 1000}') GHz"
-    sensors | grep -E 'Package id 0|fan' | awk -F':' '{
+    # Extract CPU temperature
+    sensors | grep 'Package id 0' | awk -F':' '{
         gsub(/Package id 0/, "CPU Temp");
+        print $1 ": " $2
+    }'
+    echo "----"
+    # Extract fan speeds
+    sensors | grep 'fan' | awk -F':' '{
         gsub(/fan1/, "FAN 1 (CPU)");
         gsub(/fan2/, "FAN 2 (GPU)");
         print $1 ": " $2
@@ -77,16 +80,10 @@ alias pupd='pacman -Qqd | pacman -Rsu --print -'
 alias pqe='pacman -Qe'
 alias yqm='yay -Qm'
 
-alias unziptarxf='tar -xf'
-
-alias removebashtemp='rm ~/.bash_history-*.tmp'
-
 # Exampel: sudo mount -t ntfs-3g /dev/sda1 /mnt
 # sudo umount /mnt
 alias mountntfs='sudo mount -t ntfs-3g'
 
-alias removeunsedflatpaks='flatpak uninstall --unused'
-
 alias rebuildfontscach='fc-cache -f -v'
 
-alias deepseek='ollama run deepseek-r1:8b'
+alias deepseek='ollama run deepseek-r1:8b'export LIBVIRT_DEFAULT_URI="qemu:///system"

@@ -34,6 +34,9 @@ configs:
     "/home/badreddine/Desktop/nvim-sandbox":
       row: 1
       col: 0
+    "/home/badreddine/Desktop/Betterbird_profile_backup.zip":
+      row: 3
+      col: 0
     "520E32656860CB16":
       row: 3
       col: 0
@@ -140,9 +143,9 @@ configs:
       row: 5
       col: 0
       last_seen: 1739324267916826
-    "/home/badreddine/Desktop/ISO":
-      row: 1
-      col: 1
+    "/home/badreddine/Desktop/archlinux-2025.02.01-x86_64.iso":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/org.kde.kdenlive.desktop":
       row: 2
       col: 1
@@ -166,6 +169,9 @@ configs:
     "trash:///":
       row: 6
       col: 14
+    "/home/badreddine/Desktop/ISO":
+      row: 1
+      col: 1
     "/home/badreddine/Desktop/Sera9":
       row: 4
       col: 0
@@ -199,12 +205,12 @@ configs:
     "/home/badreddine/Desktop/IMG_20250213_151056.jpg":
       row: 0
       col: 1
-    "/home/badreddine/Desktop/Mount Disk":
-      row: 3
-      col: 14
     "/home/badreddine/Desktop/SSD":
       row: 2
       col: 2
+    "/home/badreddine/Desktop/Mount Disk":
+      row: 3
+      col: 14
     "/home/badreddine/Desktop/autoexec.cfg":
       row: 3
       col: 0
