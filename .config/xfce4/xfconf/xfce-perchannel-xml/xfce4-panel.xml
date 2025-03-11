@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="discord.desktop"/>
         <value type="string" value="steam.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="org.pulseaudio.pavucontrol.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="xyz.z3ntu.razergenie.desktop"/>
         <value type="string" value="org.mozilla.Thunderbird.desktop"/>
-        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
-        <value type="string" value="xfce-session-settings.desktop"/>
-        <value type="string" value="proton-bridge.desktop"/>
-        <value type="string" value="gparted.desktop"/>
-        <value type="string" value="org.gnome.Boxes.desktop"/>
+        <value type="string" value="xfce4-screenshooter.desktop"/>
+        <value type="string" value="virtualbox.desktop"/>
+        <value type="string" value="discord.desktop"/>
+        <value type="string" value="com.obsproject.Studio.desktop"/>
+        <value type="string" value="xfce4-power-manager-settings.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -136,6 +136,7 @@
     <property name="plugin-14" type="string" value="xkb">
       <property name="display-name" type="uint" value="1"/>
       <property name="display-type" type="uint" value="2"/>
+      <property name="display-tooltip-icon" type="bool" value="false"/>
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">

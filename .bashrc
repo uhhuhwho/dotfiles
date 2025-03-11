@@ -87,3 +87,5 @@ alias mountntfs='sudo mount -t ntfs-3g'
 alias rebuildfontscach='fc-cache -f -v'
 
 alias deepseek='ollama run deepseek-r1:8b'export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+alias addtogroup='sudo usermod -aG'

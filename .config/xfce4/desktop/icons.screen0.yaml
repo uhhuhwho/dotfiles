@@ -45,6 +45,9 @@ configs:
       row: 5
       col: 0
       last_seen: 1739810590647921
+    "/home/badreddine/Desktop/252490_6.jpg":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/OBS Studio.desktop":
       row: 0
       col: 1
@@ -65,13 +68,13 @@ configs:
     "/home/badreddine/Desktop/Discord.desktop":
       row: 3
       col: 0
-    "/home/badreddine/Desktop/VP-":
-      row: 5
-      col: 2
     "1A0D-1B23":
       row: 0
       col: 1
       last_seen: 1738408534473401
+    "/home/badreddine/Desktop/VP-":
+      row: 5
+      col: 2
     "/home/badreddine/Desktop/2025-36-23_19-36_Blockout.blend@":
       row: 0
       col: 1
@@ -95,6 +98,9 @@ configs:
     "/home/badreddine/Desktop/Firefox.desktop":
       row: 1
       col: 0
+    "/home/badreddine/Desktop/252490_1.jpg":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/Blockout.blend":
       row: 6
       col: 0
@@ -111,12 +117,15 @@ configs:
       row: 6
       col: 0
       last_seen: 1737824326911606
-    "/home/badreddine/Desktop/IMG_20250213_151057.jpg":
-      row: 1
-      col: 1
+    "/home/badreddine/Desktop/txt":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/chadvim or whatever":
       row: 3
       col: 0
+    "/home/badreddine/Desktop/IMG_20250213_151057.jpg":
+      row: 1
+      col: 1
     "/home/badreddine/Desktop/Windows Games":
       row: 2
       col: 14
@@ -155,6 +164,9 @@ configs:
     "/home/badreddine/Desktop/FreeCAD.desktop":
       row: 5
       col: 0
+    "trash:///":
+      row: 6
+      col: 14
     "/home/badreddine/Desktop/polybar":
       row: 6
       col: 1
@@ -166,9 +178,12 @@ configs:
       row: 6
       col: 0
       last_seen: 1737833493801737
-    "trash:///":
-      row: 6
-      col: 14
+    "/home/badreddine/Desktop/2025-03-09 23-56-00.mkv":
+      row: 3
+      col: 0
+    "/home/badreddine/Desktop/DJAMAL AHRAWO.txt":
+      row: 1
+      col: 4
     "/home/badreddine/Desktop/ISO":
       row: 1
       col: 1
@@ -193,6 +208,9 @@ configs:
     "/home/badreddine/Desktop/2025-01-29 17-46-51.mkv":
       row: 0
       col: 1
+    "/home/badreddine/Desktop/threejs":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/GNU Image Manipulation Program.desktop":
       row: 6
       col: 0
@@ -232,12 +250,15 @@ configs:
       row: 6
       col: 1
       last_seen: 1737833580192685
-    "/home/badreddine/Desktop/VID_20250206_165353-30fps.mp4":
-      row: 2
-      col: 1
+    "/home/badreddine/Desktop/2025-03-10 00-30-07.mkv":
+      row: 5
+      col: 0
     "/home/badreddine/Desktop/Blender":
       row: 2
       col: 0
+    "/home/badreddine/Desktop/VID_20250206_165353-30fps.mp4":
+      row: 2
+      col: 1
     "/home/badreddine/Desktop/Ubisoft Connect.lnk":
       row: 4
       col: 0
@@ -270,5 +291,8 @@ configs:
       row: 5
       col: 0
     "/home/badreddine/Desktop/Epic Games Launcher.lnk":
+      row: 3
+      col: 0
+    "/home/badreddine/Desktop/New Project":
       row: 3
       col: 0
