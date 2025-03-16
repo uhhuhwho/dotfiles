@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="steam.desktop"/>
-        <value type="string" value="org.pulseaudio.pavucontrol.desktop"/>
+        <value type="string" value="gparted.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="xfce-mouse-settings.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="xyz.z3ntu.razergenie.desktop"/>
-        <value type="string" value="org.mozilla.Thunderbird.desktop"/>
-        <value type="string" value="xfce4-screenshooter.desktop"/>
+        <value type="string" value="calibre-gui.desktop"/>
         <value type="string" value="virtualbox.desktop"/>
-        <value type="string" value="discord.desktop"/>
-        <value type="string" value="com.obsproject.Studio.desktop"/>
-        <value type="string" value="xfce4-power-manager-settings.desktop"/>
+        <value type="string" value="scrcpy-console.desktop"/>
+        <value type="string" value="org.mozilla.Thunderbird.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -140,6 +140,8 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (41%)"/>
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (52%)"/>
         <value type="string" value="proton mail bridge"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (69%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (60%)"/>
@@ -207,6 +209,7 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="Thunderbird"/>
         <value type="string" value="Proton Mail Bridge"/>
         <value type="string" value="proton-vpn-app"/>
         <value type="string" value="net.lutris.Lutris"/>

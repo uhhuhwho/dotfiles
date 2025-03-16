@@ -72,13 +72,13 @@ alias xnt='noisetorch -u'
 alias zsstats='sudo grep -r . /sys/kernel/debug/zswap/'
 
 # Pacman sync refresh upgrade
-alias syu="sudo pacman -Syu"
+# alias syu="sudo pacman -Syu"
 
 # https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans)
 # If you want to remove all packages in the list at once, run the command without --print argument.
-alias pupd='pacman -Qqd | pacman -Rsu --print -'
-alias pqe='pacman -Qe'
-alias yqm='yay -Qm'
+# alias pupd='pacman -Qqd | pacman -Rsu --print -'
+# alias pqe='pacman -Qe'
+# alias yqm='yay -Qm'
 
 # Exampel: sudo mount -t ntfs-3g /dev/sda1 /mnt
 # sudo umount /mnt
