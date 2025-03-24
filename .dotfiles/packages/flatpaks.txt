@@ -1,9 +1,10 @@
 AnyDesk	com.anydesk.Anydesk	6.4.0	stable	system
 Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
-Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.13	24.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.16	24.08	system
 Mesa	org.freedesktop.Platform.GL.default	24.3.4	24.08	system
 Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.4	24.08extra	system
 nvidia-570-124-04	org.freedesktop.Platform.GL.nvidia-570-124-04		1.4	system
 openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
+openh264	org.freedesktop.Platform.openh264	2.5.1	2.5.1	system
 GNOME Application Platform version 47	org.gnome.Platform		47	system
 Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system

@@ -64,25 +64,24 @@
       <property name="position-profile-alternate" type="bool" value="true"/>
       <property name="button-icon" type="string" value="archlinux-logo"/>
       <property name="default-category" type="int" value="2"/>
-      <property name="show-command-logoutuser" type="bool" value="true"/>
+      <property name="show-command-logoutuser" type="bool" value="false"/>
       <property name="show-command-restart" type="bool" value="true"/>
       <property name="show-command-shutdown" type="bool" value="true"/>
       <property name="show-command-profile" type="bool" value="false"/>
-      <property name="show-command-logout" type="bool" value="false"/>
+      <property name="show-command-logout" type="bool" value="true"/>
       <property name="show-command-menueditor" type="bool" value="true"/>
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
-        <value type="string" value="gparted.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="xfce-mouse-settings.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="calibre-gui.desktop"/>
-        <value type="string" value="virtualbox.desktop"/>
-        <value type="string" value="scrcpy-console.desktop"/>
-        <value type="string" value="org.mozilla.Thunderbird.desktop"/>
+        <value type="string" value="sniffnet.desktop"/>
         <value type="string" value="steam.desktop"/>
-        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="net.lutris.Lutris.desktop"/>
+        <value type="string" value="org.flameshot.Flameshot.desktop"/>
+        <value type="string" value="firefox.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="virtualbox.desktop"/>
+        <value type="string" value="org.kde.okular.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -90,9 +89,12 @@
       <property name="show-button-title" type="bool" value="false"/>
       <property name="button-single-row" type="bool" value="false"/>
       <property name="sort-categories" type="bool" value="true"/>
-      <property name="show-command-suspend" type="bool" value="true"/>
+      <property name="show-command-suspend" type="bool" value="false"/>
       <property name="launcher-show-tooltip" type="bool" value="true"/>
       <property name="button-title" type="string" value="Whisker Menu"/>
+      <property name="favorites" type="array">
+      </property>
+      <property name="position-search-alternate" type="bool" value="false"/>
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -140,6 +142,7 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (44%)"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (41%)"/>
         <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (52%)"/>
         <value type="string" value="proton mail bridge"/>
@@ -260,6 +263,7 @@
     <property name="clipman" type="empty">
       <property name="tweaks" type="empty">
         <property name="never-confirm-history-clear" type="bool" value="false"/>
+        <property name="popup-at-pointer" type="bool" value="false"/>
       </property>
     </property>
     <property name="plugin-3" type="string" value="notification-plugin"/>

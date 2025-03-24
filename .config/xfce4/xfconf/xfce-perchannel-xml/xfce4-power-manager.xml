@@ -21,5 +21,11 @@
     <property name="inactivity-on-ac" type="uint" value="0"/>
     <property name="critical-power-level" type="uint" value="30"/>
     <property name="inactivity-sleep-mode-on-ac" type="uint" value="2"/>
+    <property name="brightness-on-ac" type="uint" value="300"/>
+    <property name="brightness-on-battery" type="uint" value="150"/>
+    <property name="brightness-level-on-battery" type="uint" value="10"/>
+    <property name="brightness-level-on-ac" type="uint" value="10"/>
+    <property name="dpms-enabled" type="bool" value="true"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="10"/>
   </property>
 </channel>
