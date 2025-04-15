@@ -8,3 +8,21 @@ openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
 openh264	org.freedesktop.Platform.openh264	2.5.1	2.5.1	system
 GNOME Application Platform version 47	org.gnome.Platform		47	system
 Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system
+AnyDesk	com.anydesk.Anydesk	6.4.0	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
+Heroic Games Launcher	com.heroicgameslauncher.hgl	v2.16.1	stable	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.29	23.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.16	24.08	system
+i386	org.freedesktop.Platform.Compat.i386		23.08	system
+Mesa	org.freedesktop.Platform.GL.default	24.3.4	23.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.4	23.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	24.3.4	24.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.3.4	24.08extra	system
+nvidia-570-133-07	org.freedesktop.Platform.GL.nvidia-570-133-07		1.4	system
+Mesa	org.freedesktop.Platform.GL32.default	24.3.4	23.08	system
+nvidia-570-133-07	org.freedesktop.Platform.GL32.nvidia-570-133-07		1.4	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
+openh264	org.freedesktop.Platform.openh264	2.5.1	2.5.1	system
+GNOME Application Platform version 47	org.gnome.Platform		47	system
+Adwaita dark GTK theme	org.gtk.Gtk3theme.Adwaita-dark		3.22	system

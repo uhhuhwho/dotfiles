@@ -6,6 +6,7 @@
     <property name="known_applications" type="array">
       <value type="string" value="blueman"/>
       <value type="string" value="com.discordapp.Discord"/>
+      <value type="string" value="com.heroicgameslauncher.hgl"/>
       <value type="string" value="discord"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="flameshot"/>
@@ -19,6 +20,7 @@
       <value type="string" value="org.xfce.xfdesktop"/>
       <value type="string" value="parole-notify"/>
       <value type="string" value="Thunderbird"/>
+      <value type="string" value="Unity"/>
       <value type="string" value="Xfce volume control"/>
       <value type="string" value="xfce4-power-manager"/>
       <value type="string" value="xfce4-settings-helper"/>

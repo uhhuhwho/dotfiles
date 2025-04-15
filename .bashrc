@@ -88,4 +88,14 @@ alias rebuildfontscach='fc-cache -f -v'
 
 alias deepseek='ollama run deepseek-r1:8b'export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-alias addtogroup='sudo usermod -aG'
+alias addtogroup='sudo usermod -aG $USER'
+
+alias dstart='cd /home/badreddine/Documents/docker/; docker compose up -d'
+alias dstop='cd /home/badreddine/Documents/docker/; docker compose down'
+alias dlogs='cd /home/badreddine/Documents/docker/; docker compose logs'
+alias dupdate='cd /home/badreddine/Documents/docker/; docker compose pull'
+
+alias sysctlinfo='systemctl list-unit-files --type=service --state=enabled'
+
+alias fans='sudo python3 /home/badreddine/Documents/fans/hp_fan_cli.py'
+alias CLEAR='clear'
