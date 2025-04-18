@@ -63,9 +63,9 @@ configs:
       row: 4
       col: 0
     "BEE2-78DB":
-      row: 5
+      row: 4
       col: 0
-      last_seen: 1744226921123286
+      last_seen: 1744977200149894
     "trash:///":
       row: 6
       col: 14
@@ -532,6 +532,10 @@ configs:
     "/home/badreddine/Desktop/2025-03-24_20-23.png":
       row: 5
       col: 0
+    "92444C17444BFC8B":
+      row: 4
+      col: 0
+      last_seen: 1744891131180659
     "/home/badreddine/Desktop/VID_20250206_165242.mp4":
       row: 5
       col: 0

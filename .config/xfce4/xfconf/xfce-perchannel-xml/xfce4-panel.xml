@@ -74,10 +74,10 @@
       <property name="menu-height" type="int" value="650"/>
       <property name="recent" type="array">
         <value type="string" value="steam.desktop"/>
+        <value type="string" value="gparted.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="net.lutris.Lutris.desktop"/>
         <value type="string" value="blender.desktop"/>
-        <value type="string" value="gparted.desktop"/>
         <value type="string" value="org.gnome.Calculator.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce4-power-manager-settings.desktop"/>
