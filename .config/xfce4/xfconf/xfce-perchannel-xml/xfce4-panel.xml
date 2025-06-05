@@ -71,18 +71,18 @@
       <property name="show-command-logout" type="bool" value="true"/>
       <property name="show-command-menueditor" type="bool" value="true"/>
       <property name="menu-width" type="int" value="550"/>
-      <property name="menu-height" type="int" value="650"/>
+      <property name="menu-height" type="int" value="638"/>
       <property name="recent" type="array">
-        <value type="string" value="steam.desktop"/>
-        <value type="string" value="gparted.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="blender.desktop"/>
-        <value type="string" value="org.gnome.Calculator.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="xfce4-power-manager-settings.desktop"/>
-        <value type="string" value="org.kde.isoimagewriter.desktop"/>
+        <value type="string" value="com.heroicgameslauncher.hgl.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="io.github.libvibrant.vibrantLinux.desktop"/>
+        <value type="string" value="xfce4-color-settings.desktop"/>
         <value type="string" value="xyz.z3ntu.razergenie.desktop"/>
+        <value type="string" value="xfce4-taskmanager.desktop"/>
+        <value type="string" value="nvidia-settings.desktop"/>
+        <value type="string" value="xfce-display-settings.desktop"/>
+        <value type="string" value="org.kde.kpat.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -143,6 +143,15 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (29%)"/>
+        <value type="string" value="vibrantlinux"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (69%)"/>
+        <value type="string" value="configuring wi-fi network connection “tp-link_4cb6eb”…"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (57%)"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (59%)"/>
+        <value type="string" value="configuring wi-fi network connection “d-link 2024”…"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (40%)"/>
+        <value type="string" value="user authentication required for wi-fi network “d-link 2024”…"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (37%)"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (44%)"/>

@@ -30,6 +30,8 @@ alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias q='exit'
 
+alias TEMP='temp'
+
 # Function to display CPU temperature, fan speeds, and GPU temperature
 temp()
 {
@@ -99,3 +101,5 @@ alias sysctlinfo='systemctl list-unit-files --type=service --state=enabled'
 
 alias fans='sudo python3 /home/badreddine/Documents/fans/hp_fan_cli.py'
 alias CLEAR='clear'
+
+alias whousegpu='watch -n 1 nvidia-smi'
