@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="638"/>
       <property name="recent" type="array">
+        <value type="string" value="blender.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="com.github.tchx84.Flatseal.desktop"/>
         <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="com.heroicgameslauncher.hgl.desktop"/>
         <value type="string" value="steam.desktop"/>
-        <value type="string" value="io.github.libvibrant.vibrantLinux.desktop"/>
-        <value type="string" value="xfce4-color-settings.desktop"/>
-        <value type="string" value="xyz.z3ntu.razergenie.desktop"/>
-        <value type="string" value="xfce4-taskmanager.desktop"/>
         <value type="string" value="nvidia-settings.desktop"/>
-        <value type="string" value="xfce-display-settings.desktop"/>
-        <value type="string" value="org.kde.kpat.desktop"/>
+        <value type="string" value="nvtop.desktop"/>
+        <value type="string" value="xfce4-sensors.desktop"/>
+        <value type="string" value="io.github.thetumultuousunicornofdarkness.cpu-x.desktop"/>
+        <value type="string" value="gimp.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -143,6 +143,11 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (48%)"/>
+        <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (57%)"/>
+        <value type="string" value="requesting a wi-fi network address for “tp-link_4cb6eb”…"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (35%)"/>
+        <value type="string" value="user authentication required for wi-fi network “d-link”…"/>
         <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (29%)"/>
         <value type="string" value="vibrantlinux"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (69%)"/>

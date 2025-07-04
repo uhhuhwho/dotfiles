@@ -18,7 +18,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # git dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-# dotfiles git commit, don't forget to add a comment in "".
+# dotfiles git commit, don't forget to add a comment in "", after that dotfiles push
 alias dgc='dotfiles commit -a -m'
 
 # Alias
@@ -100,6 +100,7 @@ alias dupdate='cd /home/badreddine/Documents/docker/; docker compose pull'
 alias sysctlinfo='systemctl list-unit-files --type=service --state=enabled'
 
 alias fans='sudo python3 /home/badreddine/Documents/fans/hp_fan_cli.py'
+alias FANS='fans'
 alias CLEAR='clear'
 
 alias whousegpu='watch -n 1 nvidia-smi'

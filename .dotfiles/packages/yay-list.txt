@@ -6,5 +6,6 @@ ttf-ms-fonts 2.0-12
 ttf-tahoma 9.0-1
 unityhub 3.11.1-1
 ventoy-bin 1.1.05-1
+xf86-video-vmware 13.4.0-4
 yay 12.4.2-1
 yay-debug 12.4.2-1

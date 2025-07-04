@@ -12,14 +12,14 @@
       </property>
       <property name="monitorDP-2" type="empty">
         <property name="workspace0" type="empty">
-          <property name="last-image" type="string" value="/home/badreddine/Pictures/Mila by Noureddine Belfethi /492004339_10163608528404274_5531803580874562675_n.jpg"/>
+          <property name="last-image" type="string" value="/home/badreddine/Pictures/Wallpapers/Cute.png"/>
           <property name="image-style" type="int" value="3"/>
-          <property name="backdrop-cycle-enable" type="bool" value="true"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
           <property name="backdrop-cycle-random-order" type="bool" value="true"/>
         </property>
       </property>
       <property name="monitor0" type="empty">
-        <property name="image-path" type="string" value="/home/badreddine/Pictures/Mila by Noureddine Belfethi /487444609_10163514413309274_3313572729319672809_n.jpg"/>
+        <property name="image-path" type="string" value="/home/badreddine/Pictures/Wallpapers/Cute.png"/>
         <property name="image-show" type="bool" value="true"/>
         <property name="image-style" type="int" value="5"/>
       </property>
