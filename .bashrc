@@ -30,6 +30,8 @@ alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias q='exit'
 
+alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'
+
 alias TEMP='temp'
 
 # Function to display CPU temperature, fan speeds, and GPU temperature
@@ -104,3 +106,5 @@ alias FANS='fans'
 alias CLEAR='clear'
 
 alias whousegpu='watch -n 1 nvidia-smi'
+
+alias gcr='git clone --recursive'

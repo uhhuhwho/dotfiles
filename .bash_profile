@@ -9,3 +9,8 @@
 [ -f /home/badreddine/.config/.dart-cli-completion/bash-config.bash ] && . /home/badreddine/.config/.dart-cli-completion/bash-config.bash || true
 ## [/Completion]
 
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/badreddine/.local/share/JetBrains/Toolbox/scripts"
+

@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="638"/>
       <property name="recent" type="array">
-        <value type="string" value="blender.desktop"/>
-        <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="com.github.tchx84.Flatseal.desktop"/>
-        <value type="string" value="net.lutris.Lutris.desktop"/>
-        <value type="string" value="steam.desktop"/>
-        <value type="string" value="nvidia-settings.desktop"/>
-        <value type="string" value="nvtop.desktop"/>
-        <value type="string" value="xfce4-sensors.desktop"/>
         <value type="string" value="io.github.thetumultuousunicornofdarkness.cpu-x.desktop"/>
-        <value type="string" value="gimp.desktop"/>
+        <value type="string" value="xfce4-about.desktop"/>
+        <value type="string" value="CLion-d9af7a86-3b34-4649-8869-d9e9aabab93c.desktop"/>
+        <value type="string" value="nvidia-settings.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="filezilla.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
+        <value type="string" value="org.tuxpaint.Tuxpaint.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -143,6 +143,15 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (72%)"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (63%)"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (61%)"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (63%)"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (36%)"/>
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (67%)"/>
+        <value type="string" value="wi-fi network connection “tenda_d98fb8” active: tenda_d98fb8 (34%)"/>
+        <value type="string" value="wi-fi network connection “aymen” active: aymen (86%)"/>
+        <value type="string" value="requesting a wi-fi network address for “tenda_d98fb8”…"/>
         <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (48%)"/>
         <value type="string" value="wi-fi network connection “tp-link_4cb6eb” active: tp-link_4cb6eb (57%)"/>
         <value type="string" value="requesting a wi-fi network address for “tp-link_4cb6eb”…"/>
@@ -229,6 +238,7 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="toolbox"/>
         <value type="string" value="Thunderbird"/>
         <value type="string" value="Proton Mail Bridge"/>
         <value type="string" value="proton-vpn-app"/>
@@ -260,6 +270,9 @@
       <property name="timezone" type="string" value="Africa/Algiers"/>
       <property name="digital-layout" type="uint" value="1"/>
       <property name="digital-date-font" type="string" value="Sans 9"/>
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="digital-date-format" type="string" value="%d/%m/%Y"/>
     </property>
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
