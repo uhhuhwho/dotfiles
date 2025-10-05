@@ -20,6 +20,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # dotfiles git commit, don't forget to add a comment in "", after that dotfiles push
 alias dgc='dotfiles commit -a -m'
+# ex: cd ~/.dotfiles yay -Qm > yay.txt .... dgc "new update" && dotfiles push
 
 # Alias
 alias cp="cp -i"
@@ -29,6 +30,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias q='exit'
+
+alias fm="thunar ."
 
 alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'
 
@@ -66,9 +69,6 @@ alias sv='sudo nvim'
 
 alias ff='fastfetch'
 
-alias rs='redshift -O 4500'
-alias xrs='redshift -x'
-
 alias nt='noisetorch -i'
 alias xnt='noisetorch -u'
 
@@ -83,6 +83,7 @@ alias zsstats='sudo grep -r . /sys/kernel/debug/zswap/'
 # alias pupd='pacman -Qqd | pacman -Rsu --print -'
 # alias pqe='pacman -Qe'
 # alias yqm='yay -Qm'
+# alias orph='sudo pacman -Rns $(pacman -Qdtq)'
 
 # Exampel: sudo mount -t ntfs-3g /dev/sda1 /mnt
 # sudo umount /mnt
@@ -104,7 +105,19 @@ alias sysctlinfo='systemctl list-unit-files --type=service --state=enabled'
 alias fans='sudo python3 /home/badreddine/Documents/fans/hp_fan_cli.py'
 alias FANS='fans'
 alias CLEAR='clear'
+alias cc="clear"
 
 alias whousegpu='watch -n 1 nvidia-smi'
 
 alias gcr='git clone --recursive'
+
+alias fuckoff='shutdown now'
+
+# https://github.com/scop/bash-completion
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+# Starship #https://starship.rs/
+# NOTE: This should be at the end of this file.
+eval "$(starship init bash)"

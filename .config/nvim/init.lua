@@ -1,28 +1,31 @@
 -- Check if running inside VS Code
 if not vim.g.vscode then
-    ----------------------------------------------------------------------------------------------------------------------------------
+
+    -- Force Neovim to always use system clipboard for yank/paste
+    vim.opt.clipboard = "unnamedplus"
+    ----------------------------------------------------------------
     -- https://github.com/nvim-tree/nvim-tree.lua
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
     -- optionally enable 24-bit colour
     vim.opt.termguicolors = true
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
 
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
     -- Mapleader aka main key
     vim.g.mapleader = ","  -- Set Leader key to , (space is problematic)
     vim.opt.number = true  -- Enable line numbers
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
 
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
     -- Set tab size to 4 spaces
     vim.opt.tabstop = 4       -- Number of visual spaces per tab
     vim.opt.shiftwidth = 4    -- Number of spaces for each indentation level
     vim.opt.expandtab = true  -- Use spaces instead of tabs
-    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------
 
     local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
     if not vim.loop.fs_stat(lazypath) then
@@ -35,23 +38,36 @@ if not vim.g.vscode then
 
     -- Plugins
     require("lazy").setup({
+        -- Themes
         {"folke/tokyonight.nvim"},          -- Tokyo night theme
-        {"nvim-tree/nvim-tree.lua"},        -- A file explorer tree for neovim written in lua.
         {"nvim-tree/nvim-web-devicons"},    -- Install the web devicons plugin (For icons etc...)
+        -- {"MunifTanjim/nui.nvim"},
+        {
+          "folke/todo-comments.nvim",
+          dependencies = { "nvim-lua/plenary.nvim" },
+          opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+          }
+        },
+        -- Extra functionality
+        {'windwp/nvim-autopairs',event = "InsertEnter",config = true},
+        {"nvim-tree/nvim-tree.lua"},        -- A file explorer tree for neovim written in lua.
         {"nvim-treesitter/nvim-treesitter"},  -- Treesitter
         {"nvim-telescope/telescope.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
         {"akinsho/bufferline.nvim"},        -- A snazzy buffer line (with tabpage integration)
         {'akinsho/toggleterm.nvim', version = "*", config = true}, -- Toggle terminal
-        {'windwp/nvim-autopairs',event = "InsertEnter",config = true},
         {"nvim-lualine/lualine.nvim"},      -- A blazing fast statusline plugin
+        -- Coding related plugins
         {"neovim/nvim-lspconfig"},          -- LSP config
         {"hrsh7th/nvim-cmp"},               -- Completion plugin
-        {"hrsh7th/cmp-nvim-lsp"}            -- LSP completion source for nvim-cmp
+        {"hrsh7th/cmp-nvim-lsp"},            -- LSP completion source for nvim-cmp
     })
 
     -- Theme setup
     require("tokyonight").setup({
-        style = "night",           -- Available styles: "night", "storm", "moon", "day"
+        style = "storm",           -- Available styles: "night", "storm", "moon", "day"
         transparent = true,      -- Set to true for a transparent background
         terminal_colors = true,  -- Apply colors to the terminal
     })
@@ -206,6 +222,7 @@ if not vim.g.vscode then
     vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>')
     vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>')
     vim.keymap.set('n', '<leader>bc', ':bdelete<CR>')
+
 else
     -- VS Code specific settings (if needed)
     vim.g.mapleader = ","  -- Set Leader key to , (space is problematic)

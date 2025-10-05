@@ -41,6 +41,9 @@ configs:
     "trash:///":
       row: 6
       col: 14
+    "/home/badreddine/Desktop/neovim-test":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/OBS Studio.desktop":
       row: 0
       col: 1
@@ -139,8 +142,8 @@ configs:
       row: 4
       col: 0
     "/home/badreddine/Desktop/Learn":
-      row: 1
-      col: 0
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/Games":
       row: 0
       col: 3
@@ -168,8 +171,8 @@ configs:
       row: 5
       col: 0
     "/home/badreddine/Desktop/engines source":
-      row: 1
-      col: 1
+      row: 5
+      col: 0
     "/home/badreddine/Desktop/bgfx":
       row: 0
       col: 6
@@ -193,15 +196,15 @@ configs:
       row: 4
       col: 0
       last_seen: 1754260410325614
-    "/home/badreddine/Desktop/Ubisoft Connect.lnk":
-      row: 1
-      col: 1
+    "/home/badreddine/Desktop/VP6":
+      row: 5
+      col: 0
     "/home/badreddine/Desktop/steps":
       row: 0
       col: 1
-    "/home/badreddine/Desktop/filament":
+    "/home/badreddine/Desktop/t":
       row: 0
-      col: 4
+      col: 2
     "/home/badreddine/Desktop/CS2 WINDOWS":
       row: 3
       col: 1
@@ -209,9 +212,9 @@ configs:
       row: 0
       col: 2
       last_seen: 1737831694198251
-    "/home/badreddine/Desktop/t":
+    "/home/badreddine/Desktop/filament":
       row: 0
-      col: 2
+      col: 4
     "/home/badreddine/Desktop/LazyFoo-SDL3":
       row: 5
       col: 0
@@ -259,8 +262,8 @@ configs:
       row: 3
       col: 2
     "/home/badreddine/Desktop/Snowflake Engine":
-      row: 4
-      col: 4
+      row: 5
+      col: 1
     "a10dc077-67d6-4cb3-9058-122f40ceca6c":
       row: 0
       col: 1
@@ -328,9 +331,9 @@ configs:
     "/home/badreddine/Desktop/Launch GSClient 1.6 [Eng].lnk":
       row: 0
       col: 1
-    "/home/badreddine/Desktop/VP6":
-      row: 5
-      col: 0
+    "/home/badreddine/Desktop/Ubisoft Connect.lnk":
+      row: 1
+      col: 1
     "/home/badreddine/Desktop/wooden_bookshelf_worn_1k.fbx":
       row: 5
       col: 2
@@ -375,8 +378,8 @@ configs:
       row: 1
       col: 14
     "/home/badreddine/Desktop/filament (copy 1)":
-      row: 6
-      col: 0
+      row: 1
+      col: 4
     "/home/badreddine/Desktop/metamod":
       row: 5
       col: 2
@@ -387,6 +390,9 @@ configs:
       row: 4
       col: 0
     "/home/badreddine/Desktop/xds.txt":
+      row: 5
+      col: 0
+    "/home/badreddine/Desktop/main.cpp":
       row: 5
       col: 0
     "/home/badreddine/Desktop/Screenshot_2025-07-05_23-46-11.png":
@@ -405,9 +411,10 @@ configs:
     "/home/badreddine/Desktop/steps-i-made.txt":
       row: 2
       col: 1
-    "/home/badreddine/Desktop/Stop Redshift.desktop":
+    "1A05-1552":
       row: 1
-      col: 14
+      col: 0
+      last_seen: 1752114552902242
     "F79C-F472":
       row: 4
       col: 0
@@ -421,9 +428,9 @@ configs:
     "/home/badreddine/Desktop/Silent Hill 2 [DODI Repack]":
       row: 0
       col: 14
-    "/home/badreddine/Desktop/Desk.gltf":
-      row: 2
-      col: 2
+    "/home/badreddine/Desktop/Stop Redshift.desktop":
+      row: 1
+      col: 14
     "/home/badreddine/Desktop/2025-03-21_21-17_1.jpeg":
       row: 6
       col: 0
@@ -439,22 +446,22 @@ configs:
     "/home/badreddine/Desktop/steam.desktop":
       row: 3
       col: 0
-    "/home/badreddine/Desktop/food_apple_01_4k.blend":
-      row: 1
-      col: 5
+    "/home/badreddine/Desktop/Desk.gltf":
+      row: 2
+      col: 2
     "481A9A2128EB9D05":
       row: 6
       col: 0
       last_seen: 1742773486717403
-    "/home/badreddine/Desktop/Deagle.blend@":
-      row: 3
-      col: 1
+    "/home/badreddine/Desktop/Deagle":
+      row: 5
+      col: 0
     "/home/badreddine/Desktop/cc":
       row: 2
       col: 14
-    "/home/badreddine/Desktop/New Project":
-      row: 3
-      col: 0
+    "/home/badreddine/Desktop/food_apple_01_4k.blend":
+      row: 1
+      col: 5
     "/home/badreddine/Desktop/unnamed.png":
       row: 6
       col: 0
@@ -464,17 +471,13 @@ configs:
     "/home/badreddine/Desktop/Learn Code Alphabet.blend1":
       row: 6
       col: 2
-    "/home/badreddine/Desktop/Deagle":
-      row: 5
+    "/home/badreddine/Desktop/New Project":
+      row: 3
       col: 0
     "67cf0545-2c8d-40aa-b69f-1d4b2d9a16ad":
       row: 5
       col: 0
       last_seen: 1742648487594641
-    "1A05-1552":
-      row: 1
-      col: 0
-      last_seen: 1752114552902242
     "/home/badreddine/Desktop/SchoolChair_01_4k.blend":
       row: 1
       col: 4
@@ -500,6 +503,9 @@ configs:
     "/home/badreddine/Desktop/ziyYIMOq":
       row: 5
       col: 2
+    "/home/badreddine/Desktop/Deagle.blend@":
+      row: 3
+      col: 1
     "/home/badreddine/Desktop/Screenshot_2025-07-27_02-07-25.png":
       row: 6
       col: 0
@@ -518,18 +524,15 @@ configs:
     "/home/badreddine/Desktop/EditorMainUI.h":
       row: 6
       col: 0
-    "/home/badreddine/Desktop/maps.ini":
-      row: 0
-      col: 1
+    "/home/badreddine/Desktop/Betterbird_profile_backup.zip":
+      row: 3
+      col: 0
     "/home/badreddine/Desktop/Screenshot_2025-03-23_22-03-21.png":
       row: 1
       col: 1
     "/home/badreddine/Desktop/apple.gltf":
       row: 1
       col: 1
-    "/home/badreddine/Desktop/Betterbird_profile_backup.zip":
-      row: 3
-      col: 0
     "/home/badreddine/Desktop/chadvim or whatever":
       row: 3
       col: 0
@@ -543,25 +546,27 @@ configs:
     "/home/badreddine/Desktop/VID_20250206_165353.mp4":
       row: 4
       col: 0
+    "/home/badreddine/Desktop/maps.ini":
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/SchoolDesk_01_1k.blend":
       row: 1
       col: 7
     "/home/badreddine/Desktop/Backups":
       row: 0
       col: 2
+    "/home/badreddine/Desktop/qt6-clion":
+      row: 3
+      col: 1
     "/home/badreddine/Desktop/userconfig.cfg":
       row: 3
       col: 6
-    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
-      row: 6
-      col: 1
-      last_seen: 1737833580192685
-    "/home/badreddine/Desktop/layne_staley_aic.jpg":
-      row: 3
-      col: 1
     "/home/badreddine/Desktop/docker-compose.yml":
       row: 4
       col: 3
+    "/home/badreddine/Desktop/Counter-Strike.desktop":
+      row: 0
+      col: 14
     "22E5EBCC5EC68572":
       row: 0
       col: 2
@@ -573,9 +578,9 @@ configs:
       row: 4
       col: 0
       last_seen: 1743455456446765
-    "/home/badreddine/Desktop/Counter-Strike.desktop":
-      row: 0
-      col: 14
+    "/home/badreddine/Desktop/layne_staley_aic.jpg":
+      row: 3
+      col: 1
     "/home/badreddine/Desktop/SchoolDesk_01_1k_001.blend":
       row: 1
       col: 6
@@ -620,6 +625,9 @@ configs:
       row: 5
       col: 0
       last_seen: 1743865314742899
+    "/home/badreddine/Desktop/Q.txt":
+      row: 5
+      col: 0
     "/home/badreddine/Desktop/PES 2013 - Pro Evolution Soccer.7z":
       row: 4
       col: 0
@@ -651,12 +659,12 @@ configs:
       row: 0
       col: 14
       last_seen: 1742143831585631
-    "/home/badreddine/Desktop/shared folder":
-      row: 1
-      col: 2
     "/home/badreddine/Desktop/FreeCAD.desktop":
       row: 5
       col: 0
+    "/home/badreddine/Desktop/shared folder":
+      row: 1
+      col: 2
     "/home/badreddine/Desktop/Screenshot_2025-03-20_14-44-32.png":
       row: 2
       col: 1
@@ -672,19 +680,19 @@ configs:
     "/home/badreddine/Desktop/Sera9":
       row: 4
       col: 0
-    "/home/badreddine/Desktop/server":
-      row: 1
-      col: 14
+    "/home/badreddine/Desktop/again, this time of the year":
+      row: 2
+      col: 13
     "/home/badreddine/Desktop/Screenshot_2025-05-16_23-37-51.png":
+      row: 2
+      col: 1
+    "/home/badreddine/Desktop/qt-creator-test":
       row: 2
       col: 1
     "FE525AD8525A94ED":
       row: 5
       col: 0
       last_seen: 1744041294463152
-    "/home/badreddine/Desktop/again, this time of the year":
-      row: 2
-      col: 13
     "/home/badreddine/Desktop/2025-08-16_01-23.png":
       row: 3
       col: 5
@@ -694,7 +702,7 @@ configs:
     "/home/badreddine/Desktop/Disco Elysium.desktop":
       row: 6
       col: 0
-    "/home/badreddine/Desktop/Screenshot_2025-03-25_22-33-46.png":
+    "/home/badreddine/Desktop/ghf.mkv":
       row: 5
       col: 0
     "/home/badreddine/Desktop/UnrealEngine":
@@ -706,9 +714,15 @@ configs:
     "/home/badreddine/Desktop/Screenshot_2025-04-03_14-56-25.png":
       row: 4
       col: 0
-    "/home/badreddine/Desktop/ghf.mkv":
+    "/home/badreddine/Desktop/grubsouls-theme":
+      row: 6
+      col: 0
+    "/home/badreddine/Desktop/Screenshot_2025-03-25_22-33-46.png":
       row: 5
       col: 0
+    "/home/badreddine/Desktop/server":
+      row: 1
+      col: 14
     "/":
       row: 0
       col: 0
@@ -730,19 +744,19 @@ configs:
     "/home/badreddine/Desktop/Mount Disk.txt":
       row: 3
       col: 14
-    "84508F93508F8B1E":
-      row: 5
-      col: 0
-      last_seen: 1744041128674287
+    "/home/badreddine/Desktop/miniaudio.c":
+      row: 0
+      col: 1
     "/home/badreddine/Desktop/biladi ouhibbouki.wma":
       row: 1
       col: 1
     "/home/badreddine/Desktop/wooden_bookshelf_worn_1k.blend1":
       row: 2
       col: 0
-    "/home/badreddine/Desktop/miniaudio.c":
-      row: 0
-      col: 1
+    "84508F93508F8B1E":
+      row: 5
+      col: 0
+      last_seen: 1744041128674287
     "/home/badreddine/Desktop/Suzanne.obj":
       row: 2
       col: 1
@@ -778,6 +792,10 @@ configs:
     "/home/badreddine/Desktop/Screenshot_2025-04-01_00-34-42.png":
       row: 4
       col: 0
+    "cdb31d2b-03ff-4491-90e9-49a17294b9db":
+      row: 6
+      col: 1
+      last_seen: 1737833580192685
     "/home/badreddine/Desktop/config.cfg":
       row: 2
       col: 4
@@ -787,6 +805,9 @@ configs:
     "/home/badreddine/Desktop/Steam.desktop":
       row: 2
       col: 0
+    "/home/badreddine/Desktop/fastfetch":
+      row: 4
+      col: 1
     "/home/badreddine/Desktop/07803.vp6":
       row: 5
       col: 0
@@ -852,14 +873,17 @@ configs:
       row: 0
       col: 14
     "EC3AA6593AA62096":
-      row: 4
+      row: 5
       col: 0
-      last_seen: 1754616283532374
+      last_seen: 1756845443623839
     "/home/badreddine/Desktop/Backup Commands.txt":
       row: 2
       col: 14
     "/home/badreddine/Desktop/game":
       row: 4
+      col: 0
+    "/home/badreddine/Desktop/glewinfo.txt":
+      row: 6
       col: 0
     "/home/badreddine/Desktop/LearnOpenGL":
       row: 1
@@ -933,6 +957,9 @@ configs:
     "/home/badreddine/Desktop/TEST":
       row: 1
       col: 3
+    "/home/badreddine/Desktop/Demonic Dominion":
+      row: 1
+      col: 0
     "72E816DAE8169D03":
       row: 6
       col: 0
@@ -950,7 +977,7 @@ configs:
       row: 4
       col: 1
     "/home/badreddine/Desktop/The Gnomon Creating Assets & Architecture for Game Environments":
-      row: 3
+      row: 5
       col: 0
     "/home/badreddine/Desktop/apple.bin":
       row: 0
@@ -994,7 +1021,7 @@ configs:
       row: 2
       col: 1
     "/home/badreddine/Desktop/Random 3D":
-      row: 2
+      row: 3
       col: 0
     "/home/badreddine/Desktop/5b52ee18c1c0f.webp":
       row: 0
@@ -1014,8 +1041,8 @@ configs:
       row: 5
       col: 0
     "/home/badreddine/Desktop/xx":
-      row: 2
-      col: 2
+      row: 3
+      col: 14
     "/home/badreddine/Desktop/SchoolDesk_01_1k_001.blend@":
       row: 3
       col: 2
@@ -1038,6 +1065,10 @@ configs:
       row: 6
       col: 0
       last_seen: 1744571256769782
+    "530E3309100D94AA":
+      row: 1
+      col: 0
+      last_seen: 1757433407667475
     "/home/badreddine/Desktop/LearnCPP":
       row: 4
       col: 0
@@ -1120,7 +1151,7 @@ configs:
       row: 1
       col: 2
     "/home/badreddine/Desktop/Windows11DevEnv":
-      row: 0
+      row: 2
       col: 1
     "/home/badreddine/Desktop/docks.gl":
       row: 5
@@ -1132,6 +1163,9 @@ configs:
     "/home/badreddine/Desktop/CLion":
       row: 4
       col: 3
+    "/home/badreddine/Desktop/config-copy":
+      row: 6
+      col: 1
     "/home/badreddine/Desktop/2025-08-16_01-23_3.png":
       row: 4
       col: 5
@@ -1149,6 +1183,9 @@ configs:
       col: 1
     "/home/badreddine/Desktop/engine-backups":
       row: 2
+      col: 1
+    "/home/badreddine/Desktop/3emi Saleh":
+      row: 4
       col: 1
     "/home/badreddine/Desktop/proj.zip":
       row: 6
@@ -1195,12 +1232,18 @@ configs:
     "/home/badreddine/Desktop/ziXRSVLj":
       row: 0
       col: 2
+    "/home/badreddine/Desktop/ghidra":
+      row: 2
+      col: 0
     "/home/badreddine/Desktop/fix":
       row: 2
       col: 1
     "/home/badreddine/Desktop/amxmodx-1.9.0-git5294-cstrike-windows.zip":
       row: 6
       col: 0
+    "/home/badreddine/Desktop/config":
+      row: 3
+      col: 1
     "2024-11-09-10-10-58-00":
       row: 2
       col: 1
@@ -1208,9 +1251,6 @@ configs:
     "/home/badreddine/Desktop/rust.cFG":
       row: 2
       col: 7
-    "/home/badreddine/Desktop/Substance.3D.Painter":
-      row: 6
-      col: 0
     "1C13-EDF8":
       row: 4
       col: 0
@@ -1218,21 +1258,24 @@ configs:
     "/home/badreddine/Desktop/SchoolDesk_01_1k.fbx":
       row: 1
       col: 3
-    "/home/badreddine/Desktop/hp_fan_cli.py":
-      row: 4
+    "/home/badreddine/Desktop/Substance.3D.Painter":
+      row: 6
       col: 0
     "/home/badreddine/Desktop/bookshelf.blend@":
       row: 5
       col: 1
     "/home/badreddine/Desktop/readme-badreddine-plz.txt":
-      row: 4
+      row: 6
       col: 0
     "/home/badreddine/Desktop/source":
-      row: 2
+      row: 1
       col: 1
     "/home/badreddine/Desktop/SSD":
       row: 2
       col: 2
+    "/home/badreddine/Desktop/hp_fan_cli.py":
+      row: 4
+      col: 0
     "/home/badreddine/Desktop/nylxQPLnnFJK-V4EulF8l7FcFGmhO4Ybpmodz67FUtSzIiF1ltp6s42lHKdEwedgQzEs":
       row: 5
       col: 2

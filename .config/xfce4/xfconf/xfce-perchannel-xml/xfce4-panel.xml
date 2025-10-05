@@ -73,16 +73,16 @@
       <property name="menu-width" type="int" value="550"/>
       <property name="menu-height" type="int" value="638"/>
       <property name="recent" type="array">
-        <value type="string" value="io.github.thetumultuousunicornofdarkness.cpu-x.desktop"/>
         <value type="string" value="xfce4-about.desktop"/>
         <value type="string" value="CLion-d9af7a86-3b34-4649-8869-d9e9aabab93c.desktop"/>
-        <value type="string" value="nvidia-settings.desktop"/>
+        <value type="string" value="kitty.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="firefox.desktop"/>
         <value type="string" value="steam.desktop"/>
-        <value type="string" value="io.missioncenter.MissionCenter.desktop"/>
-        <value type="string" value="xfce4-file-manager.desktop"/>
-        <value type="string" value="filezilla.desktop"/>
-        <value type="string" value="xfce-ui-settings.desktop"/>
-        <value type="string" value="org.tuxpaint.Tuxpaint.desktop"/>
+        <value type="string" value="nvidia-settings.desktop"/>
+        <value type="string" value="protonvpn.desktop"/>
+        <value type="string" value="org.gnome.Cheese.desktop"/>
+        <value type="string" value="org.gnome.baobab.desktop"/>
       </property>
       <property name="show-command-lockscreen" type="bool" value="false"/>
       <property name="launcher-show-name" type="bool" value="true"/>
@@ -143,6 +143,8 @@
     </property>
     <property name="plugin-16" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (70%)"/>
+        <value type="string" value="wi-fi network connection “djaweb_d1e9” active: djaweb_d1e9 (84%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (72%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (63%)"/>
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (61%)"/>
@@ -238,6 +240,9 @@
         <value type="string" value="wi-fi network connection “badreddine px6p” active: badreddine px6p (84%)"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="sdl-appindicator-82044-0"/>
+        <value type="string" value="sdl-appindicator-81926-0"/>
+        <value type="string" value="sdl-appindicator-81158-0"/>
         <value type="string" value="toolbox"/>
         <value type="string" value="Thunderbird"/>
         <value type="string" value="Proton Mail Bridge"/>
