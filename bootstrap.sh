@@ -2,6 +2,7 @@
 # ==============================================================================
 # dotfiles bootstrap & restore script
 # Restores configurations, symlinks, themes, and packages on a new device
+# Supports Arch Linux, BlackArch, AUR (yay), and Flatpaks
 # ==============================================================================
 
 set -euo pipefail
@@ -83,6 +84,13 @@ if [ -f "$DOTFILES_DIR/assets/wallpaper.jpeg" ]; then
     echo -e "${GREEN}[RESTORED]${NC} Active wallpaper placed in ~/Pictures/Wallpapers/"
 fi
 
+# Restore custom commands
+if [ -d "$DOTFILES_DIR/commands" ]; then
+    mkdir -p "$HOME/Documents/Commands"
+    cp -rn "$DOTFILES_DIR/commands/"* "$HOME/Documents/Commands/" 2>/dev/null || true
+    echo -e "${GREEN}[RESTORED]${NC} Custom helper scripts restored to ~/Documents/Commands/"
+fi
+
 # 3. Provision ~/.bashrc.local template if missing
 if [ ! -f "$HOME/.bashrc.local" ]; then
     cat << 'LOCAL_EOF' > "$HOME/.bashrc.local"
@@ -99,10 +107,10 @@ echo -e "\n${GREEN}✓ Configurations and symlinks successfully deployed!${NC}"
 
 # 4. Package Installation Menu
 echo -e "\n${BLUE}:: Step 2: Package Installation${NC}"
-echo -e "Would you like to install packages now?"
-echo -e "  ${YELLOW}1)${NC} Full Restore (Native Pacman + AUR + Flatpaks)"
-echo -e "  ${YELLOW}2)${NC} Native Pacman + AUR only"
-echo -e "  ${YELLOW}3)${NC} Skip package installation (Configs only)"
+echo -e "Select installation mode:"
+echo -e "  ${YELLOW}1)${NC} Full System (Standard Arch + BlackArch + AUR + Flatpaks)"
+echo -e "  ${YELLOW}2)${NC} Standard Desktop (Arch Core/Extra + AUR only)"
+echo -e "  ${YELLOW}3)${NC} Skip package installation (Configs & Dotfiles only)"
 read -rp "Select option [1-3] (default: 3): " choice
 choice="${choice:-3}"
 
@@ -118,20 +126,37 @@ case "$choice" in
             rm -rf "$tmp_yay"
         fi
 
-        # Native packages
+        # 1. Standard Arch packages
         if [ -f "$DOTFILES_DIR/packages/pacman.txt" ]; then
-            echo -e "${BLUE}:: Installing Native Pacman packages...${NC}"
+            echo -e "${BLUE}:: Installing Standard Arch packages...${NC}"
             sudo pacman -S --needed - < "$DOTFILES_DIR/packages/pacman.txt"
         fi
 
-        # AUR packages
+        # 2. BlackArch tools (if Option 1 selected)
+        if [ "$choice" = "1" ] && [ -f "$DOTFILES_DIR/packages/blackarch.txt" ]; then
+            echo -e "${BLUE}:: Setting up BlackArch repository...${NC}"
+            if ! grep -q "\[blackarch\]" /etc/pacman.conf 2>/dev/null; then
+                tmp_ba="$(mktemp -d)"
+                (
+                    cd "$tmp_ba"
+                    echo -e "${YELLOW}:: Fetching and executing official strap.sh from blackarch.org...${NC}"
+                    curl -sSO https://blackarch.org/strap.sh
+                    chmod +x strap.sh
+                    sudo ./strap.sh
+                )
+                rm -rf "$tmp_ba"
+            fi
+            echo -e "${BLUE}:: Installing BlackArch security & OSINT packages...${NC}"
+            sudo pacman -S --needed - < "$DOTFILES_DIR/packages/blackarch.txt"
+        fi
+
+        # 3. AUR packages
         if [ -f "$DOTFILES_DIR/packages/aur.txt" ]; then
             echo -e "${BLUE}:: Installing AUR packages...${NC}"
-            # Note: filter out hardware-specific packages if needed
             yay -S --needed - < "$DOTFILES_DIR/packages/aur.txt"
         fi
 
-        # Flatpaks (if option 1 selected)
+        # 4. Flatpaks (if Option 1 selected)
         if [ "$choice" = "1" ] && [ -f "$DOTFILES_DIR/packages/flatpak.txt" ]; then
             echo -e "${BLUE}:: Restoring Flatpak applications...${NC}"
             if ! command -v flatpak &>/dev/null; then
