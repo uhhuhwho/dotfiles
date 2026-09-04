@@ -1,0 +1,112 @@
+// This configuration is merged with the default vicinae configuration file, which you can obtain by running the `vicinae config default` command.
+// Every item defined in this file takes precedence over the values defined in the default config or any other imported file.
+//
+// You can make manual edits to this file, however you should keep in mind that this file may be written to by vicinae when a configuration change is made through the GUI.
+// When that happens, any custom comments or formatting will be lost.
+//
+// If you want to maintain a configuration file with your own comments and formatting, you should create a separate file and add it to the 'imports' array.
+//
+// Learn more about configuration at https://docs.vicinae.com/config
+
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "global_shortcuts": {
+      "toggle": ""
+   },
+   "font": {
+      "normal": {
+         "size": 13.5
+      }
+   },
+   "theme": {
+      "dark": {
+         "name": "zenwritten-dark",
+         "icon_theme": "Papirus-Light"
+      }
+   },
+   "telemetry": {
+      "system_info": false
+   },
+   "launcher_window": {
+      "opacity": 0.8,
+      "compact_mode": {
+         "enabled": false
+      }
+   },
+   "providers": {
+      "browser-extension": {
+         "entrypoints": {
+            "browse-tabs": {
+               "enabled": false
+            },
+            "shortcut-active-tab": {
+               "enabled": false
+            }
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "report-bug": {
+               "enabled": false
+            },
+            "sponsor": {
+               "enabled": false
+            }
+         }
+      },
+      "files": {
+         "preferences": {
+            "autoIndexing": false,
+            "excludedIndexingPaths": [],
+            "indexingPaths": [
+               "/home/badreddine"
+            ]
+         },
+         "entrypoints": {
+            "search": {
+               "enabled": false
+            }
+         }
+      },
+      "power": {
+         "entrypoints": {
+            "hibernate": {
+               "preferences": {
+                  "confirm": true,
+                  "customProgram": "systemctl hybrid-sleep"
+               }
+            },
+            "lock": {
+               "preferences": {
+                  "confirm": false,
+                  "customProgram": "loginctl lock-session"
+               }
+            },
+            "logout": {
+               "preferences": {
+                  "confirm": true,
+                  "customProgram": "loginctl terminate-user $USER"
+               }
+            },
+            "power-off": {
+               "preferences": {
+                  "confirm": true,
+                  "customProgram": "systemctl poweroff"
+               }
+            },
+            "reboot": {
+               "preferences": {
+                  "confirm": true,
+                  "customProgram": "systemctl reboot"
+               }
+            },
+            "sleep": {
+               "enabled": false
+            },
+            "suspend": {
+               "enabled": false
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,17 @@
+android-studio
+betterbird-bin
+binance
+claude-code
+codebase-memory-mcp-bin
+ferdium-bin
+fsearch
+google-earth-pro
+hyprsysteminfo
+razergenie
+thinkfan
+unityhub
+vicinae-bin
+visual-studio-code-bin
+waybar-git
+wayle-bin
+waypaper

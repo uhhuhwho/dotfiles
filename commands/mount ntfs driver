@@ -1,0 +1,7 @@
+[badreddine@hpomen ~]$ fdisk -l
+fdisk: cannot open /dev/nvme1n1: Permission denied
+fdisk: cannot open /dev/nvme0n1: Permission denied
+fdisk: cannot open /dev/sda: Permission denied
+[badreddine@hpomen ~]$ ls /mnt/
+drive  ssdtg1tb
+[badreddine@hpomen ~]$ mountntfs /dev/sda1 /mnt/drive

@@ -1,0 +1,106 @@
+[general]
+font-sans = "Noto Sans"
+font-mono = "FiraCode Nerd Font Mono"
+tearing-mode = true
+
+[bar]
+scale = 0.75
+padding = 0.5
+module-gap = 0.30000001192092896
+bg = "transparent"
+background-opacity = 80
+border-location = "bottom"
+border-color = "status-success-subtle"
+shadow = "drop"
+button-variant = "icon-square"
+button-icon-size = 1.5
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    "cpu",
+    "ram",
+    "storage",
+    "hyprland-workspaces",
+    "media",
+    "separator",
+]
+center = [
+    "separator",
+    "separator",
+]
+right = [
+    "separator",
+    "notifications",
+    "systray",
+    "microphone",
+    "volume",
+    "idle-inhibit",
+    "keyboard-input",
+    "hyprsunset",
+    "brightness",
+    "battery",
+    "clock",
+]
+
+[styling]
+matugen-scheme = "rainbow"
+
+[styling.palette]
+bg = "#232136"
+surface = "#2a273f"
+elevated = "#393552"
+fg = "#e0def4"
+fg-muted = "#908caa"
+primary = "#c4a7e7"
+red = "#eb6f92"
+yellow = "#f6c177"
+green = "#3e8fb0"
+blue = "#9ccfd8"
+
+[modules.brightness]
+scroll-up = "brightnessctl set 1%+"
+scroll-down = "brightnessctl set 1%-"
+
+[modules.cava]
+bars = 15
+stereo = true
+style = "peaks"
+
+[modules.clock]
+format = "%I:%M %p"
+dropdown-show-seconds = true
+
+[modules.dashboard]
+icon-bg-color = "accent"
+right-click = "dropdown:dashboard"
+
+[modules.hyprland-workspaces]
+min-workspace-count = 5
+display-mode = "icon"
+app-icons-show = true
+icon-gap = 0.0
+workspace-padding = 1.0
+icon-size = 1.350000023841858
+label-size = 1.350000023841858
+
+[modules.media]
+icon-type = "spinning-disc"
+label-max-length = 15
+
+[modules.network]
+label-show = false
+
+[modules.power]
+left-click = "wlogout"
+
+[modules.storage]
+format = "{{ percent }}% {{free_gib}} GiB"
+
+[modules.systray]
+icon-scale = 1.5
+
+[wallpaper]
+engine-enabled = false

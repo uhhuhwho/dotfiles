@@ -1,0 +1,11 @@
+  "logo": {
+    "source": "/home/badreddine/.config/fastfetch/berserker_logo.txt",
+    "type": "auto",
+    "color": {
+      "1": "white",
+      "2": "black"
+    },
+    "padding": {
+      "top": 2
+    }
+  },

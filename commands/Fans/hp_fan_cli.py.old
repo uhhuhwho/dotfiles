@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+HP_WMI_PATH = "/sys/devices/platform/hp-wmi"
+TARGET_FILES = ["fan1_input", "fan2_input", "pwm1_enable"]
+
+def find_hwmon_path():
+    hwmon_base = os.path.join(HP_WMI_PATH, "hwmon")
+    if not os.path.exists(hwmon_base):
+        sys.stderr.write("hp-wmi hwmon path does not exist.\n")
+        sys.exit(1)
+
+    for entry in os.listdir(hwmon_base):
+        full_path = os.path.join(hwmon_base, entry)
+        if os.path.isdir(full_path):
+            if all(os.path.exists(os.path.join(full_path, f)) for f in TARGET_FILES):
+                return full_path
+
+    sys.stderr.write("Could not find a valid hwmon directory with required files.\n")
+    sys.exit(1)
+
+def read_file(path):
+    try:
+        with open(path, "r") as f:
+            return f.read().strip()
+    except Exception as e:
+        sys.stderr.write(f"Error reading {path}: {e}\n")
+        return None
+
+def write_file(path, value):
+    try:
+        with open(path, "w") as f:
+            f.write(value)
+        print(f"Wrote '{value}' to {path}")
+        return True
+    except PermissionError:
+        sys.stderr.write(f"Permission denied when writing to {path}. Try running as root.\n")
+    except Exception as e:
+        sys.stderr.write(f"Error writing to {path}: {e}\n")
+    return False
+
+def get_status(pwm_enable_path):
+    pwm_enable = read_file(pwm_enable_path)
+    if pwm_enable is not None:
+        return pwm_enable
+
+def set_pwm_enable(pwm_enable_path, state):
+    allowed = ["0", "2"]
+    if state not in allowed:
+        sys.stderr.write(f"Invalid state. Allowed values are: {', '.join(allowed)}.\n")
+        sys.exit(1)
+    if write_file(pwm_enable_path, state):
+        print("pwm1_enable set successfully.")
+    else:
+        sys.exit(1)
+
+def main():
+    hwmon_path = find_hwmon_path()
+    pwm_enable_path = os.path.join(hwmon_path, "pwm1_enable")
+
+    current_status = get_status(pwm_enable_path)
+    if current_status is None:
+        sys.exit(1)
+
+    new_state = "0" if current_status == "2" else "2"
+    set_pwm_enable(pwm_enable_path, new_state)
+
+if __name__ == "__main__":
+    main()

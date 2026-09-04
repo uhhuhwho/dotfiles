@@ -1,0 +1,18 @@
+# Ignore machine-local secrets and overrides
+*.local
+*.local.*
+*.secrets
+*.env
+
+# Ignore runtime and cache files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+__pycache__/
+*.pyc
+
+# Ignore OS-specific garbage
+.DS_Store
+Thumbs.db

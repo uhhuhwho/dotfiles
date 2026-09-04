@@ -1,0 +1,15 @@
+[badreddine@hpomen ~]$ powerprofilesctl
+  performance:
+    CpuDriver:	intel_pstate
+    PlatformDriver:	platform_profile
+    Degraded:   no
+
+* balanced:
+    CpuDriver:	intel_pstate
+    PlatformDriver:	platform_profile
+
+  power-saver:
+    CpuDriver:	intel_pstate
+    PlatformDriver:	platform_profile
+[badreddine@hpomen ~]$ powerprofilesctl set performance
+[badreddine@hpomen ~]$ powerprofilesctl set balanced

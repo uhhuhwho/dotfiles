@@ -1,0 +1,5 @@
+[Context]
+
+[Environment]
+GTK_THEME=Adwaita-dark
+ICON_THEME=WhiteSur-dark
