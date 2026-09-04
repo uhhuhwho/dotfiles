@@ -43,7 +43,7 @@ safe_link() {
     echo -e "${GREEN}[LINKED]${NC} $link_path -> $target"
 }
 
-echo -e "\n${BLUE}:: Step 1: Deploying user configurations...${NC}"
+echo -e "\n${BLUE}:: Step 1: Deploying user configurations & symlinks...${NC}"
 
 # Link .config items
 for item in "$DOTFILES_DIR/.config"/*; do
@@ -88,6 +88,12 @@ if [ -d "$DOTFILES_DIR/commands" ]; then
     mkdir -p "$HOME/Documents/Commands"
     cp -rn "$DOTFILES_DIR/commands/"* "$HOME/Documents/Commands/" 2>/dev/null || true
     echo -e "${GREEN}[RESTORED]${NC} Custom helper scripts restored to ~/Documents/Commands/"
+fi
+
+# Load Dconf desktop settings (GTK app styles, Mission Center, Blueman)
+if [ -f "$DOTFILES_DIR/system/dconf-settings.ini" ] && command -v dconf &>/dev/null; then
+    dconf load / < "$DOTFILES_DIR/system/dconf-settings.ini"
+    echo -e "${GREEN}[APPLIED]${NC} Dconf desktop preferences restored."
 fi
 
 # Provision ~/.bashrc.local template if missing
@@ -235,6 +241,20 @@ if [[ "$enable_services" =~ ^[Yy]$ ]]; then
                 systemctl --user enable --now "$svc" 2>/dev/null || systemctl --user enable "$svc" 2>/dev/null || true
             fi
         done < "$DOTFILES_DIR/packages/services-user.txt"
+    fi
+fi
+
+# 6. Optional Offline Secrets Prompt
+if [ -f "$DOTFILES_DIR/scripts/restore-secrets-offline.sh" ]; then
+    echo -e "\n${BLUE}:: Step 5: Offline Secrets & Wi-Fi Restore${NC}"
+    read -rp "Do you have an encrypted secrets archive (from backup-secrets-offline.sh)? [y/N]: " has_secrets
+    if [[ "$has_secrets" =~ ^[Yy]$ ]]; then
+        read -rp "Enter path to encrypted archive (e.g. /mnt/usb/system_secrets.tar.gz.gpg): " secrets_path
+        if [ -f "$secrets_path" ]; then
+            "$DOTFILES_DIR/scripts/restore-secrets-offline.sh" "$secrets_path"
+        else
+            echo -e "${RED}[ERROR]${NC} File not found: $secrets_path"
+        fi
     fi
 fi
 

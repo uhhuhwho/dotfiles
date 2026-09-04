@@ -68,17 +68,19 @@ fi
 systemctl list-unit-files --state=enabled --no-legend 2>/dev/null | awk '{print $1}' | grep -v "@" | sort > "$DOTFILES_DIR/packages/services-system.txt" || true
 systemctl --user list-unit-files --state=enabled --no-legend 2>/dev/null | awk '{print $1}' | grep -v "@" | sort > "$DOTFILES_DIR/packages/services-user.txt" || true
 
-# 5. System Configurations Snapshot (pacman.conf, hardware configs)
+# 5. System Configurations Snapshot (pacman.conf, hardware configs, dconf)
 mkdir -p "$DOTFILES_DIR/system/etc/pacman.d" "$DOTFILES_DIR/system/hardware/thinkpad/modprobe.d" "$DOTFILES_DIR/system/hardware/thinkpad/udev" "$DOTFILES_DIR/system/hardware/thinkpad/etc"
 cp /etc/pacman.conf "$DOTFILES_DIR/system/etc/pacman.conf" 2>/dev/null || true
 cp /etc/pacman.d/blackarch-mirrorlist "$DOTFILES_DIR/system/etc/pacman.d/" 2>/dev/null || true
 cp /etc/modprobe.d/thinkpad_acpi.conf /etc/modprobe.d/ec_sys.conf "$DOTFILES_DIR/system/hardware/thinkpad/modprobe.d/" 2>/dev/null || true
 cp /etc/udev/rules.d/99-thinklight.rules "$DOTFILES_DIR/system/hardware/thinkpad/udev/" 2>/dev/null || true
 cp /etc/thinkfan.conf "$DOTFILES_DIR/system/hardware/thinkpad/etc/" 2>/dev/null || true
+dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini" 2>/dev/null || true
 
 echo -e "\033[1;32m✓ State snapshot complete:\033[0m"
 echo -e "  - Packages: $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak."
 echo -e "  - Services: $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") System, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") User."
+echo -e "  - Desktop: Dconf settings dumped ($(wc -l < "$DOTFILES_DIR/system/dconf-settings.ini") lines)."
 
 # 6. Git commit & push
 git add -A
