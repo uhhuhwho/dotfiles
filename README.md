@@ -1,21 +1,28 @@
-# 🌌 Badreddine's Arch Linux Setup & Dotfiles
+# 🌌 Badreddine's Arch Linux Setup & System Replication Framework
 
-A high-performance, minimalist, zero-copy configuration framework for **Arch Linux** running **Hyprland**, **Wayle**, **Vicinae**, **Kitty**, and **Starship**.
+A high-performance, minimalist, zero-copy configuration and full-system replication framework for **Arch Linux** running **Hyprland**, **Wayle**, **Vicinae**, **Kitty**, and **Starship**.
 
 ---
 
 ## ⚡ Key Highlights & Architecture
 
-- **Zero-Copy Symlinks**: Configs reside directly in `~/dotfiles/` and are symlinked to `~/.config` and `~`. When you edit a configuration in your daily life, you are editing the git repo directly. Zero syncing or copying needed.
-- **Pure Configs (No Junk)**: Heavy app caches (3+ GB of VS Code caches, 1.8 GB PS3 emulator caches, browser profiles) and dead configs (`xfce4`, `cosmic`, `wlogout`) are excluded. The entire repo is lightweight (~15MB).
-- **Four-Tier Package Management**: Intelligently separates packages so clean replication never fails:
+- **Zero-Copy Symlinks**: User configurations reside directly in `~/dotfiles/` and are symlinked to `~/.config` and `~`. Editing files in your daily life modifies the Git repo directly with zero copying or exporting required.
+- **System-Level Settings Synced**: Preserves critical `/etc` configurations:
+  - `/etc/pacman.conf` (Color, ILoveCandy, ParallelDownloads = 5, Multilib, BlackArch)
+  - Hardware rules (`thinkpad_acpi.conf`, `ec_sys.conf`, `99-thinklight.rules`, `thinkfan.conf`)
+  - Reference bootloader settings (`grub.reference`)
+- **Automated Systemd Services Management**:
+  - Automatically snapshots all enabled system daemons (`packages/services-system.txt`)
+  - Automatically snapshots enabled user daemons (`packages/services-user.txt`)
+  - Enables and starts them automatically on a clean machine during bootstrap.
+- **Four-Tier Package Management**:
   1. **Standard Arch Linux** (`packages/pacman.txt`)
   2. **BlackArch Security & OSINT** (`packages/blackarch.txt`)
   3. **AUR Packages via yay** (`packages/aur.txt`)
   4. **Flatpaks & Flatseal Permissions** (`packages/flatpak.txt` & `packages/flatpak-overrides/`)
 - **Safe Secret Decoupling**: API keys and tokens are isolated in `~/.bashrc.local` (mode `600`, gitignored) and sourced dynamically. Your secrets never touch Git.
-- **1-Command Daily Snapshot**: `dotsync` automatically refreshes all 4 package lists, copies Flatseal overrides, stages changes, and pushes to GitHub.
-- **1-Command Bootstrap**: `bootstrap.sh` non-destructively backs up any existing configs on a fresh machine and restores the entire desktop environment.
+- **1-Command Daily Snapshot**: `dotsync` automatically refreshes packages, system settings, services, stages changes, and pushes to GitHub.
+- **1-Command Bootstrap**: `bootstrap.sh` non-destructively deploys configs, system settings, services, and packages on any fresh device.
 
 ---
 
@@ -84,7 +91,7 @@ All keybindings are defined cleanly in `.config/hypr/hyprland.lua`:
 ```
 ~/dotfiles/
 ├── .config/
-│   ├── hypr/               # Complete Hyprland setup (hyprland.lua, lock, idle, paper, sunset, scripts)
+│   ├── hypr/               # Hyprland (hyprland.lua, lock, idle, paper, sunset, scripts)
 │   ├── wayle/              # Wayle status panel & theme settings
 │   ├── vicinae/            # Vicinae launcher, search, and clipboard history
 │   ├── kitty/              # Kitty terminal configuration
@@ -102,16 +109,24 @@ All keybindings are defined cleanly in `.config/hypr/hyprland.lua`:
 │   ├── .gitconfig          # Git user credentials & settings
 │   ├── .gtkrc-2.0          # GTK2 appearance settings
 │   └── .face               # Account profile picture
+├── system/
+│   ├── etc/
+│   │   ├── pacman.conf     # Pacman config (ILoveCandy, ParallelDownloads, Multilib, BlackArch)
+│   │   └── pacman.d/       # Mirrorlists
+│   ├── hardware/thinkpad/  # ThinkPad fan control, ThinkLight udev rules, thinkfan.conf
+│   └── boot/grub.reference # Reference GRUB styling configuration
 ├── themes/                 # Dracula-pink-accent GTK theme
 ├── icons/                  # Future-Cyan-Hyprcursor, WhiteSur-cursors, default
 ├── assets/                 # Active ocean balcony wallpaper
 ├── commands/               # Custom scripts (ThinkPad light, fans, turbo-boost, etc.)
 ├── packages/
-│   ├── pacman.txt          # 308 Standard Arch Linux packages
-│   ├── blackarch.txt       # 20 BlackArch security/OSINT tools
-│   ├── aur.txt             # 17 AUR packages
-│   ├── flatpak.txt         # 68 Flatpak applications
-│   └── flatpak-overrides/  # Custom Flatseal permission profiles
+│   ├── pacman.txt          # Standard Arch Linux packages
+│   ├── blackarch.txt       # BlackArch security/OSINT tools
+│   ├── aur.txt             # AUR packages
+│   ├── flatpak.txt         # Flatpak applications
+│   ├── flatpak-overrides/  # Custom Flatseal permission profiles
+│   ├── services-system.txt # Enabled systemd system services
+│   └── services-user.txt   # Enabled systemd user services
 ├── sync.sh                 # 1-command snapshot script (aliased to `dotsync`)
 ├── bootstrap.sh            # Automated installer for clean machines
 └── .gitignore              # Ignores secrets, caches, and machine-local files
@@ -119,17 +134,27 @@ All keybindings are defined cleanly in `.config/hypr/hyprland.lua`:
 
 ---
 
-## 🛡️ BlackArch Linux Integration
+## ⚙️ System Settings & Services Synced
 
-The setup recognizes tools from the **BlackArch** security repository:
-- Security & OSINT packages (`androguard`, `maigret`, `sherlock`, `mobsf`, `detect-it-easy`, `apkleaks`, `set`, `trape`, etc.) are separated into `packages/blackarch.txt`.
-- When bootstrapping on a new machine, `bootstrap.sh` prompts to enable BlackArch and automatically fetches and verifies `strap.sh` from `blackarch.org` so standard pacman commands never fail.
+### 1. `/etc/pacman.conf`
+Synced with:
+- `Color` and `ILoveCandy` enabled.
+- `ParallelDownloads = 5`.
+- `[multilib]` enabled for 32-bit compatibility (Wine, Steam).
+- `[blackarch]` repository integration.
+
+### 2. Systemd Services
+Automatically tracked and restored:
+- **Core System**: `NetworkManager`, `bluetooth`, `power-profiles-daemon`, `systemd-timesyncd`, `reflector`, `ufw`.
+- **Virtualization & Tools**: `docker`, `libvirtd`, `waydroid-container`, `proton.VPN`.
+- **ThinkPad Hardware**: `thinkfan`, `thinkfan-sleep`, `thinkfan-wakeup`.
+- **User Daemons**: `hyprpaper`, `vicinae`, `wireplumber`, `pipewire`, `gnome-keyring-daemon`.
 
 ---
 
 ## 🔄 Daily Backup Workflow
 
-Whenever you change your configurations or install new packages:
+Whenever you change your configurations, install packages, or enable new services:
 
 ```bash
 dotsync "Description of updates"
@@ -137,12 +162,13 @@ dotsync "Description of updates"
 
 Behind the scenes, `dotsync`:
 1. Separates and writes `pacman.txt` and `blackarch.txt`.
-2. Updates `aur.txt` and `flatpak.txt`.
-3. Backs up Flatseal overrides.
-4. Stages all modified dotfiles and pushes to your private GitHub repo (`uhhuhwho/dotfiles`).
+2. Updates `aur.txt`, `flatpak.txt`, and Flatseal overrides.
+3. Snapshots all enabled system and user services.
+4. Refreshes `/etc/pacman.conf` and hardware configs.
+5. Stages all modified dotfiles and pushes to your private GitHub repo (`uhhuhwho/dotfiles`).
 
 ### Shell Aliases Included in `.bashrc`:
-- `dotsync "msg"` ➔ Snapshot packages, commit, and push.
+- `dotsync "msg"` ➔ Snapshot system, packages, commit, and push.
 - `dotstatus` ➔ Run `git status` on your dotfiles.
 - `dotdiff` ➔ Show changes made to your configs.
 - `dotcd` ➔ Quickly `cd` into `~/dotfiles`.
@@ -164,10 +190,12 @@ cd ~/dotfiles
 
 ### What `bootstrap.sh` does:
 1. **Safety Backup**: Backs up any conflicting files on the target machine to `~/.dotfiles_backup_<timestamp>/`.
-2. **Symlink Deployment**: Links all configs, home files, themes, and cursors.
-3. **Wallpaper & Commands**: Restores active wallpaper to `~/Pictures/Wallpapers/` and scripts to `~/Documents/Commands/`.
-4. **Secrets Template**: Generates `~/.bashrc.local` for private API keys.
-5. **Interactive Package Restore**:
+2. **User Configurations**: Links all configs, home files, themes, and cursors.
+3. **System Settings**: Offers to apply optimized `/etc/pacman.conf` and ThinkPad hardware rules.
+4. **Wallpaper & Commands**: Restores active wallpaper to `~/Pictures/Wallpapers/` and scripts to `~/Documents/Commands/`.
+5. **Secrets Template**: Generates `~/.bashrc.local` for private API keys.
+6. **Package Restore**:
    - `[1] Full System`: Installs Standard Arch, bootstraps BlackArch tools, installs AUR packages via `yay`, restores Flatpaks, and applies Flatseal overrides.
    - `[2] Standard Desktop`: Installs Standard Arch + AUR packages only.
-   - `[3] Configs Only`: Deploys dotfiles without installing packages.
+   - `[3] Configs & Settings`: Deploys dotfiles and system settings without packages.
+7. **Services Enablement**: Automatically enables and starts your configured system and user systemd services.

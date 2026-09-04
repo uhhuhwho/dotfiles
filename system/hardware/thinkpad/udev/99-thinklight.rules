@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="tpacpi::thinklight", RUN+="/bin/bin/sh -c 'chgrp video /sys/class/leds/tpacpi\:\:thinklight/brightness && chmod g+w /sys/class/leds/tpacpi\:\:thinklight/brightness'"
