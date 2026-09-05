@@ -387,7 +387,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 1%-"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(terminal))
 
 -- Bind the blue ThinkVantage button to mimic physical PageUp
-hl.bind("XF86Launch1", hl.dsp.exec_cmd('"/home/badreddine/Documents/Commands/ThinkPad X230/thinklight-toggle.sh"'))
+hl.bind("XF86Launch1", hl.dsp.exec_cmd('"$HOME/Documents/Commands/ThinkPad X230/thinklight-toggle.sh"'))
 
 -- Space -> launcher
 -- hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))

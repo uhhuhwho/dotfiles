@@ -8,11 +8,11 @@ export PATH="/usr/sbin:$PATH"
 
 
 # Added by Toolbox App
-export PATH="$PATH:/home/badreddine/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/badreddine/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
@@ -24,4 +24,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 
 # Added by Antigravity CLI installer
-export PATH="/home/badreddine/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

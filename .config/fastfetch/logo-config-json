@@ -1,5 +1,5 @@
   "logo": {
-    "source": "/home/badreddine/.config/fastfetch/berserker_logo.txt",
+    "source": "~/.config/fastfetch/berserker_logo.txt",
     "type": "auto",
     "color": {
       "1": "white",

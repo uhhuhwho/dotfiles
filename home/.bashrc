@@ -51,7 +51,7 @@ export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.2.12479018
 export PATH=~/gradle/gradle-9.5.1/bin:$PATH
 
 # Flutter
-export PATH="$PATH:/home/badreddine/flutter/3.41.7/bin"
+export PATH="$PATH:$HOME/flutter/3.41.7/bin"
 
 # ==============================================================================
 # 3. SHELL & UTILITY ALIASES
@@ -86,7 +86,7 @@ alias fm="xdg-open . >/dev/null 2>&1 & disown"
 alias gcr='git clone --recursive'
 
 # Dotfiles workflow (Zero-copy symlinked repository)
-alias dotsync='$HOME/dotfiles/sync.sh'
+alias dotsync="$HOME/dotfiles/sync.sh"
 alias dotstatus='git -C $HOME/dotfiles status'
 alias dotdiff='git -C $HOME/dotfiles diff'
 alias dotcd='cd $HOME/dotfiles'
@@ -129,7 +129,7 @@ alias rebuildfontscach='fc-cache -f -v'
 alias addtogroup='sudo usermod -aG $USER'
 
 # Fan Control
-alias fans='sudo python3 /home/badreddine/Documents/Commands/Fans/hp_fan_cli.py'
+alias fans='sudo python3 $HOME/Documents/Commands/Fans/hp_fan_cli.py'
 alias FANS='fans'
 
 # Shut Down
@@ -149,10 +149,10 @@ alias changepackageinstallreasontodependency='sudo pacman -D --asdeps '
 # 6. DOCKER CONTAINERS
 # ==============================================================================
 
-alias dstart='cd /home/badreddine/Documents/Docker/; docker compose up -d'
-alias dstop='cd /home/badreddine/Documents/Docker/; docker compose down'
-alias dlogs='cd /home/badreddine/Documents/Docker/; docker compose logs'
-alias dupdate='cd /home/badreddine/Documents/Docker/; docker compose pull'
+alias dstart='cd $HOME/Documents/Docker/; docker compose up -d'
+alias dstop='cd $HOME/Documents/Docker/; docker compose down'
+alias dlogs='cd $HOME/Documents/Docker/; docker compose logs'
+alias dupdate='cd $HOME/Documents/Docker/; docker compose pull'
 
 
 # ==============================================================================
@@ -175,7 +175,7 @@ alias xnt='noisetorch -u'
 alias deepseek='ollama run deepseek-r1:8b'
 
 # Wallpaper Changer
-alias changewallpaper='cd /home/badreddine/Documents/Commands/; ./random-change-wallpaper.sh'
+alias changewallpaper='cd $HOME/Documents/Commands/; ./random-change-wallpaper.sh'
 
 # Youtube Downloader
 alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'
@@ -230,7 +230,7 @@ fi
 
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/badreddine/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
@@ -238,13 +238,22 @@ export PATH="$PATH:/home/badreddine/.lmstudio/bin"
 
 
 # Added by Antigravity CLI installer
-export PATH="/home/badreddine/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # kimi-code
-export PATH="/home/badreddine/.kimi-code/bin:$PATH"
+export PATH="$HOME/.kimi-code/bin:$PATH"
 
 # Flutter SDK
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # OpenClaw Completion
-[ -f '/home/badreddine/.openclaw/completions/openclaw.bash' ] && source '/home/badreddine/.openclaw/completions/openclaw.bash'
+[ -f "$HOME/.openclaw/completions/openclaw.bash" ] && source "$HOME/.openclaw/completions/openclaw.bash"
+
+# ==============================================================================
+# 6. DOTFILES STATUS REMINDER
+# ==============================================================================
+if [[ $- == *i* && -d "$HOME/dotfiles/.git" ]]; then
+    if [[ -n "$(git -C "$HOME/dotfiles" status --porcelain 2>/dev/null)" ]]; then
+        echo -e "\033[1;33m💡 Dotfiles have unsaved changes. Run '\033[1;36mdotsync\033[1;33m' to backup.\033[0m"
+    fi
+fi
