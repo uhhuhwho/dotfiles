@@ -38,6 +38,7 @@ io.github.plrigaux.sysd-manager
 io.github.screwys.Rufin
 io.github.shonebinu.Brief
 io.github.shonebinu.Defuse
+io.github.wojciech_graj.OrbVis
 io.gitlab.liferooter.TextPieces
 io.gitlab.metadatacleaner.metadatacleaner
 me.fouquet.Stencil

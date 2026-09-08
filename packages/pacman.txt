@@ -83,7 +83,6 @@ httrack
 hugo
 hypridle
 hyprland
-hyprlauncher
 hyprlock
 hyprpaper
 hyprpicker
@@ -152,6 +151,7 @@ man-db
 man-pages
 mangohud
 mesa-utils
+metasploit
 milou
 mission-center
 mtools
@@ -214,6 +214,7 @@ powerdevil
 print-manager
 proton-vpn-gtk-app
 protonmail-bridge
+pyenv
 python-virtualenv
 qbittorrent
 qemu-full

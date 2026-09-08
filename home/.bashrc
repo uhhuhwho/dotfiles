@@ -129,7 +129,7 @@ alias rebuildfontscach='fc-cache -f -v'
 alias addtogroup='sudo usermod -aG $USER'
 
 # Fan Control
-alias fans='sudo python3 $HOME/Documents/Commands/Fans/hp_fan_cli.py'
+alias fans='sudo python3 $HOME/Documents/Tools/Commands/Fans/hp_fan_cli.py'
 alias FANS='fans'
 
 # Shut Down
@@ -149,10 +149,10 @@ alias changepackageinstallreasontodependency='sudo pacman -D --asdeps '
 # 6. DOCKER CONTAINERS
 # ==============================================================================
 
-alias dstart='cd $HOME/Documents/Docker/; docker compose up -d'
-alias dstop='cd $HOME/Documents/Docker/; docker compose down'
-alias dlogs='cd $HOME/Documents/Docker/; docker compose logs'
-alias dupdate='cd $HOME/Documents/Docker/; docker compose pull'
+alias dstart='docker compose up -d'
+alias dstop='docker compose down'
+alias dlogs='docker compose logs'
+alias dupdate='docker compose pull'
 
 
 # ==============================================================================
@@ -175,7 +175,7 @@ alias xnt='noisetorch -u'
 alias deepseek='ollama run deepseek-r1:8b'
 
 # Wallpaper Changer
-alias changewallpaper='cd $HOME/Documents/Commands/; ./random-change-wallpaper.sh'
+alias changewallpaper='cd $HOME/Documents/Tools/Commands/; ./random-change-wallpaper.sh'
 
 # Youtube Downloader
 alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'

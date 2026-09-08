@@ -12,7 +12,6 @@ mobsf
 ngrok
 phoneinfoga
 seekr
-set
 sherlock
 social-analyzer
 trape
