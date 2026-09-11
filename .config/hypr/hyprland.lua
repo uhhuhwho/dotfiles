@@ -31,7 +31,6 @@ local menu        = "hyprlauncher"
 hl.on("hyprland.start", function()
     -- Hyprland ecosystem
     hl.exec_cmd("hyprpm reload")
-    hl.exec_cmd("hyprlauncher --daemon")
     -- hl.exec_cmd("waybar")
     hl.exec_cmd("wayle panel start")
     hl.exec_cmd("vicinae server")
@@ -150,24 +149,24 @@ if hl.plugin.hyprglass then
 end
 
 -- Hyprexpo
-hl.config({
-    plugin = {
-        hyprexpo = {
-            columns = 3,
-            gaps_in = 5,
-            gaps_out = 0,
-            bg_col = "rgb(111111)",
-            workspace_method = "center current",
-            gesture_distance = 200,
-            cancel_key = "escape",
-            show_cursor = 1,
-        },
-    },
-})
+-- hl.config({
+    -- plugin = {
+        -- hyprexpo = {
+            -- columns = 3,
+            -- gaps_in = 5,
+            -- gaps_out = 0,
+            -- bg_col = "rgb(111111)",
+            -- workspace_method = "center current",
+            -- gesture_distance = 200,
+            -- cancel_key = "escape",
+            -- show_cursor = 1,
+        -- },
+    -- },
+-- })
 
-hl.bind("SUPER + TAB", function()
-    hl.plugin.hyprexpo.expo("toggle")
-end)
+-- hl.bind("SUPER + TAB", function()
+    -- hl.plugin.hyprexpo.expo("toggle")
+-- end)
 
 -----------------------
 ---- LOOK AND FEEL ----

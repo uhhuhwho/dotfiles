@@ -159,6 +159,7 @@ nano
 neovim
 network-manager-applet
 networkmanager
+nmap
 noto-fonts-cjk
 noto-fonts-emoji
 npm
@@ -307,4 +308,5 @@ xf86-video-intel
 xfce4-terminal
 yay
 yt-dlp
+zenmap
 zip

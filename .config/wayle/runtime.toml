@@ -4,7 +4,7 @@ font-mono = "FiraCode Nerd Font Mono"
 tearing-mode = true
 
 [bar]
-scale = 0.75
+scale = 0.699999988079071
 padding = 0.5
 module-gap = 0.30000001192092896
 bg = "transparent"
