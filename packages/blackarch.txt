@@ -11,6 +11,7 @@ maigret
 mobsf
 ngrok
 phoneinfoga
+recon-ng
 seekr
 sherlock
 social-analyzer

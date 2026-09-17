@@ -8,6 +8,7 @@ baobab
 base
 base-devel
 bash-completion
+bat
 bluedevil
 blueman
 bluez
@@ -57,6 +58,7 @@ fzf
 gamemode
 gamescope
 gemini-cli
+ggml-vulkan
 ghidra
 gimp
 git
@@ -141,6 +143,7 @@ linux-firmware
 linux-lts-headers
 linux-zen
 linux-zen-headers
+llama-cpp
 lld
 lldb
 lmms

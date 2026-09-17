@@ -44,6 +44,7 @@ io.gitlab.metadatacleaner.metadatacleaner
 me.fouquet.Stencil
 me.iepure.devtoolbox
 org.bleachbit.BleachBit
+org.cutwire.Drift
 org.freedownloadmanager.Manager
 org.gnome.Aisleriot
 org.gnome.Chess

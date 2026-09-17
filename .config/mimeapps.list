@@ -1,6 +1,6 @@
 [Added Associations]
 text/plain=com.github.dail8859.NotepadNext.desktop;com.system76.CosmicEdit.desktop;org.onlyoffice.desktopeditors.desktop;org.xfce.mousepad.desktop;okularApplication_txt.desktop;nvim.desktop;code-oss.desktop;
-image/png=org.xfce.ristretto.desktop;com.xnview.XnViewMP.desktop;krita_png.desktop;
+image/png=org.xfce.ristretto.desktop;gimp.desktop;com.xnview.XnViewMP.desktop;krita_png.desktop;
 application/json=org.xfce.mousepad.desktop;code-oss.desktop;nvim.desktop;
 video/quicktime=vlc.desktop;
 application/x-shellscript=org.xfce.mousepad.desktop;nvim.desktop;
