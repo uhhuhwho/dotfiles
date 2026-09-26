@@ -24,6 +24,7 @@ com.xnview.XnViewMP
 cz.ondrejkolin.Barcoder
 de.haeckerfelix.Shortwave
 dev.fredol.open-tv
+dev.geopjr.Collision
 io.github._0xzer0x.qurancompanion
 io.github.amit9838.mousam
 io.github.arunsivaramanneo.GPUViewer
@@ -63,6 +64,7 @@ org.onlyoffice.desktopeditors
 org.openscad.OpenSCAD
 org.shadered.SHADERed
 org.shotcut.Shotcut
+org.stellarium.Stellarium
 org.upscayl.Upscayl
 org.zealdocs.Zeal
 page.codeberg.grinka.Transition
