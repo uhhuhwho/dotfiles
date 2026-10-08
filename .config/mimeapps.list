@@ -1,7 +1,7 @@
 [Added Associations]
-text/plain=okularApplication_txt.desktop;com.github.dail8859.NotepadNext.desktop;com.system76.CosmicEdit.desktop;org.onlyoffice.desktopeditors.desktop;org.xfce.mousepad.desktop;nvim.desktop;code-oss.desktop;
+text/plain=com.github.dail8859.NotepadNext.desktop;okularApplication_txt.desktop;com.system76.CosmicEdit.desktop;org.onlyoffice.desktopeditors.desktop;org.xfce.mousepad.desktop;nvim.desktop;code-oss.desktop;
 image/png=org.xfce.ristretto.desktop;gimp.desktop;com.xnview.XnViewMP.desktop;krita_png.desktop;
-application/json=org.xfce.mousepad.desktop;code-oss.desktop;nvim.desktop;
+application/json=com.github.dail8859.NotepadNext.desktop;org.xfce.mousepad.desktop;code-oss.desktop;nvim.desktop;
 video/quicktime=vlc.desktop;
 application/x-shellscript=org.xfce.mousepad.desktop;nvim.desktop;
 application/schema+json=code-oss.desktop;
@@ -31,10 +31,11 @@ video/vnd.avi=vlc.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;okularApplication_xps.desktop;calibre-ebook-viewer.desktop;
 application/zip=io.github.peazip.PeaZip.desktop;xarchiver.desktop;
 text/x-lua=com.github.dail8859.NotepadNext.desktop;com.system76.CosmicEdit.desktop;org.xfce.mousepad.desktop;nvim.desktop;
-application/toml=org.xfce.mousepad.desktop;nvim.desktop;code-oss.desktop;
+application/toml=com.github.dail8859.NotepadNext.desktop;org.xfce.mousepad.desktop;nvim.desktop;code-oss.desktop;
 image/webp=org.xfce.ristretto.desktop;
 application/vnd.microsoft.portable-executable=wine.desktop;ru.linux_gaming.PortProton.desktop;
 audio/vnd.wave=vlc.desktop;
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
 
 [Default Applications]
 x-scheme-handler/jetbrains=jetbrainsd.desktop

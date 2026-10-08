@@ -93,6 +93,9 @@ label-max-length = 15
 [modules.network]
 label-show = false
 
+[modules.notifications]
+popup-max-visible = 10
+
 [modules.power]
 left-click = "wlogout"
 

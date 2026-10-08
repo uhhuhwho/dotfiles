@@ -30,6 +30,7 @@ cmake
 cppcheck
 cpu-x
 darktable
+ddrescue
 dialog
 digikam
 directx-shader-compiler
@@ -53,6 +54,7 @@ firefox
 flatpak
 flatpak-kcm
 fontforge
+foremost
 freecad
 fzf
 gamemode
