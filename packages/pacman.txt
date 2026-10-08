@@ -56,6 +56,7 @@ flatpak-kcm
 fontforge
 foremost
 freecad
+fsearch
 fzf
 gamemode
 gamescope
@@ -90,6 +91,7 @@ hyprland
 hyprlock
 hyprpaper
 hyprpicker
+hyprpm
 hyprpolkitagent
 hyprpwcenter
 hyprsunset

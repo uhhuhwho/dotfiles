@@ -103,9 +103,25 @@ if [ ! -f "$HOME/.bashrc.local" ]; then
 # Machine-local environment variables and secrets (NOT tracked in git)
 # export ANTHROPIC_AUTH_TOKEN=""
 # export ANTHROPIC_BASE_URL="https://xixiapi.io"
+# export CLAUDE_MEM_GEMINI_API_KEY=""
 LOCAL_EOF
     chmod 600 "$HOME/.bashrc.local"
     echo -e "${GREEN}[CREATED]${NC} Clean ~/.bashrc.local template created for private keys."
+fi
+
+# Restore AI Assistant configs & skills manifests
+if [ -d "$DOTFILES_DIR/ai" ]; then
+    echo -e "${BLUE}:: Restoring AI Assistant configurations & manifests...${NC}"
+    mkdir -p "$HOME/.agents/rules" "$HOME/.claude/plugins" "$HOME/.gemini/antigravity" "$HOME/.cursor" "$HOME/.codex"
+    [ -f "$DOTFILES_DIR/ai/agents/.skill-lock.json" ] && cp "$DOTFILES_DIR/ai/agents/.skill-lock.json" "$HOME/.agents/.skill-lock.json"
+    [ -f "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" ] && cp "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" "$HOME/.agents/rules/claude-mem-context.md"
+    [ -f "$DOTFILES_DIR/ai/claude/installed_plugins.json" ] && cp "$DOTFILES_DIR/ai/claude/installed_plugins.json" "$HOME/.claude/plugins/installed_plugins.json"
+    [ -f "$DOTFILES_DIR/ai/claude/settings.json" ] && [ ! -f "$HOME/.claude/settings.json" ] && cp "$DOTFILES_DIR/ai/claude/settings.json" "$HOME/.claude/settings.json"
+    [ -f "$DOTFILES_DIR/ai/gemini/settings.json" ] && [ ! -f "$HOME/.gemini/settings.json" ] && cp "$DOTFILES_DIR/ai/gemini/settings.json" "$HOME/.gemini/settings.json"
+    [ -f "$DOTFILES_DIR/ai/gemini/mcp_config.json" ] && cp "$DOTFILES_DIR/ai/gemini/mcp_config.json" "$HOME/.gemini/antigravity/mcp_config.json"
+    [ -f "$DOTFILES_DIR/ai/cursor/mcp.json" ] && cp "$DOTFILES_DIR/ai/cursor/mcp.json" "$HOME/.cursor/mcp.json"
+    [ -f "$DOTFILES_DIR/ai/codex/config.toml" ] && [ ! -f "$HOME/.codex/config.toml" ] && cp "$DOTFILES_DIR/ai/codex/config.toml" "$HOME/.codex/config.toml"
+    echo -e "${GREEN}[RESTORED]${NC} AI Assistant configurations deployed."
 fi
 
 # 3. System Configurations (pacman.conf, hardware)
@@ -208,6 +224,28 @@ case "$choice" in
                 cp -r "$DOTFILES_DIR/packages/flatpak-overrides/"* "$HOME/.local/share/flatpak/overrides/"
                 echo -e "${GREEN}[RESTORED]${NC} Flatseal permissions and overrides applied."
             fi
+        fi
+
+        # Bun runtime
+        if ! command -v bun &>/dev/null; then
+            echo -e "${BLUE}:: Installing Bun runtime...${NC}"
+            curl -fsSL https://bun.sh/install | bash || true
+        fi
+
+        # NPM global packages
+        if [ -f "$DOTFILES_DIR/packages/npm.txt" ] && command -v npm &>/dev/null; then
+            echo -e "${BLUE}:: Restoring NPM global packages...${NC}"
+            while IFS= read -r pkg; do
+                [ -n "$pkg" ] && npm install -g "$pkg" 2>/dev/null || true
+            done < "$DOTFILES_DIR/packages/npm.txt"
+        fi
+
+        # Python UV tools
+        if [ -f "$DOTFILES_DIR/packages/uv.txt" ] && command -v uv &>/dev/null; then
+            echo -e "${BLUE}:: Restoring Python UV tools...${NC}"
+            while IFS= read -r tool; do
+                [ -n "$tool" ] && uv tool install "$tool" 2>/dev/null || true
+            done < "$DOTFILES_DIR/packages/uv.txt"
         fi
         ;;
     *)

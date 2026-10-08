@@ -7,5 +7,6 @@
     "claudeCode.preferredLocation": "panel",
     "python.languageServer": "Default",
     "editor.fontFamily": "'Fira Code', monospace",
-    "workbench.editor.empty.hint": "hidden"
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.secondarySideBar.showLabels": false
 }

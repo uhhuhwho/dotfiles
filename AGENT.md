@@ -46,20 +46,33 @@ $HOME/dotfiles/.config/<app>/  <-- Real physical files tracked by Git
 
 ---
 
-## 3. Four-Tier Package Management
+## 3. Package Management & Developer Ecosystem
 
-Pacman packages are strictly categorized to ensure clean replication on systems without third-party repositories:
+Packages are categorized to ensure clean replication across tools and package managers:
 
-| Tier | File Path | Scope & Description |
+| Tier / Category | File Path | Scope & Description |
 | :--- | :--- | :--- |
 | **Tier 1: Standard Arch** | `packages/pacman.txt` | Explicitly installed packages from official `core`, `extra`, and `multilib` repos only. |
-| **Tier 2: BlackArch** | `packages/blackarch.txt` | Security & OSINT tools from the BlackArch repo (`androguard`, `maigret`, `sherlock`, `mobsf`, `set`, `apkleaks`, etc.). **Do not merge into `pacman.txt`!** |
-| **Tier 3: AUR** | `packages/aur.txt` | Foreign packages installed via `yay` (`wayle-bin`, `vicinae-bin`, `waypaper`, etc.). |
+| **Tier 2: BlackArch** | `packages/blackarch.txt` | Security & OSINT tools from the BlackArch repo (`androguard`, `maigret`, `sherlock`, etc.). **Do not merge into `pacman.txt`!** |
+| **Tier 3: AUR** | `packages/aur.txt` | Foreign packages installed via `yay` (`wayle-bin`, `vicinae-bin`, `waypaper`, `claude-code`, etc.). |
 | **Tier 4: Flatpaks** | `packages/flatpak.txt` | Flatpak application IDs + Flatseal permissions in `packages/flatpak-overrides/`. |
+| **Tier 5: Global NPM** | `packages/npm.txt` | Globally installed NPM packages (`omniroute`, `oh-my-mermaid`, etc.) managed via `~/.npm-global`. |
+| **Tier 6: Python UV Tools** | `packages/uv.txt` | Standalone Python CLI tools installed via `uv tool` (`hackingtool`, `pixelrag`, etc.). |
 
 ---
 
-## 4. System Settings & Daemons Tracked
+## 4. AI Ecosystem & Assistants Configuration
+
+AI configurations and agent skills are snapshot into `ai/`:
+- **Universal Agent Skills (`ai/agents/`)**: Tracks `.skill-lock.json` and rules (`claude-mem-context.md`).
+- **Claude Code (`ai/claude/`)**: Tracks installed plugins (`installed_plugins.json`) and non-sensitive options (`settings.json`). *API tokens are strictly kept in `~/.bashrc.local`.*
+- **Gemini / Antigravity (`ai/gemini/`)**: Tracks `settings.json` (claude-mem lifecycle hooks via Bun), `mcp_config.json`, and plugin manifest (`plugins.json`).
+- **Cursor (`ai/cursor/`)**: Tracks MCP configurations (`mcp.json`) and custom skill manifests (`skills-manifest.json`).
+- **Codex CLI (`ai/codex/`)**: Tracks model configurations (`config.toml`).
+
+---
+
+## 5. System Settings & Daemons Tracked
 
 - **`/etc/pacman.conf`** ➔ Synced in `system/etc/pacman.conf` (Color, ILoveCandy, ParallelDownloads = 5, Multilib, BlackArch).
 - **ThinkPad Tweaks** ➔ Synced in `system/hardware/thinkpad/` (`thinkpad_acpi.conf`, `ec_sys.conf`, `99-thinklight.rules`, `thinkfan.conf`).
@@ -69,7 +82,7 @@ Pacman packages are strictly categorized to ensure clean replication on systems 
 
 ---
 
-## 5. Standard AI Workflows & Commands
+## 6. Standard AI Workflows & Commands
 
 ### Task 1: When user says "Sync my stuff", "Backup dotfiles", or "dotsync"
 Run the automated snapshot script:

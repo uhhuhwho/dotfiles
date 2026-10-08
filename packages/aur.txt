@@ -4,7 +4,6 @@ binance
 claude-code
 codebase-memory-mcp-bin
 ferdium-bin
-fsearch
 google-earth-pro
 hyprsysteminfo
 razergenie

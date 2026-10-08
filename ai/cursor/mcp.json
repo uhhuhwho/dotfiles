@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "claude-mem": {
+      "command": "node",
+      "args": [
+        "/home/badreddine/.claude/plugins/marketplaces/thedotmack/plugin/scripts/mcp-server.cjs"
+      ]
+    }
+  }
+}

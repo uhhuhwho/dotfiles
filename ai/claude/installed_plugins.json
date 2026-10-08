@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "plugins": {
+    "claude-mem@thedotmack": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/13.4.0",
+        "version": "13.4.0",
+        "installedAt": "2026-06-07T22:56:40.428Z",
+        "lastUpdated": "2026-06-07T22:56:40.428Z"
+      }
+    ],
+    "clangd-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-06-09T01:51:45.503Z",
+        "lastUpdated": "2026-06-09T01:51:45.503Z"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown",
+        "version": "unknown",
+        "installedAt": "2026-06-11T23:02:25.585Z",
+        "lastUpdated": "2026-06-11T23:02:25.585Z"
+      }
+    ],
+    "superpowers@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0",
+        "version": "5.1.0",
+        "installedAt": "2026-06-11T23:02:40.222Z",
+        "lastUpdated": "2026-06-11T23:02:40.222Z",
+        "gitCommitSha": "6fd4507659784c351abbd2bc264c7162cfd386dc"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/unknown",
+        "version": "unknown",
+        "installedAt": "2026-06-11T23:02:51.907Z",
+        "lastUpdated": "2026-06-11T23:02:51.907Z"
+      }
+    ],
+    "code-simplifier@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-06-11T23:02:56.922Z",
+        "lastUpdated": "2026-06-11T23:02:56.922Z"
+      }
+    ],
+    "claude-md-management@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-06-11T23:03:05.308Z",
+        "lastUpdated": "2026-06-11T23:03:05.308Z"
+      }
+    ],
+    "oh-my-mermaid@oh-my-mermaid": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/oh-my-mermaid/oh-my-mermaid/0.2.0",
+        "version": "0.2.0",
+        "installedAt": "2026-08-11T02:43:02.785Z",
+        "lastUpdated": "2026-08-11T02:43:02.785Z",
+        "gitCommitSha": "38ccdb69298adec949177c92c88d6e3ddfb5bab7"
+      }
+    ],
+    "pixelbrowse@pixelrag-plugins": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/pixelrag-plugins/pixelbrowse/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2026-08-12T16:25:16.092Z",
+        "lastUpdated": "2026-08-12T16:25:16.092Z",
+        "gitCommitSha": "c1dae49ba78e33ff1d02d9f8efd7b9adf9cecb22"
+      }
+    ],
+    "i-have-adhd@i-have-adhd": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/i-have-adhd/i-have-adhd/0.2.0",
+        "version": "0.2.0",
+        "installedAt": "2026-08-25T03:28:34.940Z",
+        "lastUpdated": "2026-08-25T03:28:34.940Z",
+        "gitCommitSha": "b42a45a068e080294924bfba19a7a2e8944c48ff"
+      }
+    ],
+    "ponytail@ponytail": [
+      {
+        "scope": "user",
+        "installPath": "/home/badreddine/.claude/plugins/cache/ponytail/ponytail/4.9.0",
+        "version": "4.9.0",
+        "installedAt": "2026-09-02T18:32:46.883Z",
+        "lastUpdated": "2026-09-02T18:32:46.883Z",
+        "gitCommitSha": "2ed6c52c9d7e5e56942508591085fd45dea277d3"
+      }
+    ]
+  }
+}

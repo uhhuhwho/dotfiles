@@ -15,11 +15,15 @@ A high-performance, minimalist, zero-copy configuration and full-system replicat
   - Automatically snapshots all enabled system daemons (`packages/services-system.txt`)
   - Automatically snapshots enabled user daemons (`packages/services-user.txt`)
   - Enables and starts them automatically on a clean machine during bootstrap.
-- **Four-Tier Package Management**:
+- **Comprehensive Package & Tool Management**:
   1. **Standard Arch Linux** (`packages/pacman.txt`)
   2. **BlackArch Security & OSINT** (`packages/blackarch.txt`)
   3. **AUR Packages via yay** (`packages/aur.txt`)
   4. **Flatpaks & Flatseal Permissions** (`packages/flatpak.txt` & `packages/flatpak-overrides/`)
+  5. **Global NPM Packages** (`packages/npm.txt` via `~/.npm-global`)
+  6. **Python UV Tools** (`packages/uv.txt` via `uv tool`)
+- **AI Ecosystem & Multi-Agent Tracking**:
+  - Automatically snapshots agent skills lockfile (`ai/agents/.skill-lock.json`), shared rules (`ai/agents/rules/`), Claude Code plugins & sanitized settings (`ai/claude/`), Gemini/Antigravity hooks & MCP servers (`ai/gemini/`), Cursor configs (`ai/cursor/`), and Codex models (`ai/codex/`).
 - **Safe Secret Decoupling**: API keys and tokens are isolated in `~/.bashrc.local` (mode `600`, gitignored) and sourced dynamically. Your secrets never touch Git.
 - **1-Command Daily Snapshot**: `dotsync` automatically refreshes packages, system settings, services, stages changes, and pushes to GitHub.
 - **1-Command Bootstrap**: `bootstrap.sh` non-destructively deploys configs, system settings, services, and packages on any fresh device.
@@ -125,8 +129,16 @@ All keybindings are defined cleanly in `.config/hypr/hyprland.lua`:
 │   ├── aur.txt             # AUR packages
 │   ├── flatpak.txt         # Flatpak applications
 │   ├── flatpak-overrides/  # Custom Flatseal permission profiles
+│   ├── npm.txt             # Global NPM packages
+│   ├── uv.txt              # Python UV CLI tools
 │   ├── services-system.txt # Enabled systemd system services
 │   └── services-user.txt   # Enabled systemd user services
+├── ai/
+│   ├── agents/             # Universal agent skill lockfile & rules
+│   ├── claude/             # Claude Code plugins & sanitized settings
+│   ├── gemini/             # Gemini hooks, plugins & Antigravity MCP config
+│   ├── cursor/             # Cursor MCP settings & skill manifest
+│   └── codex/              # Codex model configurations
 ├── sync.sh                 # 1-command snapshot script (aliased to `dotsync`)
 ├── bootstrap.sh            # Automated installer for clean machines
 └── .gitignore              # Ignores secrets, caches, and machine-local files

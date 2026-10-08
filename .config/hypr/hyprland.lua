@@ -106,6 +106,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 -- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
+hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
 -------------------
 ---- PLUGINS  ----
@@ -148,25 +149,7 @@ if hl.plugin.hyprglass then
     })
 end
 
--- Hyprexpo
--- hl.config({
-    -- plugin = {
-        -- hyprexpo = {
-            -- columns = 3,
-            -- gaps_in = 5,
-            -- gaps_out = 0,
-            -- bg_col = "rgb(111111)",
-            -- workspace_method = "center current",
-            -- gesture_distance = 200,
-            -- cancel_key = "escape",
-            -- show_cursor = 1,
-        -- },
-    -- },
--- })
-
--- hl.bind("SUPER + TAB", function()
-    -- hl.plugin.hyprexpo.expo("toggle")
--- end)
+-- HyMission (Already installed, add it)
 
 -----------------------
 ---- LOOK AND FEEL ----
