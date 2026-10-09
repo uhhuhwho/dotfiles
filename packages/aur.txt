@@ -5,6 +5,7 @@ claude-code
 codebase-memory-mcp-bin
 ferdium-bin
 google-earth-pro
+hyprmod
 hyprsysteminfo
 razergenie
 thinkfan
