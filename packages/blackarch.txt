@@ -8,6 +8,7 @@ dmde
 dotpeek
 email2phonenumber
 maigret
+mimikatz
 mobsf
 ngrok
 phoneinfoga

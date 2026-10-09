@@ -7,8 +7,10 @@ com.geeks3d.furmark
 com.gitbutler.gitbutler
 com.github.dail8859.NotepadNext
 com.github.johnfactotum.Foliate
+com.github.johnfactotum.QuickLookup
 com.github.k4zmu2a.spacecadetpinball
 com.github.PintaProject.Pinta
+com.github.qarmin.szyszka
 com.github.ryonakano.pinit
 com.github.tchx84.Flatseal
 com.github.tenderowl.frog
@@ -29,6 +31,7 @@ io.github._0xzer0x.qurancompanion
 io.github.amit9838.mousam
 io.github.arunsivaramanneo.GPUViewer
 io.github.benjamimgois.goverlay
+io.github.db_mobile.resonance
 io.github.fkinoshita.Telegraph
 io.github.flattool.Warehouse
 io.github.giantpinkrobots.flatsweep
@@ -36,9 +39,11 @@ io.github.idescriptor.iDescriptor
 io.github.meehow.Receiver
 io.github.peazip.PeaZip
 io.github.plrigaux.sysd-manager
+io.github.ronniedroid.concessio
 io.github.screwys.Rufin
 io.github.shonebinu.Brief
 io.github.shonebinu.Defuse
+io.github.sugarycandybar.Crucible
 io.github.wojciech_graj.OrbVis
 io.gitlab.liferooter.TextPieces
 io.gitlab.metadatacleaner.metadatacleaner
@@ -56,6 +61,7 @@ org.gnome.SoundRecorder
 org.gnucash.GnuCash
 org.kde.drawy
 org.kde.kdenlive
+org.kicad.KiCad
 org.librecad.librecad
 org.localsend.localsend_app
 org.munadi.Munadi
@@ -65,6 +71,7 @@ org.openscad.OpenSCAD
 org.shadered.SHADERed
 org.shotcut.Shotcut
 org.stellarium.Stellarium
+org.texstudio.TeXstudio
 org.upscayl.Upscayl
 org.zealdocs.Zeal
 page.codeberg.grinka.Transition
