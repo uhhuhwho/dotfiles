@@ -8,6 +8,7 @@ google-earth-pro
 hyprmod
 hyprsysteminfo
 razergenie
+rustdesk
 thinkfan
 unityhub
 vicinae-bin
@@ -15,3 +16,4 @@ visual-studio-code-bin
 waybar-git
 wayle-bin
 waypaper
+winboat-bin

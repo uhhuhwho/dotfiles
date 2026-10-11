@@ -1,4 +1,7 @@
 bluetooth.service
+cups.path
+cups.service
+cups.socket
 docker.service
 libvirtd-admin.socket
 libvirtd-ro.socket

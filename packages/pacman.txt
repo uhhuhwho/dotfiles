@@ -29,6 +29,8 @@ cliphist
 cmake
 cppcheck
 cpu-x
+cups
+cups-filters
 darktable
 ddrescue
 dialog
