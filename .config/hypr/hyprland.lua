@@ -268,7 +268,7 @@ hl.config({
         kb_layout  = "fr, ara",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "grp:alt_shift_toggle",
+        kb_options = "grp:alt_shift_toggle,caps:digits_row",
         kb_rules   = "",
         repeat_rate  = 25,
         repeat_delay = 600,

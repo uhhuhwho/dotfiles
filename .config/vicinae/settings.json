@@ -15,7 +15,7 @@
    },
    "font": {
       "normal": {
-         "size": 13.5
+         "size": 15.5
       }
    },
    "theme": {
@@ -28,7 +28,11 @@
       "system_info": false
    },
    "launcher_window": {
+      "rounding": 15,
       "opacity": 0.8,
+      "client_side_decorations": {
+         "border_width": 2
+      },
       "compact_mode": {
          "enabled": false
       }
@@ -50,6 +54,13 @@
                "enabled": false
             },
             "sponsor": {
+               "enabled": false
+            }
+         }
+      },
+      "developer": {
+         "entrypoints": {
+            "create": {
                "enabled": false
             }
          }
@@ -103,9 +114,21 @@
             "sleep": {
                "enabled": false
             },
+            "soft-reboot": {
+               "enabled": false
+            },
             "suspend": {
                "enabled": false
             }
+         }
+      },
+      "snippets": {
+         "preferences": {
+            "enabled": true,
+            "undo": true,
+            "layout": "",
+            "prePasteDelay": "0",
+            "keyDelay": "2"
          }
       }
    }

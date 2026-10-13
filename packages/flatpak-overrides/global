@@ -1,5 +1,6 @@
 [Context]
+unset-environment=GTK_THEME;ICON_THEME;
 
 [Environment]
-GTK_THEME=Adwaita-dark
-ICON_THEME=oxygen
+GTK_THEME=
+ICON_THEME=
