@@ -20,6 +20,7 @@ breeze-gtk
 breeze-plymouth
 brightnessctl
 btop
+btrfs-progs
 calibre
 cava
 cgdb
@@ -98,7 +99,6 @@ hyprpolkitagent
 hyprpwcenter
 hyprsunset
 inkscape
-intel-ucode
 isoimagewriter
 jdk21-openjdk
 kactivitymanagerd
@@ -108,6 +108,7 @@ kdeconnect
 kdecoration
 kdeplasma-addons
 kdevelop
+keyd
 kgamma
 kglobalacceld
 kinfocenter
@@ -135,7 +136,6 @@ lazygit
 lib32-gamemode
 lib32-libpulse
 lib32-mangohud
-lib32-vulkan-intel
 libc++
 libc++abi
 libkscreen
@@ -159,6 +159,7 @@ mako
 man-db
 man-pages
 mangohud
+mesa
 mesa-utils
 metasploit
 milou
@@ -292,7 +293,6 @@ vulkan-extra-layers
 vulkan-extra-tools
 vulkan-headers
 vulkan-html-docs
-vulkan-intel
 vulkan-profiles
 vulkan-tools
 vulkan-utility-libraries
@@ -313,7 +313,6 @@ xarchiver
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xdg-user-dirs
-xf86-video-intel
 xfce4-terminal
 yay
 yt-dlp

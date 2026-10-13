@@ -17,6 +17,7 @@ com.github.tenderowl.frog
 com.github.wwmm.easyeffects
 com.her01n.BatteryInfo
 com.heroicgameslauncher.hgl
+com.jeffser.Pigment
 com.rafaelmardojai.Blanket
 com.stremio.Stremio
 com.usebottles.bottles

@@ -128,9 +128,12 @@ alias rebuildfontscach='fc-cache -f -v'
 # User & Permission Helper
 alias addtogroup='sudo usermod -aG $USER'
 
-# Fan Control
-alias fans='sudo python3 $HOME/Documents/Tools/Commands/Fans/hp_fan_cli.py'
+# Hardware & Power Control (Scripts in ~/dotfiles/scripts/hardware/)
+alias fans='sudo python3 "$HOME/dotfiles/scripts/hardware/hp-omen/hp-fan-control.py"'
 alias FANS='fans'
+alias turbo='"$HOME/dotfiles/scripts/hardware/common/cpu-turbo-boost.sh"'
+alias pprofile='"$HOME/dotfiles/scripts/hardware/common/power-profile.sh"'
+alias dotmachine='"$HOME/dotfiles/scripts/system/detect-machine.sh" --info'
 
 # Shut Down
 alias fuckoff='shutdown now'
@@ -175,7 +178,7 @@ alias xnt='noisetorch -u'
 alias deepseek='ollama run deepseek-r1:8b'
 
 # Wallpaper Changer
-alias changewallpaper='cd $HOME/Documents/Tools/Commands/; ./random-change-wallpaper.sh'
+alias changewallpaper='"$HOME/dotfiles/scripts/desktop/random-wallpaper.sh"'
 
 # Youtube Downloader
 alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'
@@ -187,30 +190,44 @@ alias ytdl='yt-dlp -f "bestvideo+bestaudio/best" -o "%(title)s.%(ext)s"'
 
 alias TEMP='temp'
 
-# Display detailed CPU temperature, fan speeds, scaling, and GPU temperature
+# Display detailed CPU temperature, fan speeds, scaling, and GPU temperature (Multi-machine: AMD, Intel, NVIDIA)
 temp() {
     echo "---"
-    echo "Power Profile: $(powerprofilesctl get)"
-    echo "---"
-    echo "GPU Temp:      $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
-    echo "---"
+    if command -v powerprofilesctl >/dev/null 2>&1; then
+        echo "Power Profile: $(powerprofilesctl get 2>/dev/null || echo 'N/A')"
+        echo "---"
+    fi
+
+    # GPU temperature (NVIDIA dGPU or AMD Radeon iGPU/dGPU)
+    if command -v nvidia-smi >/dev/null 2>&1 && nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader >/dev/null 2>&1; then
+        echo "GPU Temp (NVIDIA): $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
+        echo "---"
+    elif sensors 2>/dev/null | grep -q 'edge:'; then
+        sensors 2>/dev/null | awk -F':' '/edge:/ {gsub(/^[ \t]+/, "", $2); print "GPU Temp (AMD):    " $2; exit}'
+        echo "---"
+    fi
+
     echo "CPU(s) scaling MHz: $(lscpu | grep 'CPU(s) scaling MHz' | awk '{print $NF}')"
-    echo "CPU(s) scaling GHz: $(awk -v max_mhz=$(lscpu | grep "CPU max MHz" | awk '{print $NF}') -v scale=$(lscpu | grep "CPU(s) scaling MHz" | awk '{print $NF}' | tr -d '%') 'BEGIN {printf "%.2f", (max_mhz * scale / 100) / 1000}') GHz"
-    
-    # Extract CPU temperature
-    sensors | grep 'Package id 0' | awk -F':' '{
-        gsub(/Package id 0/, "CPU Temp");
-        print $1 ": " $2
-    }'
+    echo "CPU(s) scaling GHz: $(awk -v max_mhz="$(lscpu | grep "CPU max MHz" | awk '{print $NF}')" -v scale="$(lscpu | grep "CPU(s) scaling MHz" | awk '{print $NF}' | tr -d '%')" 'BEGIN {if (max_mhz > 0) printf "%.2f", (max_mhz * scale / 100) / 1000; else print "N/A"}') GHz"
+
+    # Extract CPU temperature (Intel 'Package id 0' or AMD 'Tctl' / 'Tdie')
+    sensors 2>/dev/null | awk -F':' '
+        /Package id 0/ { gsub(/Package id 0/, "CPU Temp (Intel)"); print $1 ": " $2 }
+        /Tctl|Tdie/    { gsub(/Tctl|Tdie/, "CPU Temp (AMD)");   print $1 ": " $2 }
+    '
     echo "----"
-    
-    # Extract fan speeds
-    sensors | grep 'fan' | awk -F':' '{
+
+    # Extract fan speeds (if exposed by sensors)
+    local fan_out
+    fan_out="$(sensors 2>/dev/null | grep -i 'fan' | awk -F':' '{
         gsub(/fan1/, "FAN 1 (CPU)");
         gsub(/fan2/, "FAN 2 (GPU)");
         print $1 ": " $2
-    }'
-    echo "---"
+    }')"
+    if [[ -n "$fan_out" ]]; then
+        echo "$fan_out"
+        echo "---"
+    fi
 }
 
 
@@ -234,10 +251,10 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
-. "$HOME/.local/bin/env"
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
 
-# Added by Antigravity CLI installer
+# Local user binaries (Antigravity CLI, uv tools, custom scripts)
 export PATH="$HOME/.local/bin:$PATH"
 
 # kimi-code
@@ -247,10 +264,10 @@ export PATH="$HOME/.kimi-code/bin:$PATH"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # OpenClaw Completion
-[ -f "$HOME/.openclaw/completions/openclaw.bash" ] && source "$HOME/.openclaw/completions/openclaw.bash"
+[[ -f "$HOME/.openclaw/completions/openclaw.bash" ]] && source "$HOME/.openclaw/completions/openclaw.bash"
 
 # ==============================================================================
-# 6. DOTFILES STATUS REMINDER
+# 10. DOTFILES STATUS REMINDER
 # ==============================================================================
 if [[ $- == *i* && -d "$HOME/dotfiles/.git" ]]; then
     if [[ -n "$(git -C "$HOME/dotfiles" status --porcelain 2>/dev/null)" ]]; then

@@ -4,7 +4,7 @@ font-mono = "FiraCode Nerd Font Mono"
 tearing-mode = true
 
 [bar]
-scale = 0.699999988079071
+scale = 0.75
 padding = 0.5
 module-gap = 0.30000001192092896
 bg = "transparent"
@@ -49,16 +49,16 @@ right = [
 matugen-scheme = "rainbow"
 
 [styling.palette]
-bg = "#232136"
-surface = "#2a273f"
-elevated = "#393552"
-fg = "#e0def4"
-fg-muted = "#908caa"
-primary = "#c4a7e7"
-red = "#eb6f92"
-yellow = "#f6c177"
-green = "#3e8fb0"
-blue = "#9ccfd8"
+bg = "#11111b"
+surface = "#181825"
+elevated = "#1e1e2e"
+fg = "#cdd6f4"
+fg-muted = "#bac2de"
+primary = "#b4befe"
+red = "#f38ba8"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+blue = "#74c7ec"
 
 [modules.brightness]
 scroll-up = "brightnessctl set 1%+"
@@ -81,8 +81,7 @@ right-click = "dropdown:dashboard"
 min-workspace-count = 5
 display-mode = "icon"
 app-icons-show = true
-icon-gap = 0.0
-workspace-padding = 1.0
+workspace-padding = 1.5
 icon-size = 1.350000023841858
 label-size = 1.350000023841858
 

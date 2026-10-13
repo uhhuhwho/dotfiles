@@ -1,0 +1,5 @@
+intel-ucode
+lib32-nvidia-utils
+nvidia
+nvidia-utils
+

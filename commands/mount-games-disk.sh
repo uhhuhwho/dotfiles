@@ -1,1 +1,0 @@
-sudo mount /dev/sda1 /mnt/ssdtg1tb

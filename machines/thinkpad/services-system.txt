@@ -1,0 +1,4 @@
+thinkfan-sleep.service
+thinkfan-wakeup.service
+thinkfan.service
+

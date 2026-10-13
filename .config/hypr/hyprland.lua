@@ -282,7 +282,7 @@ hl.config({
     },
 })
 
--- Touchpad
+-- Touchpad (ThinkPad X230 Synaptics)
 hl.device({
     name = "synps/2-synaptics-touchpad",
     enabled = true,
@@ -293,7 +293,17 @@ hl.device({
     tap_to_click = true,
 })
 
--- Tune the TrackPoint for better responsiveness
+-- Touchpad (Honor MagicBook ELAN)
+hl.device({
+    name = "elan2204:00-04f3:30f5-touchpad",
+    enabled = true,
+    sensitivity = 0.4,
+    natural_scroll = true,
+    scroll_factor = 1.2,
+    tap_to_click = true,
+})
+
+-- Tune the TrackPoint for better responsiveness (ThinkPad X230)
 hl.device({
     name = "tpps/2-ibm-trackpoint",
     enabled = true,
@@ -324,6 +334,12 @@ hl.config({
 
 hl.device({
     name           = "razer-razer-viper-mini",
+    sensitivity    = -0.5,
+    natural_scroll = false,
+})
+
+hl.device({
+    name           = "razer-razer-viper-mini-1",
     sensitivity    = -0.5,
     natural_scroll = false,
 })
@@ -368,8 +384,8 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 1%-"))
 -- Terminal
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(terminal))
 
--- Bind the blue ThinkVantage button to mimic physical PageUp
-hl.bind("XF86Launch1", hl.dsp.exec_cmd('"$HOME/Documents/Commands/ThinkPad X230/thinklight-toggle.sh"'))
+-- Bind the blue ThinkVantage button to toggle ThinkLight on ThinkPad X230
+hl.bind("XF86Launch1", hl.dsp.exec_cmd('"$HOME/dotfiles/scripts/hardware/thinkpad/thinklight-toggle.sh"'))
 
 -- Space -> launcher
 -- hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))

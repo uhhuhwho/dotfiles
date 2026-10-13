@@ -1,1 +1,0 @@
-powerprofilesctl set power-saver

@@ -1,8 +1,0 @@
-Verify that GameMode is running
-
-When you have started your game you can verify that GameMode is running with the command:
-
-$ gamemoded -s
-
-// For steam games
-gamemoderun %command%

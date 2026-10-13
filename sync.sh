@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # dotfiles sync script (dotsync)
-# Automatically updates packages, system configs, services, and pushes to GitHub
+# Multi-machine aware: detects current hardware profile, separates hardware
+# packages/services into machines/<profile>/, union-merges shared packages so
+# syncing on one laptop never deletes another laptop's packages, and pushes to GitHub.
+#
+# Usage:
+#   dotsync "Commit message"
+#   dotsync --prune "Commit message"   # Overwrite shared lists with only this machine's packages
 # ==============================================================================
 
 set -euo pipefail
@@ -9,15 +15,97 @@ set -euo pipefail
 DOTFILES_DIR="$HOME/dotfiles"
 cd "$DOTFILES_DIR"
 
-echo -e "\033[1;34m:: Snapshotting packages & system state...\033[0m"
+PRUNE_MODE=0
+if [[ "${1:-}" == "--prune" ]]; then
+    PRUNE_MODE=1
+    shift
+fi
 
-# 1. Native packages & BlackArch separation
-python3 - << 'PY_EOF'
-import subprocess, os
+MACHINE_PROFILE="$("$DOTFILES_DIR/scripts/system/detect-machine.sh")"
+MACHINE_INFO="$("$DOTFILES_DIR/scripts/system/detect-machine.sh" --info)"
+MACHINE_DIR="$DOTFILES_DIR/machines/$MACHINE_PROFILE"
+mkdir -p "$MACHINE_DIR" "$DOTFILES_DIR/packages"
 
-dotfiles_pkg = os.path.expanduser('~/dotfiles/packages')
-os.makedirs(dotfiles_pkg, exist_ok=True)
+echo -e "\033[1;34m:: Detected Machine Profile:\033[0m \033[1;36m$MACHINE_INFO\033[0m"
+echo -e "\033[1;34m:: Snapshotting packages, services & system state...\033[0m"
 
+# 1. Native, BlackArch, AUR, NPM, UV & Services separation (Multi-Machine Aware)
+DOTFILES_MACHINE="$MACHINE_PROFILE" PRUNE_MODE="$PRUNE_MODE" python3 - << 'PY_EOF'
+import os
+import re
+import subprocess
+
+dotfiles = os.path.expanduser('~/dotfiles')
+pkg_dir = os.path.join(dotfiles, 'packages')
+machine = os.environ.get('DOTFILES_MACHINE', 'generic')
+prune = os.environ.get('PRUNE_MODE', '0') == '1'
+machine_dir = os.path.join(dotfiles, 'machines', machine)
+os.makedirs(pkg_dir, exist_ok=True)
+os.makedirs(machine_dir, exist_ok=True)
+
+# Hardware-specific package regexes routed to machines/<profile>/
+HW_PKG_PATTERNS = [
+    r'^(amd|intel)-ucode$',
+    r'^(lib32-)?vulkan-(intel|radeon|nouveau)$',
+    r'^(lib32-)?amdvlk$',
+    r'^xf86-video-(intel|amdgpu|ati|nouveau|vesa)$',
+    r'^(lib32-)?nvidia(-.*)?$',
+    r'^cuda(-.*)?$',
+    r'^optimus-manager(-.*)?$',
+    r'^bbswitch(-.*)?$',
+    r'^thinkfan(-.*)?$',
+    r'^tp_smapi(-.*)?$',
+    r'^acpi_call(-.*)?$',
+    r'^(intel-media-driver|libva-intel-driver|libva-mesa-driver)$',
+]
+hw_pkg_re = re.compile('|'.join(HW_PKG_PATTERNS))
+
+# Hardware-specific systemd service regexes routed to machines/<profile>/
+HW_SVC_PATTERNS = [
+    r'^thinkfan.*\.(service|socket|timer)$',
+    r'^nvidia.*\.(service|socket|timer)$',
+    r'^optimus-manager.*\.(service|socket|timer)$',
+    r'^tlp.*\.(service|socket|timer)$',
+]
+hw_svc_re = re.compile('|'.join(HW_SVC_PATTERNS))
+
+# Known hardware packages from ALL machine profiles so we never leak them into shared lists
+all_machine_hw_pkgs = set()
+machines_root = os.path.join(dotfiles, 'machines')
+if os.path.isdir(machines_root):
+    for m_name in os.listdir(machines_root):
+        m_path = os.path.join(machines_root, m_name)
+        for fname in ('pacman.txt', 'aur.txt'):
+            fpath = os.path.join(m_path, fname)
+            if os.path.isfile(fpath):
+                with open(fpath) as f:
+                    for line in f:
+                        p = line.strip()
+                        if p and not p.startswith('#'):
+                            all_machine_hw_pkgs.add(p)
+
+def is_hw_pkg(pkg: str) -> bool:
+    return bool(hw_pkg_re.match(pkg)) or pkg in all_machine_hw_pkgs
+
+def read_list(path: str) -> set[str]:
+    if not os.path.isfile(path):
+        return set()
+    with open(path) as f:
+        return {line.strip() for line in f if line.strip() and not line.startswith('#')}
+
+def write_list(path: str, items: set[str] | list[str], union_existing: bool = False) -> int:
+    final = set(items)
+    if union_existing and not prune:
+        final |= read_list(path)
+    sorted_items = sorted(final)
+    with open(path, 'w') as f:
+        if sorted_items:
+            f.write('\n'.join(sorted_items) + '\n')
+        else:
+            f.write('')
+    return len(sorted_items)
+
+# BlackArch repo package list
 ba_pkgs = set()
 try:
     ba_out = subprocess.check_output(['pacman', '-Sl', 'blackarch'], stderr=subprocess.DEVNULL).decode().splitlines()
@@ -26,32 +114,56 @@ try:
         if len(parts) >= 2:
             ba_pkgs.add(parts[1])
 except Exception:
-    pass
+    # Fallback to existing blackarch.txt if repo isn't enabled on this machine
+    ba_pkgs = read_list(os.path.join(pkg_dir, 'blackarch.txt'))
 
+# 1. Native packages (pacman -Qeqn)
 native_pkgs = subprocess.check_output(['pacman', '-Qeqn']).decode().splitlines()
-
-standard_pkgs = []
-blackarch_pkgs = []
+shared_pacman = set()
+shared_blackarch = set()
+machine_pacman = set()
 
 for pkg in native_pkgs:
     pkg = pkg.strip()
     if not pkg:
         continue
-    if pkg in ba_pkgs and pkg != 'yay':
-        blackarch_pkgs.append(pkg)
+    if is_hw_pkg(pkg):
+        machine_pacman.add(pkg)
+    elif pkg in ba_pkgs and pkg != 'yay':
+        shared_blackarch.add(pkg)
     else:
-        standard_pkgs.append(pkg)
+        shared_pacman.add(pkg)
 
-standard_pkgs.sort()
-blackarch_pkgs.sort()
+# Remove any hardware packages that may have existed in shared pacman.txt
+existing_shared_pacman = read_list(os.path.join(pkg_dir, 'pacman.txt')) - all_machine_hw_pkgs - machine_pacman
+if not prune:
+    shared_pacman |= existing_shared_pacman
 
-with open(os.path.join(dotfiles_pkg, 'pacman.txt'), 'w') as f:
-    f.write('\n'.join(standard_pkgs) + '\n')
+write_list(os.path.join(pkg_dir, 'pacman.txt'), shared_pacman, union_existing=False)
+write_list(os.path.join(pkg_dir, 'blackarch.txt'), shared_blackarch, union_existing=True)
+write_list(os.path.join(machine_dir, 'pacman.txt'), machine_pacman, union_existing=False)
 
-with open(os.path.join(dotfiles_pkg, 'blackarch.txt'), 'w') as f:
-    f.write('\n'.join(blackarch_pkgs) + '\n')
+# 2. AUR packages (pacman -Qeqm)
+aur_out = subprocess.check_output(['pacman', '-Qeqm']).decode().splitlines()
+shared_aur = set()
+machine_aur = set()
+for pkg in aur_out:
+    pkg = pkg.strip()
+    if not pkg:
+        continue
+    if is_hw_pkg(pkg):
+        machine_aur.add(pkg)
+    else:
+        shared_aur.add(pkg)
 
-# NPM global packages snapshot
+existing_shared_aur = read_list(os.path.join(pkg_dir, 'aur.txt')) - all_machine_hw_pkgs - machine_aur
+if not prune:
+    shared_aur |= existing_shared_aur
+
+write_list(os.path.join(pkg_dir, 'aur.txt'), shared_aur, union_existing=False)
+write_list(os.path.join(machine_dir, 'aur.txt'), machine_aur, union_existing=False)
+
+# 3. NPM global packages
 npm_pkgs = set()
 npm_global = os.path.expanduser('~/.npm-global/lib/node_modules')
 if os.path.exists(npm_global):
@@ -65,49 +177,84 @@ if os.path.exists(usr_node):
         res = subprocess.run(['pacman', '-Qo', p], capture_output=True)
         if res.returncode != 0:
             npm_pkgs.add(item)
-with open(os.path.join(dotfiles_pkg, 'npm.txt'), 'w') as f:
-    f.write('\n'.join(sorted(npm_pkgs)) + '\n')
+write_list(os.path.join(pkg_dir, 'npm.txt'), npm_pkgs, union_existing=True)
 
-# UV tools snapshot
-uv_pkgs = []
+# 4. UV tools
+uv_pkgs = set()
 try:
     uv_out = subprocess.check_output(['uv', 'tool', 'list'], stderr=subprocess.DEVNULL).decode().splitlines()
     for line in uv_out:
         parts = line.strip().split()
         if len(parts) >= 2 and parts[1].startswith('v'):
-            uv_pkgs.append(parts[0])
+            uv_pkgs.add(parts[0])
 except Exception:
     pass
-with open(os.path.join(dotfiles_pkg, 'uv.txt'), 'w') as f:
-    f.write('\n'.join(sorted(uv_pkgs)) + '\n')
+write_list(os.path.join(pkg_dir, 'uv.txt'), uv_pkgs, union_existing=True)
+
+# 5. System & User Services
+def get_enabled_services(user_mode: bool = False) -> list[str]:
+    cmd = ['systemctl']
+    if user_mode:
+        cmd.append('--user')
+    cmd += ['list-unit-files', '--state=enabled', '--no-legend']
+    try:
+        out = subprocess.check_output(cmd, stderr=subprocess.DEVNULL).decode().splitlines()
+        svcs = []
+        for line in out:
+            parts = line.split()
+            if parts and '@' not in parts[0]:
+                svcs.append(parts[0])
+        return svcs
+    except Exception:
+        return []
+
+sys_svcs = get_enabled_services(user_mode=False)
+shared_sys_svcs = {s for s in sys_svcs if not hw_svc_re.match(s)}
+machine_sys_svcs = {s for s in sys_svcs if hw_svc_re.match(s)}
+
+existing_shared_svcs = {s for s in read_list(os.path.join(pkg_dir, 'services-system.txt')) if not hw_svc_re.match(s)}
+if not prune:
+    shared_sys_svcs |= existing_shared_svcs
+
+write_list(os.path.join(pkg_dir, 'services-system.txt'), shared_sys_svcs, union_existing=False)
+write_list(os.path.join(machine_dir, 'services-system.txt'), machine_sys_svcs, union_existing=False)
+
+user_svcs = set(get_enabled_services(user_mode=True))
+write_list(os.path.join(pkg_dir, 'services-user.txt'), user_svcs, union_existing=True)
 PY_EOF
 
-# 2. AUR packages
-pacman -Qeqm | sort > "$DOTFILES_DIR/packages/aur.txt"
-
-# 3. Flatpak applications & overrides
+# 2. Flatpak applications & overrides (Union-merged unless --prune)
 if command -v flatpak &>/dev/null; then
-    flatpak list --app --columns=application 2>/dev/null | sort > "$DOTFILES_DIR/packages/flatpak.txt"
-    if [ -d "$HOME/.local/share/flatpak/overrides" ]; then
+    if [[ "$PRUNE_MODE" -eq 1 ]] || [[ ! -f "$DOTFILES_DIR/packages/flatpak.txt" ]]; then
+        flatpak list --app --columns=application 2>/dev/null | sort -u > "$DOTFILES_DIR/packages/flatpak.txt"
+    else
+        {
+            cat "$DOTFILES_DIR/packages/flatpak.txt"
+            flatpak list --app --columns=application 2>/dev/null || true
+        } | sed '/^[[:space:]]*$/d' | sort -u > "$DOTFILES_DIR/packages/flatpak.txt.tmp"
+        mv "$DOTFILES_DIR/packages/flatpak.txt.tmp" "$DOTFILES_DIR/packages/flatpak.txt"
+    fi
+    if [[ -d "$HOME/.local/share/flatpak/overrides" ]]; then
         mkdir -p "$DOTFILES_DIR/packages/flatpak-overrides"
         cp -r "$HOME/.local/share/flatpak/overrides/"* "$DOTFILES_DIR/packages/flatpak-overrides/" 2>/dev/null || true
     fi
 fi
 
-# 4. System & User Services Snapshot
-systemctl list-unit-files --state=enabled --no-legend 2>/dev/null | awk '{print $1}' | grep -v "@" | sort > "$DOTFILES_DIR/packages/services-system.txt" || true
-systemctl --user list-unit-files --state=enabled --no-legend 2>/dev/null | awk '{print $1}' | grep -v "@" | sort > "$DOTFILES_DIR/packages/services-user.txt" || true
-
-# 5. System Configurations Snapshot (pacman.conf, hardware configs, dconf)
-mkdir -p "$DOTFILES_DIR/system/etc/pacman.d" "$DOTFILES_DIR/system/hardware/thinkpad/modprobe.d" "$DOTFILES_DIR/system/hardware/thinkpad/udev" "$DOTFILES_DIR/system/hardware/thinkpad/etc"
+# 3. System Configurations Snapshot (pacman.conf, machine-specific hardware configs, dconf)
+mkdir -p "$DOTFILES_DIR/system/etc/pacman.d"
 cp /etc/pacman.conf "$DOTFILES_DIR/system/etc/pacman.conf" 2>/dev/null || true
 cp /etc/pacman.d/blackarch-mirrorlist "$DOTFILES_DIR/system/etc/pacman.d/" 2>/dev/null || true
-cp /etc/modprobe.d/thinkpad_acpi.conf /etc/modprobe.d/ec_sys.conf "$DOTFILES_DIR/system/hardware/thinkpad/modprobe.d/" 2>/dev/null || true
-cp /etc/udev/rules.d/99-thinklight.rules "$DOTFILES_DIR/system/hardware/thinkpad/udev/" 2>/dev/null || true
-cp /etc/thinkfan.conf "$DOTFILES_DIR/system/hardware/thinkpad/etc/" 2>/dev/null || true
 dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini" 2>/dev/null || true
 
-# 6. AI Assistant Configurations & Manifests Snapshot
+# Snapshot ThinkPad hardware configs ONLY when running on ThinkPad
+if [[ "$MACHINE_PROFILE" == "thinkpad" ]]; then
+    mkdir -p "$MACHINE_DIR/modprobe.d" "$MACHINE_DIR/udev" "$MACHINE_DIR/etc"
+    cp /etc/modprobe.d/thinkpad_acpi.conf /etc/modprobe.d/ec_sys.conf "$MACHINE_DIR/modprobe.d/" 2>/dev/null || true
+    cp /etc/udev/rules.d/99-thinklight.rules "$MACHINE_DIR/udev/" 2>/dev/null || true
+    cp /etc/thinkfan.conf "$MACHINE_DIR/etc/" 2>/dev/null || true
+fi
+
+# 4. AI Assistant Configurations & Manifests Snapshot
 python3 - << 'PY_EOF'
 import json, os, shutil, subprocess
 
@@ -170,19 +317,19 @@ if os.path.isfile(f_codex):
     shutil.copy(f_codex, os.path.join(ai_dir, 'codex', 'config.toml'))
 PY_EOF
 
-echo -e "\033[1;32m✓ State snapshot complete:\033[0m"
-echo -e "  - Packages: $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV."
-echo -e "  - Services: $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") System, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") User."
-echo -e "  - Desktop: Dconf settings dumped ($(wc -l < "$DOTFILES_DIR/system/dconf-settings.ini") lines)."
-echo -e "  - AI Ecosystem: Claude, Gemini, Agents skill-lock, Cursor, and Codex configurations snapshotted."
+echo -e "\033[1;32m✓ State snapshot complete for profile [$MACHINE_PROFILE]:\033[0m"
+echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV."
+echo -e "  - Machine Profile : $(wc -l < "$MACHINE_DIR/pacman.txt") hardware Arch pkgs, $(wc -l < "$MACHINE_DIR/aur.txt") hardware AUR pkgs in machines/$MACHINE_PROFILE/."
+echo -e "  - Services        : $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") shared system, $(wc -l < "$MACHINE_DIR/services-system.txt") machine system, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") user."
+echo -e "  - Desktop & AI    : Dconf ($(wc -l < "$DOTFILES_DIR/system/dconf-settings.ini") lines) + Claude, Gemini, Cursor & Codex snapshotted."
 
-# 6. Git commit & push
+# 5. Git commit & push
 git add -A
 
 if git diff-index --quiet HEAD --; then
     echo -e "\033[1;33m:: No changes to commit. Everything is up to date.\033[0m"
 else
-    COMMIT_MSG="${1:-Update dotfiles & system state $(date '+%Y-%m-%d %H:%M')}"
+    COMMIT_MSG="${1:-Sync dotfiles & state [$MACHINE_PROFILE] $(date '+%Y-%m-%d %H:%M')}"
     git commit -m "$COMMIT_MSG"
     echo -e "\033[1;34m:: Pushing changes to remote repository...\033[0m"
     git push origin main
