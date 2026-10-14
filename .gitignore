@@ -16,3 +16,11 @@ __pycache__/
 # Ignore OS-specific garbage
 .DS_Store
 Thumbs.db
+
+# Ignore container runtime data & volumes
+docker/**/data/
+docker/**/storage/
+docker/**/mysql/
+docker/**/config/
+docker/**/plugins/
+docker/**/extensions/

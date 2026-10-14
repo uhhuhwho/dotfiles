@@ -52,6 +52,7 @@ me.fouquet.Stencil
 me.iepure.devtoolbox
 org.bleachbit.BleachBit
 org.cutwire.Drift
+org.flameshot.Flameshot
 org.freedownloadmanager.Manager
 org.gnome.Aisleriot
 org.gnome.Chess

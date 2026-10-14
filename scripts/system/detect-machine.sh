@@ -49,9 +49,24 @@ detect_profile() {
         return
     fi
 
-    # 3. Lenovo ThinkPad detection
+    # 3. Lenovo ThinkPad detection (with specific model subfolders)
     if [[ -d "/sys/devices/platform/thinkpad_acpi" ]] || [[ "$SYS_VENDOR" =~ LENOVO ]] || [[ "$PRODUCT_VERSION" =~ ThinkPad ]]; then
-        echo "thinkpad"
+        local tp_info="${PRODUCT_VERSION} ${PRODUCT_NAME} ${PRODUCT_FAMILY}"
+        if [[ "$tp_info" =~ X230 ]]; then
+            echo "thinkpad/x230"
+        elif [[ "$tp_info" =~ [Yy]oga ]]; then
+            echo "thinkpad/x1-yoga"
+        elif [[ "$tp_info" =~ Carbon ]]; then
+            echo "thinkpad/x1-carbon"
+        else
+            local model_slug
+            model_slug="$(echo "$tp_info" | grep -oEi '([xtlepw][0-9]{3}[a-z]?|x1[- ]yoga|x1[- ]carbon)' | head -n 1 | tr '[:upper:]' '[:lower:]' | tr ' ' '-')"
+            if [[ -n "$model_slug" ]]; then
+                echo "thinkpad/${model_slug}"
+            else
+                echo "thinkpad/generic"
+            fi
+        fi
         return
     fi
 

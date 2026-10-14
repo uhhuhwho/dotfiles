@@ -69,15 +69,13 @@ HW_SVC_PATTERNS = [
 ]
 hw_svc_re = re.compile('|'.join(HW_SVC_PATTERNS))
 
-# Known hardware packages from ALL machine profiles so we never leak them into shared lists
 all_machine_hw_pkgs = set()
 machines_root = os.path.join(dotfiles, 'machines')
 if os.path.isdir(machines_root):
-    for m_name in os.listdir(machines_root):
-        m_path = os.path.join(machines_root, m_name)
+    for root, dirs, files in os.walk(machines_root):
         for fname in ('pacman.txt', 'aur.txt'):
-            fpath = os.path.join(m_path, fname)
-            if os.path.isfile(fpath):
+            if fname in files:
+                fpath = os.path.join(root, fname)
                 with open(fpath) as f:
                     for line in f:
                         p = line.strip()
@@ -246,15 +244,26 @@ cp /etc/pacman.conf "$DOTFILES_DIR/system/etc/pacman.conf" 2>/dev/null || true
 cp /etc/pacman.d/blackarch-mirrorlist "$DOTFILES_DIR/system/etc/pacman.d/" 2>/dev/null || true
 dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini" 2>/dev/null || true
 
-# Snapshot ThinkPad hardware configs ONLY when running on ThinkPad
-if [[ "$MACHINE_PROFILE" == "thinkpad" ]]; then
+# Snapshot ThinkPad hardware configs ONLY when running on ThinkPad X230
+if [[ "$MACHINE_PROFILE" == "thinkpad/x230" ]]; then
     mkdir -p "$MACHINE_DIR/modprobe.d" "$MACHINE_DIR/udev" "$MACHINE_DIR/etc"
     cp /etc/modprobe.d/thinkpad_acpi.conf /etc/modprobe.d/ec_sys.conf "$MACHINE_DIR/modprobe.d/" 2>/dev/null || true
     cp /etc/udev/rules.d/99-thinklight.rules "$MACHINE_DIR/udev/" 2>/dev/null || true
     cp /etc/thinkfan.conf "$MACHINE_DIR/etc/" 2>/dev/null || true
 fi
 
-# 4. AI Assistant Configurations & Manifests Snapshot
+# 4. Docker Compose Configurations Snapshot
+if [[ -d "$HOME/Documents/Docker" ]]; then
+    for compose_file in "$HOME/Documents/Docker"/*/docker-compose.yml; do
+        if [[ -f "$compose_file" ]]; then
+            stack_name="$(basename "$(dirname "$compose_file")")"
+            mkdir -p "$DOTFILES_DIR/docker/$stack_name"
+            cp "$compose_file" "$DOTFILES_DIR/docker/$stack_name/" 2>/dev/null || true
+        fi
+    done
+fi
+
+# 5. AI Assistant Configurations & Manifests Snapshot
 python3 - << 'PY_EOF'
 import json, os, shutil, subprocess
 
@@ -263,7 +272,6 @@ ai_dir = os.path.join(dotfiles, 'ai')
 os.makedirs(os.path.join(ai_dir, 'agents', 'rules'), exist_ok=True)
 os.makedirs(os.path.join(ai_dir, 'claude'), exist_ok=True)
 os.makedirs(os.path.join(ai_dir, 'gemini'), exist_ok=True)
-os.makedirs(os.path.join(ai_dir, 'cursor'), exist_ok=True)
 os.makedirs(os.path.join(ai_dir, 'codex'), exist_ok=True)
 home = os.path.expanduser('~')
 
@@ -305,13 +313,7 @@ try:
 except Exception:
     pass
 
-# Cursor & Codex
-f_cur_mcp = os.path.join(home, '.cursor', 'mcp.json')
-if os.path.isfile(f_cur_mcp):
-    shutil.copy(f_cur_mcp, os.path.join(ai_dir, 'cursor', 'mcp.json'))
-f_cur_man = os.path.join(home, '.cursor', 'skills-cursor', '.sync-manifest.json')
-if os.path.isfile(f_cur_man):
-    shutil.copy(f_cur_man, os.path.join(ai_dir, 'cursor', 'skills-manifest.json'))
+# Codex CLI
 f_codex = os.path.join(home, '.codex', 'config.toml')
 if os.path.isfile(f_codex):
     shutil.copy(f_codex, os.path.join(ai_dir, 'codex', 'config.toml'))
@@ -321,9 +323,9 @@ echo -e "\033[1;32m✓ State snapshot complete for profile [$MACHINE_PROFILE]:\0
 echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV."
 echo -e "  - Machine Profile : $(wc -l < "$MACHINE_DIR/pacman.txt") hardware Arch pkgs, $(wc -l < "$MACHINE_DIR/aur.txt") hardware AUR pkgs in machines/$MACHINE_PROFILE/."
 echo -e "  - Services        : $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") shared system, $(wc -l < "$MACHINE_DIR/services-system.txt") machine system, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") user."
-echo -e "  - Desktop & AI    : Dconf ($(wc -l < "$DOTFILES_DIR/system/dconf-settings.ini") lines) + Claude, Gemini, Cursor & Codex snapshotted."
+echo -e "  - Docker & AI     : Compose stacks in docker/ + Claude, Gemini & Codex configs snapshotted."
 
-# 5. Git commit & push
+# 6. Git commit & push
 git add -A
 
 if git diff-index --quiet HEAD --; then

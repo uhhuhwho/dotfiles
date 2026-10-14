@@ -107,16 +107,30 @@ fi
 # Restore AI Assistant configs & skills manifests
 if [[ -d "$DOTFILES_DIR/ai" ]]; then
     echo -e "${BLUE}:: Restoring AI Assistant configurations & manifests...${NC}"
-    mkdir -p "$HOME/.agents/rules" "$HOME/.claude/plugins" "$HOME/.gemini/antigravity" "$HOME/.cursor" "$HOME/.codex"
+    mkdir -p "$HOME/.agents/rules" "$HOME/.claude/plugins" "$HOME/.gemini/antigravity" "$HOME/.codex"
     [[ -f "$DOTFILES_DIR/ai/agents/.skill-lock.json" ]] && cp "$DOTFILES_DIR/ai/agents/.skill-lock.json" "$HOME/.agents/.skill-lock.json"
     [[ -f "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" ]] && cp "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" "$HOME/.agents/rules/claude-mem-context.md"
     [[ -f "$DOTFILES_DIR/ai/claude/installed_plugins.json" ]] && cp "$DOTFILES_DIR/ai/claude/installed_plugins.json" "$HOME/.claude/plugins/installed_plugins.json"
     [[ -f "$DOTFILES_DIR/ai/claude/settings.json" ]] && [[ ! -f "$HOME/.claude/settings.json" ]] && cp "$DOTFILES_DIR/ai/claude/settings.json" "$HOME/.claude/settings.json"
     [[ -f "$DOTFILES_DIR/ai/gemini/settings.json" ]] && [[ ! -f "$HOME/.gemini/settings.json" ]] && cp "$DOTFILES_DIR/ai/gemini/settings.json" "$HOME/.gemini/settings.json"
     [[ -f "$DOTFILES_DIR/ai/gemini/mcp_config.json" ]] && cp "$DOTFILES_DIR/ai/gemini/mcp_config.json" "$HOME/.gemini/antigravity/mcp_config.json"
-    [[ -f "$DOTFILES_DIR/ai/cursor/mcp.json" ]] && cp "$DOTFILES_DIR/ai/cursor/mcp.json" "$HOME/.cursor/mcp.json"
     [[ -f "$DOTFILES_DIR/ai/codex/config.toml" ]] && [[ ! -f "$HOME/.codex/config.toml" ]] && cp "$DOTFILES_DIR/ai/codex/config.toml" "$HOME/.codex/config.toml"
     echo -e "${GREEN}[RESTORED]${NC} AI Assistant configurations deployed."
+fi
+
+# Restore Docker compose configurations
+if [[ -d "$DOTFILES_DIR/docker" ]]; then
+    mkdir -p "$HOME/Documents/Docker"
+    for stack_dir in "$DOTFILES_DIR/docker"/*; do
+        if [[ -d "$stack_dir" ]]; then
+            stack_name="$(basename "$stack_dir")"
+            mkdir -p "$HOME/Documents/Docker/$stack_name"
+            if [[ -f "$stack_dir/docker-compose.yml" ]] && [[ ! -f "$HOME/Documents/Docker/$stack_name/docker-compose.yml" ]]; then
+                cp "$stack_dir/docker-compose.yml" "$HOME/Documents/Docker/$stack_name/"
+                echo -e "${GREEN}[RESTORED]${NC} Docker stack '$stack_name' compose file deployed."
+            fi
+        fi
+    done
 fi
 
 # 3. System Configurations (pacman.conf, machine-specific hardware rules)

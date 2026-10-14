@@ -9,7 +9,8 @@
 
 - **OS**: Arch Linux across multiple laptops, automatically detected via `~/dotfiles/scripts/system/detect-machine.sh`:
   - **`honor`**: Honor MagicBook (`HUAWEI HLYL-WXX9`, AMD Ryzen 5 4600H + Radeon Graphics).
-  - **`thinkpad`**: Lenovo ThinkPad X230 (Intel + ThinkPad ACPI/EC + ThinkLight).
+  - **`thinkpad/x230`**: Lenovo ThinkPad X230 (Intel + ThinkPad ACPI/EC + ThinkLight).
+  - **`thinkpad/x1-yoga`**: Lenovo ThinkPad X1 Yoga.
   - **`hp-omen`**: HP Omen (Intel + NVIDIA + `hp-wmi` fan control).
 - **Core Desktop Stack**:
   - **Compositor**: Hyprland (configured via Lua: `~/.config/hypr/hyprland.lua`).

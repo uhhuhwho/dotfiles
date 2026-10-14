@@ -1,1 +1,19 @@
-No imported plugins.
+Installed plugins:
+- android-cli-plugin (enabled, 1.0.16500706)
+    Source:     antigravity-plugins-official
+    Components: 1 skill
+- firebase (enabled, 1.0.3)
+    Source:     antigravity-plugins-official
+    Components: 13 skills, 1 agent
+- i-have-adhd (enabled, 0.2.0)
+    Source:     antigravity
+    Components: 1 skill
+- modern-web-guidance-plugin (enabled, 1.0.6)
+    Source:     antigravity-plugins-official
+    Components: 2 skills
+- ponytail (enabled, 4.9.0)
+    Source:     antigravity
+    Components: 6 skills
+- science (enabled, 1.2.4)
+    Source:     antigravity-plugins-official
+    Components: 42 skills

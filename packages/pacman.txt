@@ -264,6 +264,8 @@ systemsettings
 terminus-font
 testdisk
 texinfo
+texlive-langarabic
+texlive-meta
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin

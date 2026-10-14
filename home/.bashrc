@@ -274,3 +274,8 @@ if [[ $- == *i* && -d "$HOME/dotfiles/.git" ]]; then
         echo -e "\033[1;33m💡 Dotfiles have unsaved changes. Run '\033[1;36mdotsync\033[1;33m' to backup.\033[0m"
     fi
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/badreddine/.lmstudio/bin"
+# End of LM Studio CLI section
+

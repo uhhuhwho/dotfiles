@@ -20,7 +20,7 @@ hl.monitor({
 ---------------------
 
 local terminal    = "kitty"
-local fileManager = "thunar" -- "dolphin" -- "thunar"
+local fileManager = "dolphin" -- "dolphin" -- "thunar"
 local menu        = "hyprlauncher"
 
 -------------------
@@ -358,12 +358,12 @@ hl.config({
 
 ------------------
 ---- XWAYLAND ----
-------------------
+------------------GDK_SCALE
 
 hl.config({
     xwayland = {
         enabled            = true,
-        force_zero_scaling = false,
+        force_zero_scaling = true,
     },
 })
 
