@@ -65,6 +65,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   │   ├── fix-grub-chroot.sh       # GRUB UEFI recovery helper for Arch ISO chroot
 │   │   └── mount-games-disk.sh      # External/secondary games disk mount helper
 │   ├── desktop/
+│   │   ├── capslock-notify.sh       # Caps Lock status change notification popup
 │   │   ├── launch-antigravity.sh    # Isolated systemd-scope Wayland launcher for Antigravity
 │   │   ├── random-wallpaper.sh      # Random wallpaper switcher via hyprpaper/waypaper
 │   │   └── set-default-browser.sh   # XDG default web browser setter
@@ -92,6 +93,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── aur.txt                      # Shared AUR packages
 │   ├── flatpak.txt                  # Shared Flatpak applications
 │   ├── flatpak-overrides/           # Custom Flatseal permission profiles
+│   ├── hyprpm.txt                   # Tracked Hyprland plugin repositories
 │   ├── npm.txt                      # Global NPM packages
 │   ├── uv.txt                       # Python UV CLI tools
 │   ├── services-system.txt          # Shared enabled systemd system services

@@ -78,7 +78,7 @@ icon-bg-color = "accent"
 right-click = "dropdown:dashboard"
 
 [modules.hyprland-workspaces]
-min-workspace-count = 5
+min-workspace-count = 8
 display-mode = "icon"
 app-icons-show = true
 workspace-padding = 1.5

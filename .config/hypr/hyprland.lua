@@ -149,7 +149,20 @@ if hl.plugin.hyprglass then
     })
 end
 
--- HyMission (Already installed, add it)
+-- HyMission
+if hl.plugin and hl.plugin.hymission then
+    hl.config({
+        plugin = {
+            hymission = {
+                toggle_switch_mode = 1,
+                switch_toggle_auto_next = 1,
+                switch_release_key = "Alt_L",
+                layout_engine = "grid",
+                only_active_workspace = 0,
+            },
+        },
+    })
+end
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -413,11 +426,24 @@ hl.layer_rule({
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("vicinae toggle"))
 
--- Region screenshot
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd('file="$(xdg-user-dir PICTURES)/Screenshots/$(date +\'%s_grim.png\')" && grim -g "$(slurp)" "$file" && notify-send "Screenshot taken" "Saved as $(basename "$file")"'))
+-- Region screenshot (Flameshot GUI)
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("flameshot gui"))
 
--- Full screenshot
-hl.bind("Print", hl.dsp.exec_cmd('file="$(xdg-user-dir PICTURES)/Screenshots/$(date +\'%s_grim.png\')" && grim "$file" && notify-send "Screenshot taken" "Saved as $(basename "$file")"'))
+-- Full screenshot (Flameshot Full)
+hl.bind("Print", hl.dsp.exec_cmd("flameshot full"))
+
+-- Caps Lock toggle notification
+hl.bind("Caps_Lock", hl.dsp.exec_cmd('"$HOME/dotfiles/scripts/desktop/capslock-notify.sh"'), { locked = true, non_consuming = true })
+
+-- Hymission Alt+Tab to switch workspaces / windows
+if hl.plugin and hl.plugin.hymission then
+    hl.bind("ALT + TAB", function()
+        hl.plugin.hymission.toggle("forceall")
+    end, { description = "Switch workspaces with Hymission" })
+    hl.bind("ALT + SHIFT + TAB", function()
+        hl.plugin.hymission.toggle("forceall,reverse")
+    end, { description = "Switch workspaces reverse with Hymission" })
+end
 
 -- Clipboard
 -- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
@@ -442,11 +468,15 @@ hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.swap({ direction = "right" 
 hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.swap({ direction = "down" }))
 
--- Switch workspaces with mainMod + F1-F5
--- Move active window to workspace with mainMod + SHIFT + F1-F5
-for i = 1, 5 do
+-- Persistent Workspaces (1 to 8) & Keybindings
+-- Switch workspaces with mainMod + F1-F8 or mainMod + 1-8
+-- Move active window to workspace with mainMod + SHIFT + F1-F8 or mainMod + SHIFT + 1-8
+for i = 1, 8 do
+    hl.workspace_rule({ workspace = tostring(i), persistent = true })
     hl.bind(mainMod .. " + F" .. i,            hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + F" .. i,    hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + " .. i,             hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. i,     hl.dsp.window.move({ workspace = i }))
 end
 
 -- Special workspace (scratchpad)
@@ -489,8 +519,12 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+-- Ensure Kitty starts in normal tiling mode (never fullscreen, never floating)
+hl.window_rule({
+    match = { class = "kitty" },
+    fullscreen = 0,
+    float = false,
+})
 
 -- HyprMod managed settings
 require("hyprland-gui")

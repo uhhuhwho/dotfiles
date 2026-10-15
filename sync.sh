@@ -189,6 +189,25 @@ except Exception:
     pass
 write_list(os.path.join(pkg_dir, 'uv.txt'), uv_pkgs, union_existing=True)
 
+# 5. Hyprland hyprpm plugins
+hyprpm_repos = set()
+try:
+    cache_user = os.getenv('USER', 'badreddine')
+    cache_dir = f'/var/cache/hyprpm/{cache_user}'
+    if os.path.isdir(cache_dir):
+        for entry in os.listdir(cache_dir):
+            state_file = os.path.join(cache_dir, entry, 'state.toml')
+            if os.path.isfile(state_file):
+                with open(state_file) as sf:
+                    txt = sf.read()
+                    url_m = re.search(r"url\s*=\s*'([^']+)'", txt)
+                    if url_m:
+                        hyprpm_repos.add(url_m.group(1))
+except Exception:
+    pass
+if hyprpm_repos:
+    write_list(os.path.join(pkg_dir, 'hyprpm.txt'), hyprpm_repos, union_existing=True)
+
 # 5. System & User Services
 def get_enabled_services(user_mode: bool = False) -> list[str]:
     cmd = ['systemctl']
@@ -320,7 +339,7 @@ if os.path.isfile(f_codex):
 PY_EOF
 
 echo -e "\033[1;32m✓ State snapshot complete for profile [$MACHINE_PROFILE]:\033[0m"
-echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV."
+echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV, $(wc -l < "$DOTFILES_DIR/packages/hyprpm.txt" 2>/dev/null || echo 0) Hyprland plugins."
 echo -e "  - Machine Profile : $(wc -l < "$MACHINE_DIR/pacman.txt") hardware Arch pkgs, $(wc -l < "$MACHINE_DIR/aur.txt") hardware AUR pkgs in machines/$MACHINE_PROFILE/."
 echo -e "  - Services        : $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") shared system, $(wc -l < "$MACHINE_DIR/services-system.txt") machine system, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") user."
 echo -e "  - Docker & AI     : Compose stacks in docker/ + Claude, Gemini & Codex configs snapshotted."
@@ -334,6 +353,9 @@ else
     COMMIT_MSG="${1:-Sync dotfiles & state [$MACHINE_PROFILE] $(date '+%Y-%m-%d %H:%M')}"
     git commit -m "$COMMIT_MSG"
     echo -e "\033[1;34m:: Pushing changes to remote repository...\033[0m"
-    git push origin main
-    echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m"
+    if [ -t 0 ]; then
+        git push origin main && echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m" || echo -e "\033[1;33m:: Push failed or credentials needed. Run 'git push' manually.\033[0m"
+    else
+        GIT_TERMINAL_PROMPT=0 git push origin main 2>/dev/null && echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m" || echo -e "\033[1;33m:: Local commit created. Run 'git push' to sync to GitHub.\033[0m"
+    fi
 fi

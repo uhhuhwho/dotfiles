@@ -256,6 +256,16 @@ case "$choice" in
                 [[ -n "$tool" ]] && uv tool install "$tool" 2>/dev/null || true
             done < "$DOTFILES_DIR/packages/uv.txt"
         fi
+
+        # Hyprland hyprpm plugins
+        if [[ -s "$DOTFILES_DIR/packages/hyprpm.txt" ]] && command -v hyprpm &>/dev/null; then
+            echo -e "${BLUE}:: Restoring Hyprland plugins...${NC}"
+            hyprpm update 2>/dev/null || true
+            while IFS= read -r repo; do
+                [[ -n "$repo" ]] && [[ ! "$repo" =~ ^# ]] && hyprpm add "$repo" 2>/dev/null && hyprpm enable all 2>/dev/null || true
+            done < "$DOTFILES_DIR/packages/hyprpm.txt"
+            hyprpm reload 2>/dev/null || true
+        fi
         ;;
     *)
         echo -e "${YELLOW}:: Skipping package installation.${NC}"
