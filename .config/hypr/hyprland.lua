@@ -49,6 +49,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     -- Auto-mount
     hl.exec_cmd("udiskie")
+    -- Enforce Oxygen GTK/KDE icon theme
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'oxygen'")
+    hl.exec_cmd("kwriteconfig6 --file kdeglobals --group Icons --key Theme oxygen")
 end)
 
 
@@ -159,6 +162,10 @@ if hl.plugin and hl.plugin.hymission then
                 switch_release_key = "Alt_L",
                 layout_engine = "grid",
                 only_active_workspace = 0,
+                workspace_strip_force_show = 1,
+                workspace_strip_anchor = "top",
+                workspace_strip_thickness = 160,
+                workspace_strip_gap = 24,
             },
         },
     })
@@ -432,17 +439,20 @@ hl.bind("SHIFT + Print", hl.dsp.exec_cmd("flameshot gui"))
 -- Full screenshot (Flameshot Full)
 hl.bind("Print", hl.dsp.exec_cmd("flameshot full"))
 
--- Caps Lock toggle notification
-hl.bind("Caps_Lock", hl.dsp.exec_cmd('"$HOME/dotfiles/scripts/desktop/capslock-notify.sh"'), { locked = true, non_consuming = true })
+-- Caps Lock toggle notification (fires on release to accurately capture toggled state)
+hl.bind("Caps_Lock", hl.dsp.exec_cmd('"$HOME/dotfiles/scripts/desktop/capslock-notify.sh"'), { locked = true, non_consuming = true, release = true })
 
--- Hymission Alt+Tab to switch workspaces / windows
+-- Hymission: ALT+TAB to cycle switch, ALT+SHIFT+TAB or SUPER+TAB to open Mission Control with drag-and-drop workspace strip
 if hl.plugin and hl.plugin.hymission then
     hl.bind("ALT + TAB", function()
         hl.plugin.hymission.toggle("forceall")
     end, { description = "Switch workspaces with Hymission" })
     hl.bind("ALT + SHIFT + TAB", function()
-        hl.plugin.hymission.toggle("forceall,reverse")
-    end, { description = "Switch workspaces reverse with Hymission" })
+        hl.plugin.hymission.open("forceall")
+    end, { description = "Open Hymission overview to drag & drop windows to workspaces" })
+    hl.bind(mainMod .. " + TAB", function()
+        hl.plugin.hymission.open("forceall")
+    end, { description = "Open Hymission overview" })
 end
 
 -- Clipboard
@@ -518,13 +528,6 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-
--- Ensure Kitty starts in normal tiling mode (never fullscreen, never floating)
-hl.window_rule({
-    match = { class = "kitty" },
-    fullscreen = 0,
-    float = false,
-})
 
 -- HyprMod managed settings
 require("hyprland-gui")

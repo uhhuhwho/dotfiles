@@ -81,9 +81,10 @@ right-click = "dropdown:dashboard"
 min-workspace-count = 8
 display-mode = "icon"
 app-icons-show = true
-workspace-padding = 1.5
-icon-size = 1.350000023841858
+app-icons-empty = ""
+icon-size = 1.2000000476837158
 label-size = 1.350000023841858
+active-indicator = "underline"
 
 [modules.media]
 icon-type = "spinning-disc"
