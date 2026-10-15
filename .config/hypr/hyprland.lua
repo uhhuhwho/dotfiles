@@ -21,7 +21,6 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "dolphin" -- "dolphin" -- "thunar"
-local menu        = "hyprlauncher"
 
 -------------------
 ---- AUTOSTART ----
@@ -455,7 +454,6 @@ if hl.plugin and hl.plugin.hymission then
 end
 
 -- Clipboard
--- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
 
 -- Window management
