@@ -65,7 +65,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   │   ├── fix-grub-chroot.sh       # GRUB UEFI recovery helper for Arch ISO chroot
 │   │   └── mount-games-disk.sh      # External/secondary games disk mount helper
 │   ├── desktop/
-│   │   ├── capslock-notify.sh       # Caps Lock status change notification popup
+│   │   ├── capslock-watcher.py      # Caps Lock real-time state change watcher daemon (systemd service)
+│   │   ├── capslock-notify.sh       # Caps Lock status check & notification helper
 │   │   ├── launch-antigravity.sh    # Isolated systemd-scope Wayland launcher for Antigravity
 │   │   ├── random-wallpaper.sh      # Random wallpaper switcher via hyprpaper/waypaper
 │   │   └── set-default-browser.sh   # XDG default web browser setter
@@ -165,6 +166,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **OpenClaw** | AppImage (`AppImages/OpenClaw-2026.9.5-amd64.AppImage`) | [openclaw.ai](https://openclaw.ai/) | Agentic AI desktop assistant and tool automation platform. |
 | **GenOffice** | AppImage (`AppImages/GenOffice-0.8.440.AppImage`) | [GitHub](https://github.com/) | Generative AI document and workspace client. |
 | **Hydra Launcher** | AppImage (`AppImages/hydralauncher-4.0.3.AppImage`) | [hydralinks.cloud](https://hydralinks.cloud/) / [GitHub](https://github.com/hydralauncher/hydra) | Open-source gaming client and catalog launcher. |
+| **Epic Games Launcher** | AppImage (`AppImages/EpicGamesLauncher-x86_64.AppImage`) | [GitHub egl-v2](https://github.com/) / [epicgames.com](https://store.epicgames.com/) | Portable Epic Games Launcher & Unreal store client. Launches via `epic-games-launcher` or Vicinae launcher. |
 | **SourceGit** | AppImage (`AppImages/sourcegit-2026.15.linux.amd64.AppImage`) | [sourcegit-scm.github.io](https://sourcegit-scm.github.io/) / [GitHub](https://github.com/sourcegit-scm/sourcegit) | Fast, lightweight Git GUI client for Linux. |
 | **Redact** | AppImage (`AppImages/Redact-0.21.23.AppImage`) | [redact.dev](https://redact.dev/) | Privacy utility to mass-delete old posts and messages across social networks. |
 | **World Monitor** | AppImage (`AppImages/World.Monitor_2.5.23_amd64.AppImage`) | [GitHub](https://github.com/) | Real-time global intelligence, news, and conflict monitoring feed. |
@@ -189,6 +191,24 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | :--- | :--- | :--- | :--- |
 | **Project NOMAD** | `docker/Project-Nomad/docker-compose.yml` | [project-nomad.net](https://project-nomad.net/) / [GitHub](https://github.com/crosstalk-solutions/project-nomad) | Self-contained, offline digital resilience library and knowledge hub. |
 | **SillyTavern** | `docker/SillyTavern/docker-compose.yml` | [sillytavern.app](https://sillytavern.app/) / [GitHub](https://github.com/SillyTavern/SillyTavern) | User interface for local LLM character conversation and AI roleplay. |
+
+---
+
+## 🖥️ Hyprland & Desktop Experience
+
+- **Workspace Navigation & Hymission Alt+Tab**:
+  - `ALT + TAB` ➔ Cycle smoothly between active windows across workspaces with **Hymission**.
+  - `ALT + SHIFT + TAB` or `SUPER + TAB` ➔ Open Mission Control overview with a top workspace strip for visual drag-and-drop window repositioning across workspaces.
+  - **8 Persistent Workspaces**: Workspaces 1 through 8 are permanently visible in Wayle (`min-workspace-count = 8`) and directly switchable with `SUPER + 1..8` or `SUPER + F1..F8`, with window moving via `SUPER + SHIFT + 1..8` / `SUPER + SHIFT + F1..F8`.
+- **Flameshot Wayland Screenshots**:
+  - `SHIFT + Print` ➔ Region screenshot with interactive annotations, drawings, arrows, text, and copy-to-clipboard (`flameshot gui`).
+  - `Print` ➔ Full screenshot automatically copied to clipboard and saved to `~/Pictures/Screenshots/`.
+  - Configured with XDG Desktop Portal integration and Hyprland floating window rules.
+- **Caps Lock State Notifications**:
+  - Background systemd user service (`capslock-watcher.service`) provides real-time "Caps Lock is ON" and "Caps Lock is OFF" desktop popups via sysfs hardware LED monitoring.
+  - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
+- **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
+- **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
 
 ---
 
