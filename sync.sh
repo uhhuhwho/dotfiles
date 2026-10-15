@@ -353,9 +353,9 @@ else
     COMMIT_MSG="${1:-Sync dotfiles & state [$MACHINE_PROFILE] $(date '+%Y-%m-%d %H:%M')}"
     git commit -m "$COMMIT_MSG"
     echo -e "\033[1;34m:: Pushing changes to remote repository...\033[0m"
-    if [ -t 0 ]; then
-        git push origin main && echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m" || echo -e "\033[1;33m:: Push failed or credentials needed. Run 'git push' manually.\033[0m"
+    if git -c credential.interactive=never push origin main 2>/dev/null; then
+        echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m"
     else
-        GIT_TERMINAL_PROMPT=0 git push origin main 2>/dev/null && echo -e "\033[1;32m✓ Dotfiles & system state successfully pushed to GitHub!\033[0m" || echo -e "\033[1;33m:: Local commit created. Run 'git push' to sync to GitHub.\033[0m"
+        echo -e "\033[1;33m:: Local commit created. Run 'git push' to sync to GitHub when authenticated.\033[0m"
     fi
 fi
