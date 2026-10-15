@@ -4,10 +4,11 @@
     "claude-mem@thedotmack": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/13.4.0",
-        "version": "13.4.0",
+        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/13.4.1",
+        "version": "13.4.1",
         "installedAt": "2026-06-07T22:56:40.428Z",
-        "lastUpdated": "2026-06-07T22:56:40.428Z"
+        "lastUpdated": "2026-10-15T15:01:24.757Z",
+        "gitCommitSha": "f267d1d43b9b6652831c7ceff8084a556a25480e"
       }
     ],
     "clangd-lsp@claude-plugins-official": [
@@ -22,29 +23,31 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown",
-        "version": "unknown",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/8f814f49002f",
+        "version": "8f814f49002f",
         "installedAt": "2026-06-11T23:02:25.585Z",
-        "lastUpdated": "2026-06-11T23:02:25.585Z"
+        "lastUpdated": "2026-10-15T14:58:20.867Z",
+        "gitCommitSha": "8f814f49002ff824e8a9ba43cf96112dc7f5948d"
       }
     ],
     "superpowers@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0",
-        "version": "5.1.0",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/superpowers/6.4.1",
+        "version": "6.4.1",
         "installedAt": "2026-06-11T23:02:40.222Z",
-        "lastUpdated": "2026-06-11T23:02:40.222Z",
-        "gitCommitSha": "6fd4507659784c351abbd2bc264c7162cfd386dc"
+        "lastUpdated": "2026-10-15T14:58:25.842Z",
+        "gitCommitSha": "5bf4e78011075bcfc0dc295f0724994cd123ee71"
       }
     ],
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/unknown",
-        "version": "unknown",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/8f814f49002f",
+        "version": "8f814f49002f",
         "installedAt": "2026-06-11T23:02:51.907Z",
-        "lastUpdated": "2026-06-11T23:02:51.907Z"
+        "lastUpdated": "2026-10-15T14:58:20.864Z",
+        "gitCommitSha": "8f814f49002ff824e8a9ba43cf96112dc7f5948d"
       }
     ],
     "code-simplifier@claude-plugins-official": [

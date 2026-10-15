@@ -2,6 +2,7 @@ android-studio
 betterbird-bin
 binance
 claude-code
+claude-desktop-extra
 codebase-memory-mcp-bin
 ferdium-bin
 google-earth-pro
