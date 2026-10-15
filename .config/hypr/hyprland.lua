@@ -52,6 +52,8 @@ hl.on("hyprland.start", function()
     -- Enforce Oxygen GTK/KDE icon theme
     hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'oxygen'")
     hl.exec_cmd("kwriteconfig6 --file kdeglobals --group Icons --key Theme oxygen")
+    -- Caps Lock state monitor daemon
+    hl.exec_cmd("python3 $HOME/dotfiles/scripts/desktop/capslock-watcher.py")
 end)
 
 
@@ -436,11 +438,8 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("vicinae toggle"))
 -- Region screenshot (Flameshot GUI)
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("flameshot gui"))
 
--- Full screenshot (Flameshot Full)
-hl.bind("Print", hl.dsp.exec_cmd("flameshot full"))
-
--- Caps Lock toggle notification (fires on release to accurately capture toggled state)
-hl.bind("Caps_Lock", hl.dsp.exec_cmd('"$HOME/dotfiles/scripts/desktop/capslock-notify.sh"'), { locked = true, non_consuming = true, release = true })
+-- Full screenshot (Flameshot Full saved to Screenshots and copied to clipboard)
+hl.bind("Print", hl.dsp.exec_cmd('flameshot full -c -p "$HOME/Pictures/Screenshots"'))
 
 -- Hymission: ALT+TAB to cycle switch, ALT+SHIFT+TAB or SUPER+TAB to open Mission Control with drag-and-drop workspace strip
 if hl.plugin and hl.plugin.hymission then
@@ -528,6 +527,15 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
+
+-- Flameshot window rules
+hl.window_rule({
+    name = "flameshot-float",
+    match = { class = "flameshot" },
+    float = true,
+    move = "0 0",
+    suppress_event = "maximize",
+})
 
 -- HyprMod managed settings
 require("hyprland-gui")

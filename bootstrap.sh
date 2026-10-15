@@ -265,6 +265,10 @@ case "$choice" in
                 [[ -n "$repo" ]] && [[ ! "$repo" =~ ^# ]] && hyprpm add "$repo" 2>/dev/null && hyprpm enable all 2>/dev/null || true
             done < "$DOTFILES_DIR/packages/hyprpm.txt"
             hyprpm reload 2>/dev/null || true
+        # Ensure user belongs to input group for Wayle Caps/Num Lock OSD monitoring
+        if ! groups "$USER" | grep -qw "input"; then
+            echo -e "${YELLOW}:: Adding $USER to 'input' group for hardware toggle monitoring (Wayle Caps Lock OSD)...${NC}"
+            sudo usermod -aG input "$USER" 2>/dev/null || true
         fi
         ;;
     *)

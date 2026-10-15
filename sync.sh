@@ -205,6 +205,15 @@ try:
                         hyprpm_repos.add(url_m.group(1))
 except Exception:
     pass
+try:
+    res = subprocess.run(['hyprpm', 'list'], capture_output=True, text=True)
+    if res.returncode == 0:
+        for line in res.stdout.splitlines():
+            m = re.search(r'(https?://[^\s]+)', line)
+            if m:
+                hyprpm_repos.add(m.group(1).rstrip('/'))
+except Exception:
+    pass
 if hyprpm_repos:
     write_list(os.path.join(pkg_dir, 'hyprpm.txt'), hyprpm_repos, union_existing=True)
 

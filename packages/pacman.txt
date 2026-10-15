@@ -305,6 +305,7 @@ waydroid
 wdisplays
 wev
 wget
+wimlib
 wine
 wine-gecko
 wine-mono

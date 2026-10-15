@@ -1,3 +1,4 @@
+capslock-watcher.service
 gnome-keyring-daemon.socket
 hyprpaper.service
 openclaw-gateway.service
