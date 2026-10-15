@@ -146,6 +146,7 @@ libresprite
 links
 linux
 linux-firmware
+linux-headers
 linux-lts-headers
 linux-zen
 linux-zen-headers
@@ -281,6 +282,7 @@ ufw
 union
 unrar
 unzip
+usb_modeswitch
 uv
 virt-manager
 virt-viewer
