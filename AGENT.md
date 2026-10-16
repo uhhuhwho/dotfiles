@@ -19,6 +19,7 @@
   - **Terminal**: Kitty (`~/.config/kitty`).
   - **Shell & Prompt**: Bash with Starship (`~/.config/starship.toml`). *(Note: `fish` is NOT used).*
   - **File Manager**: Thunar (`SUPER + D`).
+  - **Login Manager & Boot Splash**: Ly TUI Display Manager (`system/etc/ly/config.ini`, 2x scaled via `ter-v32n`, Doom fire animation, `ly@tty2.service`) & Plymouth bootsplash (`rice/plymouth/cuts_alt/` with Arch Linux logo, `splash` kernel flag).
   - **Rice (Themes & Icons)**: Stored in `~/dotfiles/rice/themes/` (`Dracula-pink-accent`) and `~/dotfiles/rice/icons/` (`Future-Cyan-Hyprcursor_Theme`, `WhiteSur-cursors`, `default`).
 
 ---
@@ -69,7 +70,7 @@ Packages and services are split into **Shared Core (`packages/`)** and **Machine
 
 All custom scripts and reference notes live inside `~/dotfiles/scripts/`:
 - **`scripts/NOTES.md`**: Consolidated reference cheatsheet (Wayland flags, Vulkan ICD GPU selection, GameMode, NTFS, Git).
-- **`scripts/system/`**: `detect-machine.sh`, `setup-btrfs-snapper.sh`, `fix-grub-chroot.sh`, `mount-games-disk.sh`.
+- **`scripts/system/`**: `detect-machine.sh`, `setup-ly-plymouth.sh`, `setup-btrfs-snapper.sh`, `fix-grub-chroot.sh`, `mount-games-disk.sh`.
 - **`scripts/desktop/`**: `launch-antigravity.sh`, `random-wallpaper.sh`, `set-default-browser.sh`.
 - **`scripts/hardware/common/`**: `cpu-turbo-boost.sh` (Intel & AMD), `power-profile.sh`.
 - **`scripts/hardware/thinkpad/`**: `thinklight-toggle.sh`.

@@ -47,7 +47,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   └── .face                        # Account profile picture
 ├── rice/
 │   ├── themes/                      # Dracula-pink-accent GTK theme (-> ~/.themes/)
-│   └── icons/                       # Future-Cyan-Hyprcursor, WhiteSur-cursors, default (-> ~/.icons/)
+│   ├── icons/                       # Future-Cyan-Hyprcursor, WhiteSur-cursors, default (-> ~/.icons/)
+│   └── plymouth/                    # Plymouth boot splash themes (cuts_alt with Arch Linux logo)
 ├── docker/
 │   ├── Project-Nomad/               # Project NOMAD offline digital resilience library compose file
 │   └── SillyTavern/                 # SillyTavern local AI frontend compose file
@@ -62,6 +63,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── system/
 │   │   ├── detect-machine.sh        # Hardware-based machine profile detector (honor, thinkpad/*, hp-omen)
 │   │   ├── setup-btrfs-snapper.sh   # Automated Btrfs Snapper + snap-pac setup
+│   │   ├── setup-ly-plymouth.sh     # Scaled Ly DM (Doom fire) & Plymouth (Cuts Alt) installer
 │   │   ├── fix-grub-chroot.sh       # GRUB UEFI recovery helper for Arch ISO chroot
 │   │   └── mount-games-disk.sh      # External/secondary games disk mount helper
 │   ├── desktop/
@@ -83,11 +85,16 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │       └── restore-secrets-offline.sh # Decrypt & restore offline secrets archive
 ├── system/
 │   ├── etc/
+│   │   ├── ly/                      # Ly display manager config (Doom fire, big clock, 2x scaled geometry)
+│   │   ├── vconsole.conf            # Virtual console font scaling (ter-v32n)
 │   │   ├── pacman.conf              # Pacman config (ILoveCandy, ParallelDownloads, Multilib, BlackArch)
 │   │   ├── pacman.d/                # Mirrorlists
-│   │   └── snapper/                 # Btrfs Snapper root retention policy
+│   │   ├── snapper/                 # Btrfs Snapper root retention policy
+│   │   └── mkinitcpio.conf.reference# Reference initramfs with early KMS & plymouth hook
 │   ├── dconf-settings.ini           # Dconf desktop preferences snapshot
-│   └── boot/grub.reference          # Reference GRUB styling configuration
+│   └── boot/
+│       ├── grub.reference           # Reference GRUB styling configuration
+│       └── grub.default.reference   # Reference /etc/default/grub with splash parameter
 ├── packages/
 │   ├── pacman.txt                   # Shared Standard Arch Linux packages
 │   ├── blackarch.txt                # Shared BlackArch security/OSINT tools
@@ -118,7 +125,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 ### 1. 3D & Creative Design
 | Tool | Format / Path | Source / Link | Purpose & Notes |
 | :--- | :--- | :--- | :--- |
-| **Blender 4.2 LTS** | Standalone Suite (`Standalone/Blender/blender-4.2.7-linux-x64/blender`) | [blender.org/download](https://www.blender.org/download/) | Primary 3D modeling, texturing, animation, and rendering suite. Uses isolated `portable/` config. |
+| **Blender 4.2.x** | Standalone Suite (`Standalone/Blender/blender-4.2.23-linux-x64/blender`) | [blender.org/download](https://www.blender.org/download/) | Primary 3D modeling, texturing, animation, and rendering suite. Uses isolated `portable/` config. |
 | **Blender 3.6 LTS** | Standalone Suite (`Standalone/Blender/blender-3.6.23-linux-x64/blender`) | [blender.org/download/lts/3-6/](https://www.blender.org/download/lts/3-6/) | Legacy LTS version for compatibility with specific mesh add-ons. |
 | **Cascadeur** | Standalone Binary (`Standalone/cascadeur-linux/cascadeur`) | [cascadeur.com](https://cascadeur.com/) | AI and physics-assisted 3D character animation software by Nekki. |
 | **PureRef** | AppImage (`AppImages/PureRef-2.0.3_x64.Appimage`) | [pureref.com](https://www.pureref.com/) | Standalone reference image viewer and moodboard tool for artists. |
@@ -162,8 +169,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 ### 5. AI, Productivity & System Utilities
 | Tool | Format / Path | Source / Link | Purpose & Notes |
 | :--- | :--- | :--- | :--- |
-| **LM Studio** | AppImage (`AppImages/LM-Studio-0.4.15-2-x64.AppImage`) | [lmstudio.ai](https://lmstudio.ai/) | Run local LLMs (DeepSeek, Llama 3, Qwen) with hardware acceleration. |
-| **OpenClaw** | AppImage (`AppImages/OpenClaw-2026.9.5-amd64.AppImage`) | [openclaw.ai](https://openclaw.ai/) | Agentic AI desktop assistant and tool automation platform. |
+| **LM Studio** | AppImage (`AppImages/LM-Studio-0.4.26-4-x64.AppImage`) | [lmstudio.ai](https://lmstudio.ai/) | Run local LLMs (DeepSeek, Llama 3, Qwen) with hardware acceleration. |
 | **GenOffice** | AppImage (`AppImages/GenOffice-0.8.440.AppImage`) | [GitHub](https://github.com/) | Generative AI document and workspace client. |
 | **Hydra Launcher** | AppImage (`AppImages/hydralauncher-4.0.3.AppImage`) | [hydralinks.cloud](https://hydralinks.cloud/) / [GitHub](https://github.com/hydralauncher/hydra) | Open-source gaming client and catalog launcher. |
 | **Epic Games Launcher** | AppImage (`AppImages/EpicGamesLauncher-x86_64.AppImage`) | [GitHub egl-v2](https://github.com/) / [epicgames.com](https://store.epicgames.com/) | Portable Epic Games Launcher & Unreal store client. Launches via `epic-games-launcher` or Vicinae launcher. |
@@ -209,6 +215,25 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
   - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
 - **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
+
+---
+
+## 🚀 Boot Experience & Login Manager (Plymouth & Ly)
+
+- **Plymouth Boot Splash (`rice/plymouth/cuts_alt/`)**:
+  - Integrated the animated **Cuts Alt** splash theme from the `adi1090x/plymouth-themes` collection.
+  - Customized with an anti-aliased **Arch Linux logo** centered at the bottom of the screen.
+  - Early Kernel Mode Setting (`MODULES=(amdgpu)` or `i915` in `/etc/mkinitcpio.conf`) ensures flicker-free, instant splash startup on native resolution before root filesystem mount.
+  - Kernel command-line configured with `splash` in `/etc/default/grub`.
+- **Ly Display Manager (`system/etc/ly/`)**:
+  - **2x HiDPI Scaling**: Uses Terminus 32px font (`ter-v32n` in `/etc/vconsole.conf` and `/etc/ly/startup.sh`), transforming the 240x67 character TTY grid into a clean, legible 120x33 layout.
+  - **Doom Fire Animation**: Classic PSX DOOM flames rising continuously from the screen bottom with `blank_box = false` for a transparent login box overlay.
+  - **Clocks & Greeting**: Large ASCII digital clock (`bigclock = en`), formatted top-right clock (`clock = %a %d %b %H:%M`), and a customized greeting (*"Hello back ;)"*).
+  - Managed by `ly@tty2.service` with conflicting `getty@tty2.service` disabled.
+- **One-Command Deployment**:
+  ```bash
+  ~/dotfiles/scripts/system/setup-ly-plymouth.sh
+  ```
 
 ---
 

@@ -159,6 +159,14 @@ if [[ -d "$MACHINE_DIR/modprobe.d" ]] || [[ -d "$MACHINE_DIR/udev" ]] || [[ -d "
     fi
 fi
 
+# Deploy Scaled Ly DM & Plymouth Boot Splash
+if [[ -f "$DOTFILES_DIR/scripts/system/setup-ly-plymouth.sh" ]]; then
+    read -rp "Deploy scaled Ly display manager (Doom animation) & Plymouth boot splash (Cuts Alt)? [y/N]: " deploy_ly
+    if [[ "$deploy_ly" =~ ^[Yy]$ ]]; then
+        bash "$DOTFILES_DIR/scripts/system/setup-ly-plymouth.sh"
+    fi
+fi
+
 # 4. Package Installation Menu
 echo -e "\n${BLUE}:: Step 3: Package Installation${NC}"
 echo -e "Select package installation mode for profile [${CYAN}${MACHINE_PROFILE}${NC}]:"
@@ -265,6 +273,8 @@ case "$choice" in
                 [[ -n "$repo" ]] && [[ ! "$repo" =~ ^# ]] && hyprpm add "$repo" 2>/dev/null && hyprpm enable all 2>/dev/null || true
             done < "$DOTFILES_DIR/packages/hyprpm.txt"
             hyprpm reload 2>/dev/null || true
+        fi
+
         # Ensure user belongs to input group for Wayle Caps/Num Lock OSD monitoring
         if ! groups "$USER" | grep -qw "input"; then
             echo -e "${YELLOW}:: Adding $USER to 'input' group for hardware toggle monitoring (Wayle Caps Lock OSD)...${NC}"

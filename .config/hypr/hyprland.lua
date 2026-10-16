@@ -318,7 +318,7 @@ hl.device({
 hl.device({
     name = "elan2204:00-04f3:30f5-touchpad",
     enabled = true,
-    sensitivity = 0.4,
+    sensitivity = 0.1,
     natural_scroll = true,
     scroll_factor = 1.2,
     tap_to_click = true,

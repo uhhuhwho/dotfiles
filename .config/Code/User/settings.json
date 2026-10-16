@@ -8,5 +8,6 @@
     "python.languageServer": "Default",
     "editor.fontFamily": "'Fira Code', monospace",
     "workbench.editor.empty.hint": "hidden",
-    "workbench.secondarySideBar.showLabels": false
+    "workbench.secondarySideBar.showLabels": false,
+    "explorer.confirmDragAndDrop": false
 }

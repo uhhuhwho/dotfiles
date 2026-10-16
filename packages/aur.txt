@@ -8,11 +8,14 @@ ferdium-bin
 google-earth-pro
 hyprmod
 hyprsysteminfo
+kgamma
+kwin-x11
 razergenie
 rustdesk
 unityhub
 vicinae-bin
 visual-studio-code-bin
+wacomtablet
 waybar-git
 wayle-bin
 waypaper
