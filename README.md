@@ -125,7 +125,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 ### 1. 3D & Creative Design
 | Tool | Format / Path | Source / Link | Purpose & Notes |
 | :--- | :--- | :--- | :--- |
-| **Blender 4.2.x** | Standalone Suite (`Standalone/Blender/blender-4.2.23-linux-x64/blender`) | [blender.org/download](https://www.blender.org/download/) | Primary 3D modeling, texturing, animation, and rendering suite. Uses isolated `portable/` config. |
+| **Blender 4.2.24** | Standalone Suite (`Standalone/Blender/blender-4.2.23-linux-x64/blender`) | [blender.org/download](https://www.blender.org/download/) | Primary 3D modeling, texturing, animation, and rendering suite. Uses isolated `portable/` config. |
 | **Blender 3.6 LTS** | Standalone Suite (`Standalone/Blender/blender-3.6.23-linux-x64/blender`) | [blender.org/download/lts/3-6/](https://www.blender.org/download/lts/3-6/) | Legacy LTS version for compatibility with specific mesh add-ons. |
 | **Cascadeur** | Standalone Binary (`Standalone/cascadeur-linux/cascadeur`) | [cascadeur.com](https://cascadeur.com/) | AI and physics-assisted 3D character animation software by Nekki. |
 | **PureRef** | AppImage (`AppImages/PureRef-2.0.3_x64.Appimage`) | [pureref.com](https://www.pureref.com/) | Standalone reference image viewer and moodboard tool for artists. |
