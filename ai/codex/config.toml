@@ -14,3 +14,12 @@ requires_openai_auth = true
 
 [features]
 goals = true
+
+[mcp_servers.rea]
+command = "npx"
+args = [ "-y", "rea-agents@6.5.0", "mcp" ]
+startup_timeout_sec = 30
+
+[mcp_servers.rea.env]
+GHIDRA_INSTALL_DIR = "/opt/ghidra"
+JAVA_HOME = "/usr/lib/jvm/java-21-openjdk"

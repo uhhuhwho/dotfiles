@@ -125,10 +125,15 @@ if [[ -d "$DOTFILES_DIR/docker" ]]; then
         if [[ -d "$stack_dir" ]]; then
             stack_name="$(basename "$stack_dir")"
             mkdir -p "$HOME/Documents/Docker/$stack_name"
-            if [[ -f "$stack_dir/docker-compose.yml" ]] && [[ ! -f "$HOME/Documents/Docker/$stack_name/docker-compose.yml" ]]; then
-                cp "$stack_dir/docker-compose.yml" "$HOME/Documents/Docker/$stack_name/"
-                echo -e "${GREEN}[RESTORED]${NC} Docker stack '$stack_name' compose file deployed."
-            fi
+            for extra in "$stack_dir"/*; do
+                if [[ -f "$extra" ]]; then
+                    fname="$(basename "$extra")"
+                    if [[ ! -f "$HOME/Documents/Docker/$stack_name/$fname" ]]; then
+                        cp "$extra" "$HOME/Documents/Docker/$stack_name/"
+                    fi
+                fi
+            done
+            echo -e "${GREEN}[RESTORED]${NC} Docker stack '$stack_name' deployed."
         fi
     done
 fi

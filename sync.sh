@@ -284,9 +284,13 @@ fi
 if [[ -d "$HOME/Documents/Docker" ]]; then
     for compose_file in "$HOME/Documents/Docker"/*/docker-compose.yml; do
         if [[ -f "$compose_file" ]]; then
-            stack_name="$(basename "$(dirname "$compose_file")")"
+            stack_dir="$(dirname "$compose_file")"
+            stack_name="$(basename "$stack_dir")"
             mkdir -p "$DOTFILES_DIR/docker/$stack_name"
             cp "$compose_file" "$DOTFILES_DIR/docker/$stack_name/" 2>/dev/null || true
+            for extra in "$stack_dir"/.env.example "$stack_dir"/README.md "$stack_dir"/start.sh "$stack_dir"/Dockerfile*; do
+                [[ -f "$extra" ]] && cp "$extra" "$DOTFILES_DIR/docker/$stack_name/" 2>/dev/null || true
+            done
         fi
     done
 fi

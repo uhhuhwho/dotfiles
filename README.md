@@ -50,6 +50,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── icons/                       # Future-Cyan-Hyprcursor, WhiteSur-cursors, default (-> ~/.icons/)
 │   └── plymouth/                    # Plymouth boot splash themes (cuts_alt with Arch Linux logo)
 ├── docker/
+│   ├── OpenClaw/                    # OpenClaw agentic AI assistant container & gateway
+│   ├── openGym/                     # openGym self-hosted fitness tracking & AI coach stack
 │   ├── Project-Nomad/               # Project NOMAD offline digital resilience library compose file
 │   └── SillyTavern/                 # SillyTavern local AI frontend compose file
 ├── machines/
@@ -210,6 +212,8 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 ### 9. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
 | Stack | Compose Path | Upstream Repository | Purpose |
 | :--- | :--- | :--- | :--- |
+| **OpenClaw** | `docker/OpenClaw/docker-compose.yml` | [openclaw.ai](https://openclaw.ai/) / [GitHub](https://github.com/openclaw/openclaw) | Agentic AI desktop assistant gateway container (`ghcr.io/openclaw/openclaw`). Run via `./start.sh` or `docker compose up -d`. |
+| **openGym** | `docker/openGym/docker-compose.yml` | [GitHub duartesantos8/opengym](https://github.com/duartesantos8/opengym) | Self-hosted fitness, workout logging, and AI coaching platform with passkey authentication and clean web UI. |
 | **Project NOMAD** | `docker/Project-Nomad/docker-compose.yml` | [project-nomad.net](https://project-nomad.net/) / [GitHub](https://github.com/crosstalk-solutions/project-nomad) | Self-contained, offline digital resilience library and knowledge hub. |
 | **SillyTavern** | `docker/SillyTavern/docker-compose.yml` | [sillytavern.app](https://sillytavern.app/) / [GitHub](https://github.com/SillyTavern/SillyTavern) | User interface for local LLM character conversation and AI roleplay. |
 
