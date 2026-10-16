@@ -28,6 +28,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 ~/dotfiles/
 ├── .config/
 │   ├── hypr/                        # Hyprland (hyprland.lua, lock, idle, paper, sunset, scripts)
+│   ├── xdg-desktop-portal/          # XDG Desktop Portal backend preferences (hyprland-portals.conf)
 │   ├── wayle/                       # Wayle status panel & theme settings
 │   ├── vicinae/                     # Vicinae launcher, search, and clipboard history
 │   ├── kitty/                       # Kitty terminal configuration
@@ -630,6 +631,8 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
   - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
 - **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
+- **XDG Desktop Portal & Native File Pickers (`.config/xdg-desktop-portal/hyprland-portals.conf`)**:
+  - Configures default portal backends (`hyprland;gtk`) with `org.freedesktop.impl.portal.FileChooser = kde` to route file picker dialogs to KDE's dialogs across Wayland and GTK apps (`GTK_USE_PORTAL=1`).
 
 ---
 
