@@ -125,6 +125,8 @@ kscreen
 kscreenlocker
 ksshaskpass
 ksystemstats
+kvantum
+kvantum-qt5
 kwallet-pam
 kwayland
 kwin
@@ -232,6 +234,7 @@ qbittorrent
 qemu-full
 qqc2-breeze-style
 qt6-wayland
+qt6ct
 qtcreator
 quickshell
 radare2
