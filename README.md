@@ -185,14 +185,29 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **RAR / UnRAR** | CLI Binaries (`CLI/rar/rar`, `CLI/rar/unrar`) | [rarlab.com](https://www.rarlab.com/) | Official archive manager for `.rar` compression and extraction. |
 | **Ngrok** | CLI Binary (`/usr/sbin/ngrok`) | [ngrok.com](https://ngrok.com/) | Secure public URLs for exposing local development servers. |
 
-### 6. Original Archives & Installers (`~/Documents/Apps/Archives/`)
+### 6. Node / NPM & NPX CLI Tools (`~/.npm-global/bin/` & `packages/npm.txt`)
+| Tool | Format / Path | Source / Link | Purpose & How to Run |
+| :--- | :--- | :--- | :--- |
+| **`rea-agents` (`rea`)** | Global NPM / NPX (`~/.npm-global/bin/rea`, `~/.npm-global/bin/rea-agents`) | [npmjs.com/package/rea-agents](https://www.npmjs.com/package/rea-agents) / [GitHub](https://github.com/) | **Reverse Engineer Anything (REA)** agent toolkit. Reverse engineers native binaries, Electron apps, browser bundles, Android APKs, and firmware. Auto-configures REA skills and MCP tools across Claude, Gemini, and Codex. Run via `rea`, `rea-agents`, or `npx rea-agents@latest setup`. |
+| **`oh-my-mermaid` (`omm`)** | Global NPM (`~/.npm-global/bin/omm`) | [npmjs.com/package/oh-my-mermaid](https://www.npmjs.com/package/oh-my-mermaid) | Command-line CLI tool to render, preview, and generate Mermaid diagrams and SVG/PNG charts directly from markdown or code. |
+| **`omniroute`** | Global NPM (`~/.npm-global/bin/omniroute`) | [npmjs.com/package/omniroute](https://www.npmjs.com/package/omniroute) | Multi-provider AI model proxy and API routing gateway for routing LLM traffic across providers. |
+| **`@electron/asar`** | System NPM (`/usr/bin/asar`) | [npmjs.com/package/@electron/asar](https://www.npmjs.com/package/@electron/asar) | Electron Archive unpacker and inspector for inspecting `.asar` bundles inside Electron desktop applications. |
+
+### 7. Python UV CLI Tools (`packages/uv.txt`)
+| Tool | Format / Path | Source / Link | Purpose & How to Run |
+| :--- | :--- | :--- | :--- |
+| **`hackingtool`** | UV Tool (`~/.local/bin/hackingtool`) | [GitHub Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) | Ethical hacking all-in-one suite. Installed via `uv tool install hackingtool`. |
+| **`mvt` (Mobile Verification Toolkit)** | UV Tool (`~/.local/bin/mvt-*`) | [mvt-project/mvt](https://github.com/mvt-project/mvt) | Forensic analysis toolkit to inspect Android and iOS devices for potential malware and Pegasus spyware indicators. |
+| **`pixelrag`** | UV Tool (`~/.local/bin/pixelrag`) | [PyPI pixelrag](https://pypi.org/project/pixelrag/) | Local multimodal RAG (Retrieval-Augmented Generation) document search and indexing tool. |
+
+### 8. Original Archives & Installers (`~/Documents/Apps/Archives/`)
 | Archive | Format | Description |
 | :--- | :--- | :--- |
 | `GDstudio-0.3.2-alpha-6403-linux-x86_64.tar.gz` | tar.gz | Compressed distribution tarball for GDstudio. |
 | `ngrok-v3-stable-linux-amd64.tgz` | tgz | Upstream release archive for Ngrok v3. |
 | `nuclei_3.11.1_linux_amd64.zip` | zip | Upstream distribution zip for Nuclei v3.11.1. |
 
-### 7. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
+### 9. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
 | Stack | Compose Path | Upstream Repository | Purpose |
 | :--- | :--- | :--- | :--- |
 | **Project NOMAD** | `docker/Project-Nomad/docker-compose.yml` | [project-nomad.net](https://project-nomad.net/) / [GitHub](https://github.com/crosstalk-solutions/project-nomad) | Self-contained, offline digital resilience library and knowledge hub. |

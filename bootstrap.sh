@@ -255,6 +255,9 @@ case "$choice" in
             while IFS= read -r pkg; do
                 [[ -n "$pkg" ]] && npm install -g "$pkg" 2>/dev/null || true
             done < "$DOTFILES_DIR/packages/npm.txt"
+            if command -v rea &>/dev/null; then
+                rea setup 2>/dev/null || true
+            fi
         fi
 
         # Python UV tools
