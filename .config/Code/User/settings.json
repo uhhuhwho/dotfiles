@@ -11,5 +11,8 @@
     "workbench.secondarySideBar.showLabels": false,
     "explorer.confirmDragAndDrop": false,
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose"
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "claudeCode.hideOnboarding": true,
+    "editor.fontSize": 18,
+    "chat.disableAIFeatures": true
 }
