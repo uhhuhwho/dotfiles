@@ -95,6 +95,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   │   ├── snapper/                 # Btrfs Snapper root retention policy
 │   │   └── mkinitcpio.conf.reference# Reference initramfs with early KMS & plymouth hook
 │   ├── dconf-settings.ini           # Dconf desktop preferences snapshot
+│   ├── qt/                          # Qt/KDE theming snapshot (qt6ct.conf, kdeglobals, Trolltech.conf)
 │   └── boot/
 │       ├── grub.reference           # Reference GRUB styling configuration
 │       └── grub.default.reference   # Reference /etc/default/grub with splash parameter
@@ -618,6 +619,95 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
 | **`razergenie`** | Configure and control your Razer devices |
 | **`wacomtablet`** | GUI for Wacom Linux drivers that supports different button/pen layout profiles |
 
+### 📦 Flatpak Applications (`packages/flatpak.txt` — 82 apps)
+
+Installed from Flathub by `bootstrap.sh`; custom permissions live in `packages/flatpak-overrides/`.
+
+| App | Flatpak ID | Description |
+| :--- | :--- | :--- |
+| **Aisleriot Solitaire** | `org.gnome.Aisleriot` | Play many different solitaire games |
+| **Barcoder** | `cz.ondrejkolin.Barcoder` | Create barcodes & QR codes |
+| **Battery Info** | `com.her01n.BatteryInfo` | Shows informations about the system battery. |
+| **Blanket** | `com.rafaelmardojai.Blanket` | Listen to ambient sounds |
+| **BleachBit** | `org.bleachbit.BleachBit` | Free space and maintain privacy |
+| **Bobby** | `studio.planetpeanut.Bobby` | View SQLite databases |
+| **Bottles** | `com.usebottles.bottles` | Run Windows software |
+| **Brief** | `io.github.shonebinu.Brief` | Browse command-line cheatsheets |
+| **Cambalache** | `ar.xjuan.Cambalache` | Create GTK 4 user interfaces |
+| **Camera** | `org.gnome.Snapshot` | Take pictures and videos |
+| **Collision** | `dev.geopjr.Collision` | Check hashes for your files |
+| **Concessio** | `io.github.ronniedroid.concessio` | Understand file permissions |
+| **Crucible** | `io.github.sugarycandybar.Crucible` | View specs and stress test hardware |
+| **Decoder** | `com.belmoussaoui.Decoder` | Scan and generate QR codes |
+| **Defuse** | `io.github.shonebinu.Defuse` | Remove image backgrounds locally |
+| **Dev Toolbox** | `me.iepure.devtoolbox` | Dev tools at your fingertips |
+| **Drawy** | `org.kde.drawy` | Your handy, infinite brainstorming tool |
+| **Drift** | `org.cutwire.Drift` | Edit and export videos easily |
+| **Ear Tag** | `app.drey.EarTag` | Edit audio file tags |
+| **Easy Effects** | `com.github.wwmm.easyeffects` | Simple audio effects |
+| **Flatseal** | `com.github.tchx84.Flatseal` | Manage Flatpak permissions |
+| **Flatsweep** | `io.github.giantpinkrobots.flatsweep` | Flatpak leftover cleaner |
+| **Foliate** | `com.github.johnfactotum.Foliate` | Read e-books in style |
+| **Fred TV** | `dev.fredol.open-tv` | Fast And Powerful IPTV App |
+| **Free Download Manager** | `org.freedownloadmanager.Manager` | FDM is a powerful modern download accelerator and organizer. |
+| **FreeRDP Client** | `com.freerdp.FreeRDP` | Remote Desktop Protocol Client |
+| **Frog** | `com.github.tenderowl.frog` | Extract text from images |
+| **FurMark** | `com.geeks3d.furmark` | OpenGL and Vulkan GPU stress test |
+| **GitButler** | `com.gitbutler.gitbutler` | Git, finally designed for humans |
+| **GNOME Chess** | `org.gnome.Chess` | Play the classic two-player board game of chess |
+| **GnuCash** | `org.gnucash.GnuCash` | Manage your finances, accounts, and investments |
+| **Goverlay** | `io.github.benjamimgois.goverlay` | Easily configure MangoHud, vkBasalt and OptiScaler |
+| **GPU-Viewer** | `io.github.arunsivaramanneo.GPUViewer` | A front-end to glxinfo, vulkaninfo, clinfo and es2_info |
+| **Heroic Games Launcher** | `com.heroicgameslauncher.hgl` | Epic, GOG and Amazon Prime Games launcher |
+| **iDescriptor** | `io.github.idescriptor.iDescriptor` | Manage and interact with Apple mobile devices (iPhone, iPad, iPod...) |
+| **Jan** | `ai.jan.Jan` | Private offline AI assistant |
+| **Kate** | `org.kde.kate` | Advanced text editor |
+| **Kdenlive** | `org.kde.kdenlive` | Video editor |
+| **KiCad** | `org.kicad.KiCad` | An EDA suite for schematic and circuit board design |
+| **LibreCAD** | `org.librecad.librecad` | 2D Computer Aided Design (CAD) |
+| **LocalSend** | `org.localsend.localsend_app` | Share files to nearby devices |
+| **Mahjongg** | `org.gnome.Mahjongg` | Match tiles and clear the board |
+| **Maps** | `org.gnome.Maps` | Find places around the world |
+| **Metadata Cleaner** | `io.gitlab.metadatacleaner.metadatacleaner` | View and clean metadata in files |
+| **Mousam** | `io.github.amit9838.mousam` | Weather at a glance |
+| **Munadi** | `org.munadi.Munadi` | Your simple and beautiful athan app |
+| **Notepad Next** | `com.github.dail8859.NotepadNext` | A cross-platform, reimplementation of Notepad++ |
+| **ONLYOFFICE Desktop Editors** | `org.onlyoffice.desktopeditors` | Office productivity suite |
+| **OpenSCAD** | `org.openscad.OpenSCAD` | The Programmers Solid 3D CAD Modeller |
+| **OrbVis** | `io.github.wojciech_graj.OrbVis` | A Realtime Satellite Orbit Visualizer |
+| **Parabolic** | `org.nickvision.tubeconverter` | Download web video and audio |
+| **PeaZip** | `io.github.peazip.PeaZip` | Free file archiver utility |
+| **Pigment** | `com.jeffser.Pigment` | Get color palettes from images |
+| **Pin It!** | `com.github.ryonakano.pinit` | Pin portable apps to the launcher |
+| **Pinta** | `com.github.PintaProject.Pinta` | Edit images and paint digitally |
+| **PortProton** | `ru.linux_gaming.PortProton` | Run Windows games on Linux easily |
+| **Quick Lookup** | `com.github.johnfactotum.QuickLookup` | Look up words quickly |
+| **Quran Companion** | `io.github._0xzer0x.qurancompanion` | Read and listen to the Quran |
+| **Receiver** | `io.github.meehow.Receiver` | Discover radio stations worldwide |
+| **Resonance** | `io.github.db_mobile.resonance` | Test and explore web services |
+| **Rufin** | `io.github.screwys.Rufin` | Feel at home with your music |
+| **SHADERed** | `org.shadered.SHADERed` | Tool for creating and testing HLSL and GLSL shaders |
+| **Shortwave** | `de.haeckerfelix.Shortwave` | Listen to internet radio |
+| **Shotcut** | `org.shotcut.Shotcut` | Video editor |
+| **Sound Recorder** | `org.gnome.SoundRecorder` | A simple, modern sound recorder for GNOME |
+| **Space Cadet Pinball** | `com.github.k4zmu2a.spacecadetpinball` | Game engine for Space Cadet Pinball |
+| **Steam Link** | `com.valvesoftware.SteamLink` | Stream games from another computer with Steam |
+| **Stellarium** | `org.stellarium.Stellarium` | Desktop Planetarium |
+| **Stencil** | `me.fouquet.Stencil` | Rename batches of files |
+| **Stremio** | `com.stremio.Stremio` | Freedom to Stream |
+| **SysD Manager** | `io.github.plrigaux.sysd-manager` | A user-friendly application to manage systemd's units |
+| **Szyszka** | `com.github.qarmin.szyszka` | Simple but powerful file renamer, written in Rust |
+| **Telegraph** | `io.github.fkinoshita.Telegraph` | Write and decode morse |
+| **TeXstudio** | `org.texstudio.TeXstudio` | Craft beautiful LaTeX documents |
+| **Text Pieces** | `io.gitlab.liferooter.TextPieces` | Developer's scratchpad |
+| **Transition** | `page.codeberg.grinka.Transition` | Multimedia to audio conversion |
+| **Upscayl** | `org.upscayl.Upscayl` | Free and Open Source AI Image Upscaler |
+| **Vesktop** | `dev.vencord.Vesktop` | Customizable Discord client |
+| **Warehouse** | `io.github.flattool.Warehouse` | Manage all things Flatpak |
+| **XnConvert** | `com.xnview.XnConvert` | Easily process images in batches |
+| **XnView MP** | `com.xnview.XnViewMP` | View, convert and organize your images |
+| **Zeal** | `org.zealdocs.Zeal` | Your offline reference library |
+
 ---
 
 ## 🖥️ Hyprland & Desktop Experience
@@ -647,6 +737,7 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
   - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
 - **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`, `hyprcapture`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
+- **Qt / KDE Theming (`system/qt/`)**: Qt apps follow `qt6ct` (`QT_QPA_PLATFORMTHEME=qt6ct`): Breeze style, darker color scheme, Oxygen icons, DejaVu LGC Sans 12 and KDE file dialogs. `dotsync` snapshots `qt6ct/qt6ct.conf`, `kdeglobals` and `Trolltech.conf`, and `bootstrap.sh` copies them back. They are copied, not symlinked, because Qt/KDE save by replacing the file, which would break a symlink.
 - **XDG Desktop Portal & Native File Pickers (`.config/xdg-desktop-portal/hyprland-portals.conf`)**:
   - Configures default portal backends (`hyprland;gtk`) with `org.freedesktop.impl.portal.FileChooser = kde` to route file picker dialogs to KDE's dialogs across Wayland and GTK apps (`GTK_USE_PORTAL=1`).
 

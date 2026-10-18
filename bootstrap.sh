@@ -90,6 +90,15 @@ if [[ -f "$DOTFILES_DIR/system/dconf-settings.ini" ]] && command -v dconf &>/dev
     echo -e "${GREEN}[APPLIED]${NC} Dconf desktop preferences restored."
 fi
 
+# Restore Qt/KDE theming (qt6ct, kdeglobals, Trolltech.conf)
+if [[ -d "$DOTFILES_DIR/system/qt" ]]; then
+    mkdir -p "$HOME/.config/qt6ct"
+    for f in qt6ct/qt6ct.conf kdeglobals Trolltech.conf; do
+        [[ -f "$DOTFILES_DIR/system/qt/$f" ]] && cp "$DOTFILES_DIR/system/qt/$f" "$HOME/.config/$f"
+    done
+    echo -e "${GREEN}[APPLIED]${NC} Qt/KDE theme settings restored."
+fi
+
 # Provision ~/.bashrc.local template if missing
 if [[ ! -f "$HOME/.bashrc.local" ]]; then
     cat << 'LOCAL_EOF' > "$HOME/.bashrc.local"
