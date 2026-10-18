@@ -176,6 +176,19 @@ if hl.plugin and hl.plugin.hymission then
     })
 end
 
+-- HyprCapture (screenshots, binds under KEYBINDINGS)
+if hl.plugin and hl.plugin.hyprcapture then
+    hl.config({
+        plugin = {
+            hyprcapture = {
+                allow_quick = true,     -- lets Print capture instantly via quick()
+                fusion_mode = false,    -- region mode = plain drag-a-rectangle
+                show_thumbnail = false, -- no preview popup (clicking it opened an app)
+            },
+        },
+    })
+end
+
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -438,11 +451,11 @@ hl.layer_rule({
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("vicinae toggle"))
 
--- Region screenshot (Flameshot GUI)
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("flameshot gui"))
-
--- Full screenshot (Flameshot Full saved to Screenshots and copied to clipboard)
-hl.bind("Print", hl.dsp.exec_cmd('flameshot full -c -p "$HOME/Pictures/Screenshots"'))
+-- HyprCapture: saves to ~/Pictures/Screenshots and copies to clipboard
+if hl.plugin and hl.plugin.hyprcapture then
+    hl.bind("SHIFT + Print", function() hl.plugin.hyprcapture.open("region") end)
+    hl.bind("Print", function() hl.plugin.hyprcapture.quick("fullscreen") end)
+end
 
 -- Hymission: ALT+TAB to cycle switch, ALT+SHIFT+TAB or SUPER+TAB to open Mission Control with drag-and-drop workspace strip
 if hl.plugin and hl.plugin.hymission then
@@ -529,15 +542,6 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-
--- Flameshot window rules
-hl.window_rule({
-    name = "flameshot-float",
-    match = { class = "flameshot" },
-    float = true,
-    move = "0 0",
-    suppress_event = "maximize",
-})
 
 -- HyprMod managed settings
 require("hyprland-gui")

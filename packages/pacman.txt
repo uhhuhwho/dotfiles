@@ -172,6 +172,7 @@ nano
 neovim
 network-manager-applet
 networkmanager
+nlohmann-json
 nmap
 noto-fonts-cjk
 noto-fonts-emoji

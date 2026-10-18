@@ -184,7 +184,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **balenaEtcher** | Standalone Binary (`Standalone/balenaEtcher-linux-x64/balena-etcher`) | [etcher.balena.io](https://etcher.balena.io/) | Flashes OS images (.iso, .img) to USB flash drives and SD cards safely. |
 | **Ventoy GUI** | Standalone Binary (`Standalone/ventoy-1.1.14/VentoyGUI.x86_64`) | [ventoy.net](https://ventoy.net/) / [GitHub](https://github.com/ventoy/Ventoy) | Multiboot USB creator. Launches via `pkexec` for block device access. |
 | **JetBrains Toolbox** | Standalone Binary (`Standalone/jetbrains-toolbox-3.4.3.81140/bin/jetbrains-toolbox`) | [jetbrains.com/toolbox-app](https://www.jetbrains.com/toolbox-app/) | Manages JetBrains IDEs, CLI tools, and project workspaces. |
-| **Antigravity IDE** | Standalone Binary (`Standalone/Antigravity-x64/antigravity`) | Google DeepMind | Next-generation agentic AI coding environment. |
+| **Antigravity** | Standalone Binary (`Standalone/Antigravity-x64/antigravity`) | Google DeepMind | Next-generation agentic AI coding environment. |
 | **RAR / UnRAR** | CLI Binaries (`CLI/rar/rar`, `CLI/rar/unrar`) | [rarlab.com](https://www.rarlab.com/) | Official archive manager for `.rar` compression and extraction. |
 | **Ngrok** | CLI Binary (`/usr/sbin/ngrok`) | [ngrok.com](https://ngrok.com/) | Secure public URLs for exposing local development servers. |
 
@@ -622,14 +622,26 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
   - `ALT + TAB` ➔ Cycle smoothly between active windows across workspaces with **Hymission**.
   - `ALT + SHIFT + TAB` or `SUPER + TAB` ➔ Open Mission Control overview with a top workspace strip for visual drag-and-drop window repositioning across workspaces.
   - **8 Persistent Workspaces**: Workspaces 1 through 8 are permanently visible in Wayle (`min-workspace-count = 8`) and directly switchable with `SUPER + 1..8` or `SUPER + F1..F8`, with window moving via `SUPER + SHIFT + 1..8` / `SUPER + SHIFT + F1..F8`.
-- **Flameshot Wayland Screenshots**:
-  - `SHIFT + Print` ➔ Region screenshot with interactive annotations, drawings, arrows, text, and copy-to-clipboard (`flameshot gui`).
-  - `Print` ➔ Full screenshot automatically copied to clipboard and saved to `~/Pictures/Screenshots/`.
-  - Configured with XDG Desktop Portal integration and Hyprland floating window rules.
+- **HyprCapture Screenshots** ([hyprpm plugin](https://github.com/gfhdhytghd/HyprCapture), replaces Flameshot):
+  - `Print` ➔ Instant full screenshot of all monitors, with no overlay or freeze (`quick("fullscreen")`).
+  - `SHIFT + Print` ➔ The screen freezes; drag a rectangle and release (or press `Enter`) to capture it. `Esc` cancels.
+  - Every capture is saved to `~/Pictures/Screenshots/`, copied to the clipboard, and confirmed with a desktop notification.
+  - Simplified in the `plugin.hyprcapture` block of `.config/hypr/hyprland.lua`:
+    - `allow_quick = true` lets `Print` skip the overlay. Trade-off: any same-user process can trigger a silent screenshot over Hyprland IPC.
+    - `fusion_mode = false` makes region mode a plain drag-select instead of a combined region, window and monitor picker.
+    - `show_thumbnail = false` removes the preview popup that appeared after each capture (clicking it opened the image in an app).
+  - `image/png`, `image/jpeg` and `image/webp` default to Ristretto in `.config/mimeapps.list`.
+  - The plugin can do more. Each feature below is unbound; add it as a binding when you want it:
+    - **Annotation editor** (arrows, text, shapes, mosaic, pin to desktop): `hl.plugin.hyprcapture.open_editor("region")`
+    - **Window capture** (works on hidden or off-screen windows): `hl.plugin.hyprcapture.open("window")`
+    - **Scrolling (long) screenshots**: in the editor, scroll inside the selection.
+    - **Screen recording** (MP4/WebM/GIF, optional audio): `hl.plugin.hyprcapture.record_toggle`, saved to `~/Videos/Screenrecords/`
+    - All options are listed in the [upstream README](https://github.com/gfhdhytghd/HyprCapture#configuration).
+  - Install: `hyprpm add https://github.com/gfhdhytghd/HyprCapture && hyprpm enable hyprcapture` (needs `nlohmann-json` to build). `bootstrap.sh` restores it from `packages/hyprpm.txt`.
 - **Caps Lock State Notifications**:
   - Background systemd user service (`capslock-watcher.service`) provides real-time "Caps Lock is ON" and "Caps Lock is OFF" desktop popups via sysfs hardware LED monitoring.
   - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
-- **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
+- **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`, `hyprcapture`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
 - **XDG Desktop Portal & Native File Pickers (`.config/xdg-desktop-portal/hyprland-portals.conf`)**:
   - Configures default portal backends (`hyprland;gtk`) with `org.freedesktop.impl.portal.FileChooser = kde` to route file picker dialogs to KDE's dialogs across Wayland and GTK apps (`GTK_USE_PORTAL=1`).
