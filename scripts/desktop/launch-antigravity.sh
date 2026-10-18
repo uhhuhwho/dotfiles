@@ -3,7 +3,7 @@
 # Script: launch-antigravity.sh
 # Category: Desktop / Application Launchers
 # Description:
-#   Launches Antigravity IDE inside an isolated user systemd scope with native
+#   Launches Antigravity inside an isolated user systemd scope with native
 #   Wayland Ozone flags. Monitors the application's journal logs and sends
 #   SIGKILL to the entire cgroup as soon as shutdown completes so no orphan
 #   Electron/worker processes linger in the background.
