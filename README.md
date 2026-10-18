@@ -224,7 +224,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 
 Complete inventory of all explicitly installed packages on the system (`pacman -Qe` and `yay`), organized into logical categories with a concise description of what each package does.
 
-### 🏛️ Official Arch Linux Packages (`pacman -Qen` — 311 packages)
+### 🏛️ Official Arch Linux Packages (`pacman -Qen` — 315 packages)
 
 #### Desktop Environments, Wayland Compositors & Shell Tools (46 packages)
 | Package | Purpose / Description |
@@ -314,7 +314,7 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
 | **`wireshark-qt`** | Network traffic and protocol analyzer/sniffer - Qt GUI |
 | **`zenmap`** | Utility for network discovery and security auditing (GUI) |
 
-#### Software Development, Compilers, Debuggers & AI CLI (59 packages)
+#### Software Development, Compilers, Debuggers & AI CLI (60 packages)
 | Package | Purpose / Description |
 | :--- | :--- |
 | **`assimp`** | Library to import various well-known 3D model formats in an uniform manner |
@@ -347,6 +347,7 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
 | **`mesa-utils`** | Essential Mesa utilities |
 | **`nano`** | Pico editor clone with enhancements |
 | **`neovim`** | Fork of Vim aiming to improve user experience, plugins, and GUIs |
+| **`nlohmann-json`** | Header-only JSON library for C++ (build dependency of the HyprCapture plugin) |
 | **`npm`** | JavaScript package manager |
 | **`ollama`** | Create, run and share large language models (LLMs) |
 | **`openai-codex`** | OpenAIs lightweight coding agent that runs in your terminal |
@@ -406,7 +407,7 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
 | **`wine-mono`** | Wine's built-in replacement for Microsoft's .NET Framework |
 | **`winetricks`** | Script to install various redistributable runtime libraries in Wine. |
 
-#### Audio, Video, 2D/3D Graphics & Creative Multimedia (25 packages)
+#### Audio, Video, 2D/3D Graphics & Creative Multimedia (28 packages)
 | Package | Purpose / Description |
 | :--- | :--- |
 | **`audacity`** | A program that lets you manipulate digital audio waveforms |
@@ -416,6 +417,9 @@ Complete inventory of all explicitly installed packages on the system (`pacman -
 | **`ffmpegthumbnailer`** | Lightweight video thumbnailer that can be used by file managers |
 | **`fontforge`** | Outline and bitmap font editor |
 | **`gimp`** | GNU Image Manipulation Program |
+| **`gst-libav`** | GStreamer FFmpeg plugin (H.264, AAC and other codecs for GTK/GNOME media apps) |
+| **`gst-plugins-bad`** | GStreamer plugins that are less tested or have licensing concerns |
+| **`gst-plugins-ugly`** | GStreamer plugins with possible patent or distribution issues (MP3, x264) |
 | **`handbrake`** | Multithreaded video transcoder |
 | **`inkscape`** | Professional vector graphics editor |
 | **`krita`** | Edit and paint images |
