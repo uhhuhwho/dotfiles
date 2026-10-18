@@ -82,6 +82,9 @@ gparted
 grim
 grub
 gspell
+gst-libav
+gst-plugins-bad
+gst-plugins-ugly
 gufw
 gvfs
 gvfs-gphoto2

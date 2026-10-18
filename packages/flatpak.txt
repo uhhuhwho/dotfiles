@@ -28,6 +28,7 @@ cz.ondrejkolin.Barcoder
 de.haeckerfelix.Shortwave
 dev.fredol.open-tv
 dev.geopjr.Collision
+dev.vencord.Vesktop
 io.github._0xzer0x.qurancompanion
 io.github.amit9838.mousam
 io.github.arunsivaramanneo.GPUViewer
@@ -61,6 +62,7 @@ org.gnome.Snapshot
 org.gnome.SoundRecorder
 org.gnucash.GnuCash
 org.kde.drawy
+org.kde.kate
 org.kde.kdenlive
 org.kicad.KiCad
 org.librecad.librecad
