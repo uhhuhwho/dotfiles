@@ -1,0 +1,7 @@
+how to change the default console open in here in dolphin to kitty 
+I edited ~/.config/kdeglobals and added
+[General]
+TerminalApplication=kitty
+TerminalService=kitty.desktop
+
+track that

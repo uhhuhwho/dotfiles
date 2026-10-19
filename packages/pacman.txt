@@ -68,6 +68,7 @@ ggml-vulkan
 ghidra
 gimp
 git
+git-lfs
 github-cli
 glad
 gnome-boxes
