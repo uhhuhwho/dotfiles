@@ -271,6 +271,9 @@ mkdir -p "$DOTFILES_DIR/system/etc/pacman.d"
 cp /etc/pacman.conf "$DOTFILES_DIR/system/etc/pacman.conf" 2>/dev/null || true
 cp /etc/pacman.d/blackarch-mirrorlist "$DOTFILES_DIR/system/etc/pacman.d/" 2>/dev/null || true
 dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini" 2>/dev/null || true
+# AppImage inventory (binaries aren't committed, only the list)
+find "$HOME/Documents/Apps/AppImages" "$HOME/Applications" -iname '*.appimage' 2>/dev/null \
+    | sed "s|^$HOME|~|" | LC_ALL=C sort > "$DOTFILES_DIR/packages/appimages.txt" || true
 # Qt/KDE theming (copied, not symlinked: Qt/KDE save by replacing the file, which breaks symlinks)
 mkdir -p "$DOTFILES_DIR/system/qt/qt6ct"
 for f in qt6ct/qt6ct.conf kdeglobals Trolltech.conf; do

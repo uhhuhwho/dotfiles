@@ -103,6 +103,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── pacman.txt                   # Shared Standard Arch Linux packages
 │   ├── blackarch.txt                # Shared BlackArch security/OSINT tools
 │   ├── aur.txt                      # Shared AUR packages
+│   ├── appimages.txt                # AppImage inventory (~/Documents/Apps/AppImages + ~/Applications)
 │   ├── flatpak.txt                  # Shared Flatpak applications
 │   ├── flatpak-overrides/           # Custom Flatseal permission profiles
 │   ├── hyprpm.txt                   # Tracked Hyprland plugin repositories
@@ -126,6 +127,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 
 All custom and portable applications located in `~/Documents/Apps/` are categorized into 5 clean directories (`AppImages/`, `Standalone/`, `CLI/`, `GitHub/`, and `Archives/`). They have desktop launchers in `~/.local/share/applications/` and icons in `~/.local/share/icons/custom-apps/`, searchable directly from **Vicinae** (`SUPER + Space`).
 
+`dotsync` writes every AppImage in `~/Documents/Apps/AppImages/` and `~/Applications/` to `packages/appimages.txt`. The binaries are not committed, so a newly downloaded AppImage appears in that list on the next sync, ready to be catalogued below.
+
 ### 1. 3D & Creative Design
 | Tool | Format / Path | Source / Link | Purpose & Notes |
 | :--- | :--- | :--- | :--- |
@@ -138,12 +141,13 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **Mesh2Motion** | AppImage (`AppImages/Mesh2Motion_0.1.6_amd64.AppImage`) | [Mesh2Motion](https://itch.io/) | Mesh animation and motion retargeting utility. |
 | **Tahoma2D** | AppImage Suite (`AppImages/Tahoma2D/Tahoma2D.AppImage`) | [tahoma2d.org](https://tahoma2d.org/) / [GitHub](https://github.com/tahoma2d/tahoma2d) | Open-source 2D digital animation software derived from OpenToonz. |
 | **RawTherapee** | AppImage (`AppImages/RawTherapee_5.12_release.AppImage`) | [rawtherapee.com](https://rawtherapee.com/) | Advanced non-destructive raw photo developer and processor. |
+| **Concat** | AppImage (`AppImages/Concat-0.2.7-x86_64.AppImage`) | [GitHub jub0t/Concat](https://github.com/jub0t/Concat) | Free, open-source desktop video editor (beta), a local alternative to CapCut. |
 | **ArmorPaint** | GitHub Clone (`GitHub/armorpaint/`) | [armorpaint.org](https://armorpaint.org/) / [GitHub](https://github.com/armory3d/armorpaint) | 3D PBR texture painting software. |
 
 ### 2. ArtCraft Creative Suite
 | Tool | Format / Path | Description |
 | :--- | :--- | :--- |
-| **ArtCraft Launcher** | AppImage (`AppImages/ArtCraft/artcraft-0.3.2-linux-x86_64.AppImage`) | Central launcher and manager for the ArtCraft creative suite. |
+| **ArtCraft Launcher** | AppImage (`AppImages/ArtCraft/artcraft-launcher-0.3.2-linux-x86_64.AppImage`) | Central launcher and manager for the ArtCraft creative suite. |
 | **ArtCraft Apps** | Installed AppImages (`~/Applications/*craft*.AppImage`) | 13 specialized creative apps (DesignCraft, PhotoCraft, VectorCraft, FilmCraft, EffectCraft, LightCraft, PDFCraft, CADCraft, DeckCraft, FigCraft, GridCraft, SoundCraft, WordCraft) managed by ArtCraft Launcher. |
 
 ### 3. Game Development & Graphics Programming
@@ -738,6 +742,7 @@ Installed from Flathub by `bootstrap.sh`; custom permissions live in `packages/f
 - **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`, `hyprcapture`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
 - **Qt / KDE Theming (`system/qt/`)**: Qt apps follow `qt6ct` (`QT_QPA_PLATFORMTHEME=qt6ct`): Breeze style, darker color scheme, Oxygen icons, DejaVu LGC Sans 12 and KDE file dialogs. `dotsync` snapshots `qt6ct/qt6ct.conf`, `kdeglobals` and `Trolltech.conf`, and `bootstrap.sh` copies them back. They are copied, not symlinked, because Qt/KDE save by replacing the file, which would break a symlink.
+- **Dolphin "Open Terminal Here" ➔ kitty**: set in `kdeglobals` under `[General]` (`TerminalApplication=kitty`, `TerminalService=kitty.desktop`). The embedded `F4` terminal panel is a Konsole component and cannot use kitty.
 - **XDG Desktop Portal & Native File Pickers (`.config/xdg-desktop-portal/hyprland-portals.conf`)**:
   - Configures default portal backends (`hyprland;gtk`) with `org.freedesktop.impl.portal.FileChooser = kde` to route file picker dialogs to KDE's dialogs across Wayland and GTK apps (`GTK_USE_PORTAL=1`).
 
