@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PureRef-2.0.3_x64.Appimage
+Comment=PureRef-2.0.3_x64.Appimage Application
+Exec="/home/badreddine/Documents/Apps/AppImages/PureRef-2.0.3_x64.Appimage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/pureref.png
+Terminal=false
+Categories=Utility;
+StartupWMClass=PureRef-2.0.3_x64.Appimage
+X-AppImage-Version=PureRef-2.0.3_x64.Appimage

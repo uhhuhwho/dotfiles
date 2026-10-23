@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=GDstudio
+GenericName=Godot IDE / Studio
+Comment=Godot Studio Environment
+Exec="/home/badreddine/Documents/Apps/Standalone/GDstudio-0.3.2-alpha-6403-linux-x86_64/GDstudio" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/gdstudio.png
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=GDstudio

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=World.Monitor_2.5.23_amd64
+Comment=World.Monitor_2.5.23_amd64 Application
+Exec="/home/badreddine/Documents/Apps/AppImages/World.Monitor_2.5.23_amd64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/world-monitor.png
+Terminal=false
+Categories=Utility;
+StartupWMClass=World.Monitor_2.5.23_amd64
+X-AppImage-Version=World.Monitor_2.5.23_amd64.AppImage

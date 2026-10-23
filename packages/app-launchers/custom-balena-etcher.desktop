@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=balenaEtcher
+GenericName=USB Image Flasher
+Comment=Flash OS images to SD cards & USB drives safely and easily
+Exec="/home/badreddine/Documents/Apps/Standalone/balenaEtcher-linux-x64/balena-etcher" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/balena-etcher.svg
+Terminal=false
+Categories=Utility;Archiving;
+StartupWMClass=balena-etcher

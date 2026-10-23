@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=AutoRemesher
+Comment=Automatic quad remeshing tool
+Exec="/home/badreddine/Documents/Apps/AppImages/autoremesher-1.0.0.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/autoremesher.png
+Terminal=false
+Categories=Graphics;
+StartupWMClass=AutoRemesher
+X-AppImage-Version=autoremesher-1.0.0.AppImage

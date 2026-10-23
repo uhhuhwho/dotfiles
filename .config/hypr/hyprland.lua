@@ -53,6 +53,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kwriteconfig6 --file kdeglobals --group Icons --key Theme oxygen")
     -- Caps Lock state monitor daemon
     hl.exec_cmd("python3 $HOME/dotfiles/scripts/desktop/capslock-watcher.py")
+    -- Kando pie menu
+    hl.exec_cmd("$HOME/Documents/Apps/AppImages/Kando-3.0.0-x86_64.AppImage")
 end)
 
 
@@ -76,6 +78,7 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("NIXOS_OZONE_WL", "1")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("OZONE_PLATFORM", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- XDG specifications
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
@@ -446,6 +449,26 @@ hl.layer_rule({
 })
 
 -- Vicinae --
+
+-- Kando -- (shortcut ID is set per menu in Kando's editor; list IDs with `hyprctl globalshortcuts`)
+hl.bind("CTRL + Space", hl.dsp.global("menu.kando.Kando:main-menu"))
+hl.bind("mouse:275", hl.dsp.global("menu.kando.Kando:main-menu"))
+
+hl.window_rule({
+  name = "kando",
+  match = { class = "menu.kando.Kando", title = "Kando Menu" },
+  no_blur = true,
+  opaque = true,
+  move = { 0, 0 },
+  rounding = 0,
+  size = { "100%", "100%" },
+  border_size = 0,
+  no_anim = true,
+  float = true,
+  pin = true,
+  tag = "+hyprglass_disabled", -- HyprGlass blurs the full-screen overlay otherwise
+})
+-- Kando --
 
 -- R -> launcher
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))

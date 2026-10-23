@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Blender 3.6 LTS
+GenericName=3D Modeler
+Comment=3D modeling, animation, rendering and post-production
+Exec="/home/badreddine/Documents/Apps/Standalone/Blender/blender-3.6.23-linux-x64/blender" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/blender-3.6.svg
+Terminal=false
+Categories=Graphics;3DGraphics;
+StartupWMClass=Blender

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=KodeLife
+GenericName=Real-time GPU Shader Editor
+Comment=Real-time shader code editor for live visuals and graphics programming
+Exec="/home/badreddine/Documents/Apps/Standalone/kodelife-1.2.6.208-linux-x64/KodeLife" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/kodelife.svg
+Terminal=false
+Categories=Development;Graphics;AudioVideo;
+StartupWMClass=KodeLife

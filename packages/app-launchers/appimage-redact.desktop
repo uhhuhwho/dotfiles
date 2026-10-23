@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Redact
+Comment=Mass delete your social media history
+Exec="/home/badreddine/Documents/Apps/AppImages/Redact-0.21.23.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/redact.png
+Terminal=false
+Categories=Utility;
+StartupWMClass=Redact
+X-AppImage-Version=Redact-0.21.23.AppImage

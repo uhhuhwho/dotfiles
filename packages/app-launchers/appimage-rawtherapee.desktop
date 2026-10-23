@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=RawTherapee_5.12_release
+Comment=RawTherapee_5.12_release Application
+Exec="/home/badreddine/Documents/Apps/AppImages/RawTherapee_5.12_release.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/rawtherapee.svg
+Terminal=false
+Categories=Utility;
+StartupWMClass=RawTherapee_5.12_release
+X-AppImage-Version=RawTherapee_5.12_release.AppImage

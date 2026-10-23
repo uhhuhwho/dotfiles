@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Tahoma2D
+Comment=2d Digital Animation and Stop Motion (Webcam/DSLR)
+Exec="/home/badreddine/Documents/Apps/AppImages/Tahoma2D/Tahoma2D.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/tahoma2d.png
+Terminal=false
+Categories=Graphics;
+StartupWMClass=Tahoma2D
+X-AppImage-Version=Tahoma2D.AppImage

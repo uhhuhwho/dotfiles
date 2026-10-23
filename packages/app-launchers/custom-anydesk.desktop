@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=AnyDesk
+GenericName=Remote Desktop
+Comment=Fast remote desktop access software
+Exec="/home/badreddine/Documents/Apps/Standalone/anydesk-8.0.2/anydesk" %u
+Icon=/home/badreddine/.local/share/icons/custom-apps/anydesk.svg
+Terminal=false
+Categories=Network;RemoteAccess;
+StartupWMClass=AnyDesk

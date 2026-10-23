@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Material Maker
+GenericName=Procedural Texture Tool
+Comment=Procedural texture authoring and 3D model painting tool
+Exec="/home/badreddine/Documents/Apps/Standalone/material_maker_1_6_linux/material_maker.x86_64" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/material-maker.png
+Terminal=false
+Categories=Graphics;3DGraphics;
+StartupWMClass=Material Maker

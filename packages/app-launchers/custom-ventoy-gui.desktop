@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Ventoy GUI
+GenericName=Bootable USB Creator
+Comment=New generation multi-boot USB solution
+Exec=pkexec "/home/badreddine/Documents/Apps/Standalone/ventoy-1.1.14/VentoyGUI.x86_64"
+Icon=/home/badreddine/.local/share/icons/custom-apps/ventoy.png
+Terminal=false
+Categories=Utility;System;
+StartupWMClass=VentoyGUI.x86_64

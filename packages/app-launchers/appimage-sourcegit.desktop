@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=SourceGit
+Comment=Open-source & Free Git GUI Client
+Exec="/home/badreddine/Documents/Apps/AppImages/sourcegit-2026.15.linux.amd64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/sourcegit.png
+Terminal=false
+Categories=Development;
+StartupWMClass=SourceGit
+X-AppImage-Version=sourcegit-2026.15.linux.amd64.AppImage

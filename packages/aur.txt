@@ -8,6 +8,7 @@ ferdium-bin
 google-earth-pro
 hyprmod
 hyprsysteminfo
+imsprog
 kgamma
 kwin-x11
 razergenie

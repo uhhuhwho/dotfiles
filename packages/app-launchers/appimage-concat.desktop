@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Concat
+Comment=Open-source desktop video editor
+Exec="/home/badreddine/Documents/Apps/AppImages/Concat-0.2.7-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/concat.png
+Terminal=false
+Categories=AudioVideo;Video;
+StartupWMClass=concat
+X-AppImage-Version=Concat-0.2.7-x86_64.AppImage

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=GenOffice
+Comment=Unified GenOffice shell: one app hosting the docs and sheets modules behind a home/launcher window
+Exec="/home/badreddine/Documents/Apps/AppImages/GenOffice-0.8.440.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/genoffice.png
+Terminal=false
+Categories=Office;
+StartupWMClass=genoffice
+X-AppImage-Version=GenOffice-0.8.440.AppImage

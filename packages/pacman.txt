@@ -54,6 +54,7 @@ fd
 ffmpegthumbnailer
 filezilla
 firefox
+flashrom
 flatpak
 flatpak-kcm
 fontforge

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=JetBrains Toolbox
+GenericName=IDE Manager
+Comment=Manage your JetBrains tools and projects
+Exec="/home/badreddine/Documents/Apps/Standalone/jetbrains-toolbox-3.4.3.81140/bin/jetbrains-toolbox" %u
+Icon=/home/badreddine/.local/share/icons/custom-apps/jetbrains-toolbox.png
+Terminal=false
+Categories=Development;
+StartupWMClass=jetbrains-toolbox

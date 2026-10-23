@@ -37,7 +37,6 @@ video/quicktime=vlc.desktop;
 video/vnd.avi=vlc.desktop;
 video/webm=vlc.desktop;fr.handbrake.ghb.desktop;firefox.desktop;
 video/x-matroska=vlc.desktop;
-x-scheme-handler/unityhub=unityhub.desktop;
 
 [Default Applications]
 application/vnd.android.package-archive=waydroid.app.install.desktop
@@ -47,7 +46,7 @@ application/x-zerosize=com.github.dail8859.NotepadNext.desktop
 image/jpeg=org.xfce.ristretto.desktop
 image/png=org.xfce.ristretto.desktop
 image/webp=org.xfce.ristretto.desktop
-inode/directory=thunar.desktop
+inode/directory=org.kde.dolphin.desktop
 text/html=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop

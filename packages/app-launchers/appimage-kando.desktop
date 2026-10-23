@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Kando
+Comment=Cross-platform pie menu
+Exec="/home/badreddine/Documents/Apps/AppImages/Kando-3.0.0-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/kando.png
+Terminal=false
+Categories=Utility;
+StartupWMClass=menu.kando.Kando
+X-AppImage-Version=Kando-3.0.0-x86_64.AppImage

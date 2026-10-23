@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Epic Games Launcher
+Comment=Epic Games Launcher
+Exec="/home/badreddine/Documents/Apps/AppImages/EpicGamesLauncher-x86_64.AppImage" %u
+Icon=/home/badreddine/.local/share/icons/custom-apps/epic-games.png
+Terminal=false
+Categories=Game;
+StartupWMClass=EpicGamesLauncher
+MimeType=x-scheme-handler/com.epicgames.launcher;
+X-AppImage-Version=EpicGamesLauncher-x86_64.AppImage

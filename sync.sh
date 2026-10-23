@@ -274,6 +274,15 @@ dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini" 2>/dev/null || true
 # AppImage inventory (binaries aren't committed, only the list)
 find "$HOME/Documents/Apps/AppImages" "$HOME/Applications" -iname '*.appimage' 2>/dev/null \
     | sed "s|^$HOME|~|" | LC_ALL=C sort > "$DOTFILES_DIR/packages/appimages.txt" || true
+# Custom-app icons & launchers (small artwork + .desktop files, not the heavy binaries).
+# Launchers are filtered to the ones pointing at ~/Documents/Apps, ~/Applications or our
+# custom icon dir, so waydroid/wine/flatpak-generated entries are left out.
+rm -rf "$DOTFILES_DIR/packages/app-icons" "$DOTFILES_DIR/packages/app-launchers"
+mkdir -p "$DOTFILES_DIR/packages/app-icons" "$DOTFILES_DIR/packages/app-launchers"
+cp -r "$HOME/.local/share/icons/custom-apps/." "$DOTFILES_DIR/packages/app-icons/" 2>/dev/null || true
+(cd "$HOME/.local/share/applications" 2>/dev/null \
+    && grep -lE "Documents/Apps|/Applications/|icons/custom-apps" *.desktop 2>/dev/null \
+    | xargs -r -I{} cp {} "$DOTFILES_DIR/packages/app-launchers/") || true
 # Qt/KDE theming (copied, not symlinked: Qt/KDE save by replacing the file, which breaks symlinks)
 mkdir -p "$DOTFILES_DIR/system/qt/qt6ct"
 for f in qt6ct/qt6ct.conf kdeglobals Trolltech.conf; do

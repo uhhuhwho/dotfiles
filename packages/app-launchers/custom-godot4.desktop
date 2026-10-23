@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Godot Engine 4
+GenericName=Game Engine
+Comment=Multi-platform 2D and 3D game engine
+Exec="/home/badreddine/Documents/Apps/Standalone/Godot/Godot_v4.7.1-stable_linux.x86_64/Godot_v4.7.1-stable_linux.x86_64" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/godot.svg
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=Godot

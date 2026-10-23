@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Antigravity
+GenericName=AI-First Code Editor
+Comment=Next-generation agentic AI coding environment
+Exec="/home/badreddine/Documents/Apps/Standalone/Antigravity-x64/antigravity" --enable-features=UseOzonePlatform --ozone-platform=wayland %F
+Icon=/home/badreddine/.local/share/icons/custom-apps/antigravity.svg
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=Antigravity

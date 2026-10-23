@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=winboat
+Comment=Windows for Penguins
+Exec="/home/badreddine/Documents/Apps/AppImages/winboat-0.9.0-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/winboat.svg
+Terminal=false
+Categories=Utility;
+StartupWMClass=winboat
+X-AppImage-Version=winboat-0.9.0-x86_64.AppImage

@@ -257,6 +257,17 @@ case "$choice" in
             fi
         fi
 
+        # Custom-app icons & launchers (AppImages/Standalone apps in ~/Documents/Apps).
+        # Download the actual binaries from packages/appimages.txt + the README catalog links.
+        if [[ -d "$DOTFILES_DIR/packages/app-icons" ]]; then
+            echo -e "${BLUE}:: Restoring custom app icons & launchers...${NC}"
+            mkdir -p "$HOME/.local/share/icons/custom-apps" "$HOME/.local/share/applications"
+            cp -r "$DOTFILES_DIR/packages/app-icons/." "$HOME/.local/share/icons/custom-apps/" 2>/dev/null || true
+            cp "$DOTFILES_DIR/packages/app-launchers/"*.desktop "$HOME/.local/share/applications/" 2>/dev/null || true
+            update-desktop-database "$HOME/.local/share/applications" 2>/dev/null || true
+            echo -e "${GREEN}[RESTORED]${NC} Custom app launchers and icons applied."
+        fi
+
         # Bun runtime
         if ! command -v bun &>/dev/null; then
             echo -e "${BLUE}:: Installing Bun runtime...${NC}"

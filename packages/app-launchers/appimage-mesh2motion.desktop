@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Mesh2Motion_0.1.6_amd64
+Comment=Mesh2Motion_0.1.6_amd64 Application
+Exec="/home/badreddine/Documents/Apps/AppImages/Mesh2Motion_0.1.6_amd64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/mesh2motion.png
+Terminal=false
+Categories=Utility;
+StartupWMClass=Mesh2Motion_0.1.6_amd64
+X-AppImage-Version=Mesh2Motion_0.1.6_amd64.AppImage

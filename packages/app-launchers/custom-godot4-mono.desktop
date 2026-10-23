@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Godot Engine 4 (Mono / C#)
+GenericName=Game Engine (C# Support)
+Comment=Multi-platform 2D and 3D game engine with C# / .NET support
+Exec="/home/badreddine/Documents/Apps/Standalone/Godot/Godot_v4.7.1-stable_mono_linux_x86_64/Godot_v4.7.1-stable_mono_linux.x86_64" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/godot-mono.svg
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=Godot

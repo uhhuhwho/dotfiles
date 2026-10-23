@@ -4,11 +4,11 @@
     "claude-mem@thedotmack": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/14.0.1",
-        "version": "14.0.1",
+        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/15.0.1",
+        "version": "15.0.1",
         "installedAt": "2026-06-07T22:56:40.428Z",
-        "lastUpdated": "2026-10-17T16:53:38.742Z",
-        "gitCommitSha": "4d9997951eb32ba792f612066ce433b6339b451a"
+        "lastUpdated": "2026-10-22T19:41:58.165Z",
+        "gitCommitSha": "fe156e0ed7dfe95d7a5683b69d4b781e6efb8010"
       }
     ],
     "clangd-lsp@claude-plugins-official": [
@@ -23,11 +23,11 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/ea10b213686c",
-        "version": "ea10b213686c",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/af59ee3a1051",
+        "version": "af59ee3a1051",
         "installedAt": "2026-06-11T23:02:25.585Z",
-        "lastUpdated": "2026-10-16T23:43:04.249Z",
-        "gitCommitSha": "ea10b213686c90bb1984b2016937310e05336cf3"
+        "lastUpdated": "2026-10-22T19:39:14.701Z",
+        "gitCommitSha": "af59ee3a1051a29dda4a2e7a2af221aa457ae08b"
       }
     ],
     "superpowers@claude-plugins-official": [
@@ -43,11 +43,11 @@
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/ea10b213686c",
-        "version": "ea10b213686c",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/af59ee3a1051",
+        "version": "af59ee3a1051",
         "installedAt": "2026-06-11T23:02:51.907Z",
-        "lastUpdated": "2026-10-16T23:43:04.247Z",
-        "gitCommitSha": "ea10b213686c90bb1984b2016937310e05336cf3"
+        "lastUpdated": "2026-10-22T19:39:14.699Z",
+        "gitCommitSha": "af59ee3a1051a29dda4a2e7a2af221aa457ae08b"
       }
     ],
     "code-simplifier@claude-plugins-official": [

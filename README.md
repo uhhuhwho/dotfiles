@@ -104,6 +104,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── blackarch.txt                # Shared BlackArch security/OSINT tools
 │   ├── aur.txt                      # Shared AUR packages
 │   ├── appimages.txt                # AppImage inventory (~/Documents/Apps/AppImages + ~/Applications)
+│   ├── app-icons/                   # Custom-app icon artwork (-> ~/.local/share/icons/custom-apps/)
+│   ├── app-launchers/               # Custom-app .desktop launchers (-> ~/.local/share/applications/)
 │   ├── flatpak.txt                  # Shared Flatpak applications
 │   ├── flatpak-overrides/           # Custom Flatseal permission profiles
 │   ├── hyprpm.txt                   # Tracked Hyprland plugin repositories
@@ -128,6 +130,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 All custom and portable applications located in `~/Documents/Apps/` are categorized into 5 clean directories (`AppImages/`, `Standalone/`, `CLI/`, `GitHub/`, and `Archives/`). They have desktop launchers in `~/.local/share/applications/` and icons in `~/.local/share/icons/custom-apps/`, searchable directly from **Vicinae** (`SUPER + Space`).
 
 `dotsync` writes every AppImage in `~/Documents/Apps/AppImages/` and `~/Applications/` to `packages/appimages.txt`. The binaries are not committed, so a newly downloaded AppImage appears in that list on the next sync, ready to be catalogued below.
+
+`dotsync` also snapshots each app's icon (`packages/app-icons/`) and its `.desktop` launcher (`packages/app-launchers/` — only the launchers pointing at `~/Documents/Apps`, `~/Applications`, or the custom icon dir, so waydroid/wine/flatpak entries are skipped). On a fresh machine `bootstrap.sh` restores both, so every app keeps its icon and launcher — only the heavy binary needs re-downloading from its link below.
 
 ### 1. 3D & Creative Design
 | Tool | Format / Path | Source / Link | Purpose & Notes |
@@ -185,6 +189,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **Redact** | AppImage (`AppImages/Redact-0.21.23.AppImage`) | [redact.dev](https://redact.dev/) | Privacy utility to mass-delete old posts and messages across social networks. |
 | **World Monitor** | AppImage (`AppImages/World.Monitor_2.5.23_amd64.AppImage`) | [GitHub](https://github.com/) | Real-time global intelligence, news, and conflict monitoring feed. |
 | **Winboat** | AppImage (`AppImages/winboat-0.9.0-x86_64.AppImage`) | [GitHub](https://github.com/) | Portable cross-platform helper utility. |
+| **Kando** | AppImage (`AppImages/Kando-3.0.0-x86_64.AppImage`) | [kando.menu](https://kando.menu/) / [GitHub kando-menu/kando](https://github.com/kando-menu/kando) | Cross-platform pie / marking menu for fast mouse- and pen-driven app and action launching. |
 | **AnyDesk** | Standalone Binary (`Standalone/anydesk-8.0.2/anydesk`) | [anydesk.com](https://anydesk.com/) | Fast remote desktop and unattended access client. |
 | **balenaEtcher** | Standalone Binary (`Standalone/balenaEtcher-linux-x64/balena-etcher`) | [etcher.balena.io](https://etcher.balena.io/) | Flashes OS images (.iso, .img) to USB flash drives and SD cards safely. |
 | **Ventoy GUI** | Standalone Binary (`Standalone/ventoy-1.1.14/VentoyGUI.x86_64`) | [ventoy.net](https://ventoy.net/) / [GitHub](https://github.com/ventoy/Ventoy) | Multiboot USB creator. Launches via `pkexec` for block device access. |

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Cascadeur
+GenericName=Physics-based 3D Animation Software
+Comment=AI and physics-assisted character animation software
+Exec="/home/badreddine/Documents/Apps/Standalone/cascadeur-linux/cascadeur" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/cascadeur.png
+Terminal=false
+Categories=Graphics;3DGraphics;
+StartupWMClass=cascadeur

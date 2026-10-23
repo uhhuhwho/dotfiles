@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=IDA Free 9.3
+GenericName=Disassembler & Decompiler
+Comment=Interactive Disassembler for binary analysis and reverse engineering
+Exec="/home/badreddine/Documents/Apps/Standalone/ida-free-9.3/ida" %f
+Icon=/home/badreddine/.local/share/icons/custom-apps/ida-free.png
+Terminal=false
+Categories=Development;Utility;Security;
+StartupWMClass=ida

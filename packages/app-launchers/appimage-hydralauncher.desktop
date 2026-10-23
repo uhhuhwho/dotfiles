@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Hydra
+Comment=Hydra
+Exec="/home/badreddine/Documents/Apps/AppImages/hydralauncher-4.0.3.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/hydralauncher.png
+Terminal=false
+Categories=Game;
+StartupWMClass=Hydra
+X-AppImage-Version=hydralauncher-4.0.3.AppImage
