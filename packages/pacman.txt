@@ -28,6 +28,7 @@ chromium
 clang
 cliphist
 cmake
+corepack
 cppcheck
 cpu-x
 cups
@@ -286,6 +287,8 @@ tldr
 tree
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
+tuned
+tuned-ppd
 udiskie
 ufw
 union
@@ -331,4 +334,5 @@ xfce4-terminal
 yay
 yt-dlp
 zenmap
+zim-tools
 zip

@@ -1,18 +1,22 @@
 model_provider = "OpenAI"
 model = "gpt-5.5"
 review_model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 disable_response_storage = true
 network_access = "enabled"
 windows_wsl_setup_acknowledged = true
 
 [model_providers.OpenAI]
 name = "OpenAI"
-base_url = "https://xixiapi.io"
+base_url = "https://xixiapi.io/v1"
+model_catalog_url = "https://xixiapi.io/v1/models"
 wire_api = "responses"
-requires_openai_auth = true
+requires_openai_auth = false
+experimental_bearer_token = "sk-cd61cef8c60b9415c8ff19c296f4e049fefa4b52096ab2a2e5ec1bc51f0fb24b"
+http_headers = { "x-openai-actor-authorization" = "local-image-extension" }
 
 [features]
+api_key_model_discovery = true
 goals = true
 
 [mcp_servers.rea]
@@ -23,3 +27,6 @@ startup_timeout_sec = 30
 [mcp_servers.rea.env]
 GHIDRA_INSTALL_DIR = "/opt/ghidra"
 JAVA_HOME = "/usr/lib/jvm/java-21-openjdk"
+
+[tui]
+screen_reader_detection_done = true

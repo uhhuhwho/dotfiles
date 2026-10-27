@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=HyperFrames
+Exec=/home/badreddine/Documents/Apps/AppImages/HyperFrames-x86_64.AppImage %U
+Icon=dev.hyperframes.desktop
+Categories=AudioVideo;Video;
+MimeType=x-scheme-handler/hyperframes-signin;x-scheme-handler/hyperframes-open;
+NoDisplay=true

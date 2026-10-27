@@ -173,6 +173,24 @@ if [[ -d "$MACHINE_DIR/modprobe.d" ]] || [[ -d "$MACHINE_DIR/udev" ]] || [[ -d "
     fi
 fi
 
+# Deploy tracked GRUB theme(s) and this machine's GRUB config, then regenerate grub.cfg
+grub_changed=0
+if [[ -d "$DOTFILES_DIR/rice/grub" ]]; then
+    echo -e "${BLUE}:: Restoring GRUB themes...${NC}"
+    sudo mkdir -p /boot/grub/themes
+    for theme in "$DOTFILES_DIR/rice/grub"/*/; do
+        [[ -d "$theme" ]] && sudo cp -r "$theme" /boot/grub/themes/ && grub_changed=1
+    done
+fi
+if [[ -f "$MACHINE_DIR/etc/default/grub" ]]; then
+    echo -e "${BLUE}:: Restoring GRUB config for '$MACHINE_PROFILE'...${NC}"
+    sudo cp "$MACHINE_DIR/etc/default/grub" /etc/default/grub && grub_changed=1
+fi
+if [[ "$grub_changed" == 1 ]] && command -v grub-mkconfig &>/dev/null; then
+    sudo grub-mkconfig -o /boot/grub/grub.cfg || true
+    echo -e "${GREEN}[APPLIED]${NC} GRUB theme/config deployed and grub.cfg regenerated."
+fi
+
 # Deploy Scaled Ly DM & Plymouth Boot Splash
 if [[ -f "$DOTFILES_DIR/scripts/system/setup-ly-plymouth.sh" ]]; then
     read -rp "Deploy scaled Ly display manager (Doom animation) & Plymouth boot splash (Cuts Alt)? [y/N]: " deploy_ly

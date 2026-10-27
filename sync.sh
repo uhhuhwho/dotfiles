@@ -297,6 +297,23 @@ if [[ "$MACHINE_PROFILE" == "thinkpad/x230" ]]; then
     cp /etc/thinkfan.conf "$MACHINE_DIR/etc/" 2>/dev/null || true
 fi
 
+# Snapshot Honor GRUB config (AMD P-State kernel params live in GRUB_CMDLINE_LINUX_DEFAULT)
+if [[ "$MACHINE_PROFILE" == "honor" ]]; then
+    mkdir -p "$MACHINE_DIR/etc/default"
+    cp /etc/default/grub "$MACHINE_DIR/etc/default/grub" 2>/dev/null || true
+fi
+
+# Re-snapshot each already-tracked GRUB theme from /boot/grub/themes (strip nested .git)
+if [[ -d "$DOTFILES_DIR/rice/grub" ]]; then
+    for theme in "$DOTFILES_DIR/rice/grub"/*/; do
+        name="$(basename "$theme")"
+        [[ -d "/boot/grub/themes/$name" ]] || continue
+        rm -rf "$theme"; mkdir -p "$theme"
+        cp -r "/boot/grub/themes/$name/." "$theme" 2>/dev/null || true
+        rm -rf "$theme/.git"
+    done
+fi
+
 # 4. Docker Compose Configurations Snapshot
 if [[ -d "$HOME/Documents/Docker" ]]; then
     for compose_file in "$HOME/Documents/Docker"/*/docker-compose.yml; do

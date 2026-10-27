@@ -49,14 +49,15 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 ├── rice/
 │   ├── themes/                      # Dracula-pink-accent GTK theme (-> ~/.themes/)
 │   ├── icons/                       # Future-Cyan-Hyprcursor, WhiteSur-cursors, default (-> ~/.icons/)
-│   └── plymouth/                    # Plymouth boot splash themes (cuts_alt with Arch Linux logo)
+│   ├── plymouth/                    # Plymouth boot splash themes (cuts_alt with Arch Linux logo)
+│   └── grub/                        # GRUB boot themes (LiquidGlass) (-> /boot/grub/themes/)
 ├── docker/
 │   ├── OpenClaw/                    # OpenClaw agentic AI assistant container & gateway
 │   ├── openGym/                     # openGym self-hosted fitness tracking & AI coach stack
 │   ├── Project-Nomad/               # Project NOMAD offline digital resilience library compose file
 │   └── SillyTavern/                 # SillyTavern local AI frontend compose file
 ├── machines/
-│   ├── honor/                       # Honor MagicBook (HUAWEI HLYL-WXX9 AMD Ryzen + Radeon drivers)
+│   ├── honor/                       # Honor MagicBook (HUAWEI HLYL-WXX9 AMD Ryzen + Radeon drivers, etc/default/grub AMD P-State)
 │   ├── thinkpad/
 │   │   ├── x230/                    # ThinkPad X230 (Intel drivers, thinkfan, EC sys, 99-thinklight udev)
 │   │   └── x1-yoga/                 # ThinkPad X1 Yoga profile
@@ -760,6 +761,11 @@ Installed from Flathub by `bootstrap.sh`; custom permissions live in `packages/f
   - Customized with an anti-aliased **Arch Linux logo** centered at the bottom of the screen.
   - Early Kernel Mode Setting (`MODULES=(amdgpu)` or `i915` in `/etc/mkinitcpio.conf`) ensures flicker-free, instant splash startup on native resolution before root filesystem mount.
   - Kernel command-line configured with `splash` in `/etc/default/grub`.
+- **GRUB Theme (`rice/grub/LiquidGlass/`)**:
+  - **LiquidGlass** boot menu theme deployed to `/boot/grub/themes/` and selected via `GRUB_THEME` in `/etc/default/grub`.
+  - `dotsync` re-snapshots every theme already tracked under `rice/grub/` (stripping any nested `.git`); `bootstrap.sh` copies them back and regenerates `grub.cfg`.
+- **Honor AMD P-State (`machines/honor/etc/default/grub`)**:
+  - Per-device GRUB config adds `amd_pstate=active amd_pstate.shared_mem=1` to `GRUB_CMDLINE_LINUX_DEFAULT`, enabling the AMD P-State scaling driver on the Honor Ryzen laptop. Restored and applied (`grub-mkconfig`) only on the `honor` profile.
 - **Ly Display Manager (`system/etc/ly/`)**:
   - **2x HiDPI Scaling**: Uses Terminus 32px font (`ter-v32n` in `/etc/vconsole.conf` and `/etc/ly/startup.sh`), transforming the 240x67 character TTY grid into a clean, legible 120x33 layout.
   - **Doom Fire Animation**: Classic PSX DOOM flames rising continuously from the screen bottom with `blank_box = false` for a transparent login box overlay.

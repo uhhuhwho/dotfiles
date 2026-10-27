@@ -1,0 +1,1 @@
+change caplock notfication from what ever it is now to a OSD

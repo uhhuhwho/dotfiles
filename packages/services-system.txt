@@ -19,6 +19,8 @@ remote-fs.target
 seatd.service
 systemd-timesyncd.service
 systemd-userdbd.socket
+tuned-ppd.service
+tuned.service
 ufw.service
 virtlockd-admin.socket
 virtlockd.socket

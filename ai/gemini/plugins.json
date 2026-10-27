@@ -1,7 +1,7 @@
 Installed plugins:
-- android-cli-plugin (enabled, 1.0.16500706)
+- android-cli-plugin (enabled, 1.0.16625370)
     Source:     antigravity-plugins-official
-    Components: 1 skill
+    Components: 3 skills
 - firebase (enabled, 1.0.3)
     Source:     antigravity-plugins-official
     Components: 13 skills, 1 agent
@@ -14,6 +14,6 @@ Installed plugins:
 - ponytail (enabled, 4.9.0)
     Source:     antigravity
     Components: 6 skills
-- science (enabled, 1.3.0)
+- science (enabled, 1.3.1)
     Source:     antigravity-plugins-official
     Components: 41 skills, 1 rule, 1 MCP server
