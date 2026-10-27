@@ -331,7 +331,7 @@ fi
 
 # 5. AI Assistant Configurations & Manifests Snapshot
 python3 - << 'PY_EOF'
-import json, os, shutil, subprocess
+import json, os, re, shutil, subprocess
 
 dotfiles = os.path.expanduser('~/dotfiles')
 ai_dir = os.path.join(dotfiles, 'ai')
@@ -379,10 +379,21 @@ try:
 except Exception:
     pass
 
-# Codex CLI
+# Codex CLI (inline credentials are redacted: this copy is committed and pushed)
 f_codex = os.path.join(home, '.codex', 'config.toml')
 if os.path.isfile(f_codex):
-    shutil.copy(f_codex, os.path.join(ai_dir, 'codex', 'config.toml'))
+    try:
+        with open(f_codex) as f:
+            t_codex = f.read()
+        t_codex = re.sub(
+            r'(?mi)^(\s*(?:experimental_bearer_token|bearer_token|api_key|auth_token)\s*=\s*)".*"',
+            r'\1"<redacted-by-dotsync>"',
+            t_codex,
+        )
+        with open(os.path.join(ai_dir, 'codex', 'config.toml'), 'w') as f:
+            f.write(t_codex)
+    except Exception:
+        pass
 PY_EOF
 
 echo -e "\033[1;32m✓ State snapshot complete for profile [$MACHINE_PROFILE]:\033[0m"

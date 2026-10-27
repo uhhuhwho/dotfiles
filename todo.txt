@@ -1,1 +1,6 @@
 change caplock notfication from what ever it is now to a OSD
+change openclaw to use claude cli instead of api
+Could not finish. Open Details to see what to do next.
+
+Claude CLI is not authenticated on this host. Run claude auth login first, then re-run this setup.
+

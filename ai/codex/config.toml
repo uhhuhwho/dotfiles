@@ -12,7 +12,7 @@ base_url = "https://xixiapi.io/v1"
 model_catalog_url = "https://xixiapi.io/v1/models"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "sk-cd61cef8c60b9415c8ff19c296f4e049fefa4b52096ab2a2e5ec1bc51f0fb24b"
+experimental_bearer_token = "<redacted-by-dotsync>"
 http_headers = { "x-openai-actor-authorization" = "local-image-extension" }
 
 [features]

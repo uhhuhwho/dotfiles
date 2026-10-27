@@ -26,45 +26,63 @@ Host System                                         Container (/home/node)
 | Feature | Details |
 | :--- | :--- |
 | **Control Web UI** | [http://127.0.0.1:18789](http://127.0.0.1:18789) |
-| **Direct Auth Link** | [http://127.0.0.1:18789/#token=7e88d7838ee10988c6c25709eb56c965bc8e93ea0d6c5756ac944d9e61a0da2d](http://127.0.0.1:18789/#token=7e88d7838ee10988c6c25709eb56c965bc8e93ea0d6c5756ac944d9e61a0da2d) |
-| **Gateway Token** | `7e88d7838ee10988c6c25709eb56c965bc8e93ea0d6c5756ac944d9e61a0da2d` |
+| **Direct Auth Link** | Print it with: `echo "http://127.0.0.1:18789/#token=$(grep '^OPENCLAW_GATEWAY_TOKEN=' .env \| cut -d= -f2)"` |
+| **Gateway Token** | Lives in `.env` as `OPENCLAW_GATEWAY_TOKEN`. **Never paste it into this file** — this README is snapshotted into the public dotfiles repo by `dotsync`. |
 | **Workspace Folder** | `/home/badreddine/OpenClaw` (`~/OpenClaw`) |
 | **Docker Image** | `ghcr.io/openclaw/openclaw:latest` |
 
 ---
 
-## 🤖 Configured AI Models (`xixiapi.io`)
+## 🤖 Configured AI Models
 
-Both Anthropic Claude and Z.ai GLM models are routed through your custom API provider (`xixiapi.io`):
+The `xixiapi.io` Anthropic preset has been **removed**. Claude now authenticates through the **Claude CLI subscription token** (no API key), and GPT models come from the **Codex** provider.
 
-### 1. Anthropic Claude (Native Messages API)
-* **Base URL**: `https://xixiapi.io`
-* **Models**:
-  * `anthropic/claude-sonnet-5` *(Default)*
-  * `anthropic/claude-sonnet-5-5`
-  * `anthropic/claude-sonnet-4-6`
+### 1. Anthropic Claude — via Claude CLI token (no API key)
+No `ANTHROPIC_API_KEY` / `ANTHROPIC_BASE_URL` is set, and no `baseUrl` override remains in `openclaw.json`, so Claude resolves to the official endpoint using an OAuth token minted by the host's Claude CLI.
 
-### 2. GLM & OpenAI Models (OpenAI-compatible API)
-* **Base URL**: `https://xixiapi.io/v1`
-* **Models**:
-  * `glm/glm-5.3-flash` *(Fastest, reasoning enabled)*
-  * `glm/glm-5-turbo`
-  * `glm/glm-5.1`
-  * `glm/glm-5.2`
-  * `glm/glm-5.3`
-  * `glm/gpt-5.4`
-  * `glm/gpt-5.5`
+The container has **no `claude` binary** (the CLI lives on the host at `/usr/sbin/claude`), so the token is minted on the host and pasted in:
+
+```bash
+# 1. On the HOST (interactive, needs a TTY + an active Claude subscription)
+claude setup-token
+
+# 2. Paste it into OpenClaw (run from this directory)
+docker compose run --rm openclaw-cli models auth paste-token --provider anthropic
+
+# 3. Verify
+docker compose run --rm openclaw-cli models auth list
+docker compose run --rm openclaw-cli models list
+```
+
+Re-run `claude setup-token` and step 2 whenever the token expires. This keeps the host-isolation guarantee above intact — the container never sees `~/.claude`.
+
+### 2. Codex / GPT models (OpenAI-compatible API)
+* **Base URL**: `https://xixiapi.io/v1` (`OPENAI_BASE_URL`)
+* **Key**: `OPENAI_API_KEY` in `.env`
+* **Catalog**: `~/Downloads/codex-models.json` — routed through Sub2API, reasoning levels `low` / `medium` / `high` / `xhigh`:
+  * `gpt-5.2`
+  * `gpt-5.3-codex`
+  * `gpt-5.3-codex-spark`
+  * `gpt-5.4`
+  * `gpt-5.5`
+  * `gpt-5.6-sol`
+  * `gpt-6-astra`
 
 ### Switching Models
 * **In the Web UI**: Use the model dropdown in the chat header.
 * **Via Terminal**:
   ```bash
-  # Switch to GLM 5.3 Flash
-  docker compose run --rm openclaw-cli models set glm/glm-5.3-flash
+  # Confirm which slugs the gateway actually resolves first
+  docker compose run --rm openclaw-cli models list
 
-  # Switch to Claude Sonnet
+  # Claude (via the CLI token)
   docker compose run --rm openclaw-cli models set anthropic/claude-sonnet-5
+
+  # Codex
+  docker compose run --rm openclaw-cli models set gpt-5.3-codex
   ```
+
+> The default model is still `anthropic/claude-sonnet-5` from the old preset. That slug was previously served by xixiapi — confirm it against `models list` once the CLI token is in place and `models set` a valid one if it does not resolve.
 
 ---
 

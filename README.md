@@ -71,8 +71,6 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   │   ├── fix-grub-chroot.sh       # GRUB UEFI recovery helper for Arch ISO chroot
 │   │   └── mount-games-disk.sh      # External/secondary games disk mount helper
 │   ├── desktop/
-│   │   ├── capslock-watcher.py      # Caps Lock real-time state change watcher daemon (systemd service)
-│   │   ├── capslock-notify.sh       # Caps Lock status check & notification helper
 │   │   ├── launch-antigravity.sh    # Isolated systemd-scope Wayland launcher for Antigravity
 │   │   ├── random-wallpaper.sh      # Random wallpaper switcher via hyprpaper/waypaper
 │   │   └── set-default-browser.sh   # XDG default web browser setter
@@ -742,9 +740,10 @@ Installed from Flathub by `bootstrap.sh`; custom permissions live in `packages/f
     - **Screen recording** (MP4/WebM/GIF, optional audio): `hl.plugin.hyprcapture.record_toggle`, saved to `~/Videos/Screenrecords/`
     - All options are listed in the [upstream README](https://github.com/gfhdhytghd/HyprCapture#configuration).
   - Install: `hyprpm add https://github.com/gfhdhytghd/HyprCapture && hyprpm enable hyprcapture` (needs `nlohmann-json` to build). `bootstrap.sh` restores it from `packages/hyprpm.txt`.
-- **Caps Lock State Notifications**:
-  - Background systemd user service (`capslock-watcher.service`) provides real-time "Caps Lock is ON" and "Caps Lock is OFF" desktop popups via sysfs hardware LED monitoring.
-  - Wayle native toggle OSD enabled for users in the `input` group (`sudo usermod -aG input $USER`).
+- **Caps Lock OSD (Wayle native)**:
+  - Caps Lock / Num Lock / Scroll Lock show as a transient **Wayle OSD overlay** (`osd-toggle-on` / `osd-toggle-off`), not a notification toast. Configured under `[osd]` in `.config/wayle/runtime.toml` (bottom anchor, 2500 ms, bordered, `overlay` layer).
+  - **Requires membership in the `input` group** so Wayle can read key-toggle state: `sudo usermod -aG input $USER`, then log out and back in. Without it the OSD never fires.
+  - Replaces the former `capslock-watcher.service` + `capslock-watcher.py` / `capslock-notify.sh` `notify-send` daemon, which was deleted — the compositor shell covers this natively, so there is no custom poller to maintain.
 - **HyprPM Plugin Tracking**: Automatically tracks installed Hyprland plugins (`hymission`, `hyprglass`, `hyprcapture`) in `packages/hyprpm.txt` during `dotsync`, and auto-restores them on fresh machines via `bootstrap.sh`.
 - **System-Wide Icon Consistency**: Enforces Oxygen icons across GTK 3/4, KDE globals, and XSettings daemon.
 - **Qt / KDE Theming (`system/qt/`)**: Qt apps follow `qt6ct` (`QT_QPA_PLATFORMTHEME=qt6ct`): Breeze style, darker color scheme, Oxygen icons, DejaVu LGC Sans 12 and KDE file dialogs. `dotsync` snapshots `qt6ct/qt6ct.conf`, `kdeglobals` and `Trolltech.conf`, and `bootstrap.sh` copies them back. They are copied, not symlinked, because Qt/KDE save by replacing the file, which would break a symlink.

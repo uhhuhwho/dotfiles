@@ -23,11 +23,11 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/1da406f428c2",
-        "version": "1da406f428c2",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/frontend-design/1.1.1",
+        "version": "1.1.1",
         "installedAt": "2026-06-11T23:02:25.585Z",
-        "lastUpdated": "2026-10-27T00:10:24.824Z",
-        "gitCommitSha": "1da406f428c285c701a1033a3aef368a9ab865dc"
+        "lastUpdated": "2026-10-27T23:31:44.165Z",
+        "gitCommitSha": "f8c5e7a1dcb71b10cb74586224b5401f3de5db28"
       }
     ],
     "superpowers@claude-plugins-official": [
@@ -43,11 +43,11 @@
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/1da406f428c2",
-        "version": "1da406f428c2",
+        "installPath": "/home/badreddine/.claude/plugins/cache/claude-plugins-official/code-review/1.0.1",
+        "version": "1.0.1",
         "installedAt": "2026-06-11T23:02:51.907Z",
-        "lastUpdated": "2026-10-27T00:10:24.821Z",
-        "gitCommitSha": "1da406f428c285c701a1033a3aef368a9ab865dc"
+        "lastUpdated": "2026-10-27T23:31:44.161Z",
+        "gitCommitSha": "f8c5e7a1dcb71b10cb74586224b5401f3de5db28"
       }
     ],
     "code-simplifier@claude-plugins-official": [

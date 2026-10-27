@@ -161,6 +161,7 @@ linux-zen-headers
 llama-cpp
 lld
 lldb
+llmfit
 lmms
 lutris
 ly
@@ -229,6 +230,7 @@ plasma-workspace-wallpapers
 plasma5support
 plymouth
 plymouth-kcm
+podman
 polkit-kde-agent
 power-profiles-daemon
 powerdevil

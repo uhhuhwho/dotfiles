@@ -51,8 +51,6 @@ hl.on("hyprland.start", function()
     -- Enforce Oxygen GTK/KDE icon theme
     hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'oxygen'")
     hl.exec_cmd("kwriteconfig6 --file kdeglobals --group Icons --key Theme oxygen")
-    -- Caps Lock state monitor daemon
-    hl.exec_cmd("python3 $HOME/dotfiles/scripts/desktop/capslock-watcher.py")
     -- Kando pie menu
     hl.exec_cmd("$HOME/Documents/Apps/AppImages/Kando-3.0.0-x86_64.AppImage")
 end)

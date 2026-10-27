@@ -27,6 +27,7 @@
 ~/Documents/Apps/AppImages/VoiceStudio-Electron-0.5.6-linux-x64.AppImage
 ~/Documents/Apps/AppImages/World.Monitor_2.5.23_amd64.AppImage
 ~/Documents/Apps/AppImages/autoremesher-1.0.0.AppImage
+~/Documents/Apps/AppImages/comfyui-desktop-2-1.1.8x86_64.AppImage
 ~/Documents/Apps/AppImages/hydralauncher-4.0.3.AppImage
 ~/Documents/Apps/AppImages/sourcegit-2026.15.linux.amd64.AppImage
 ~/Documents/Apps/AppImages/winboat-0.9.0-x86_64.AppImage
