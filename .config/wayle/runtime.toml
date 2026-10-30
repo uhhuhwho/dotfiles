@@ -73,6 +73,9 @@ style = "peaks"
 format = "%I:%M %p"
 dropdown-show-seconds = true
 
+[modules.cpu]
+format = "{{ percent }}% @ {{ freq_ghz }}GHz {{ temp_c }}C"
+
 [modules.dashboard]
 icon-bg-color = "accent"
 right-click = "dropdown:dashboard"
@@ -85,6 +88,9 @@ app-icons-empty = ""
 icon-size = 1.2000000476837158
 label-size = 1.350000023841858
 active-indicator = "underline"
+
+[modules.keyboard-input]
+format = "{{ layout }}"
 
 [modules.media]
 icon-type = "spinning-disc"
@@ -108,7 +114,7 @@ icon-scale = 1.5
 [osd]
 enabled = true
 position = "bottom"
-duration = 2500
+duration = 2000
 border = true
 
 [wallpaper]

@@ -126,7 +126,7 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 
 ## 📦 Tools, AppImages & External Applications Catalog (`~/Documents/Apps/`)
 
-All custom and portable applications located in `~/Documents/Apps/` are categorized into 5 clean directories (`AppImages/`, `Standalone/`, `CLI/`, `GitHub/`, and `Archives/`). They have desktop launchers in `~/.local/share/applications/` and icons in `~/.local/share/icons/custom-apps/`, searchable directly from **Vicinae** (`SUPER + Space`).
+All custom and portable applications located in `~/Documents/Apps/` are categorized into 4 clean directories (`AppImages/`, `Standalone/`, `CLI/`, and `GitHub/`). Upstream release archives and installers are deliberately **not tracked or catalogued**. They have desktop launchers in `~/.local/share/applications/` and icons in `~/.local/share/icons/custom-apps/`, searchable directly from **Vicinae** (`SUPER + Space`).
 
 `dotsync` writes every AppImage in `~/Documents/Apps/AppImages/` and `~/Applications/` to `packages/appimages.txt`. The binaries are not committed, so a newly downloaded AppImage appears in that list on the next sync, ready to be catalogued below.
 
@@ -197,29 +197,13 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **RAR / UnRAR** | CLI Binaries (`CLI/rar/rar`, `CLI/rar/unrar`) | [rarlab.com](https://www.rarlab.com/) | Official archive manager for `.rar` compression and extraction. |
 | **Ngrok** | CLI Binary (`/usr/sbin/ngrok`) | [ngrok.com](https://ngrok.com/) | Secure public URLs for exposing local development servers. |
 
-### 6. Node / NPM & NPX CLI Tools (`~/.npm-global/bin/` & `packages/npm.txt`)
-| Tool | Format / Path | Source / Link | Purpose & How to Run |
-| :--- | :--- | :--- | :--- |
-| **`rea-agents` (`rea`)** | Global NPM / NPX (`~/.npm-global/bin/rea`, `~/.npm-global/bin/rea-agents`) | [npmjs.com/package/rea-agents](https://www.npmjs.com/package/rea-agents) / [GitHub](https://github.com/) | **Reverse Engineer Anything (REA)** agent toolkit. Reverse engineers native binaries, Electron apps, browser bundles, Android APKs, and firmware. Auto-configures REA skills and MCP tools across Claude, Gemini, and Codex. Run via `rea`, `rea-agents`, or `npx rea-agents@latest setup`. |
-| **`oh-my-mermaid` (`omm`)** | Global NPM (`~/.npm-global/bin/omm`) | [npmjs.com/package/oh-my-mermaid](https://www.npmjs.com/package/oh-my-mermaid) | Command-line CLI tool to render, preview, and generate Mermaid diagrams and SVG/PNG charts directly from markdown or code. |
-| **`omniroute`** | Global NPM (`~/.npm-global/bin/omniroute`) | [npmjs.com/package/omniroute](https://www.npmjs.com/package/omniroute) | Multi-provider AI model proxy and API routing gateway for routing LLM traffic across providers. |
-| **`@electron/asar`** | System NPM (`/usr/bin/asar`) | [npmjs.com/package/@electron/asar](https://www.npmjs.com/package/@electron/asar) | Electron Archive unpacker and inspector for inspecting `.asar` bundles inside Electron desktop applications. |
-
-### 7. Python UV CLI Tools (`packages/uv.txt`)
+### 6. Python UV CLI Tools (`packages/uv.txt`)
 | Tool | Format / Path | Source / Link | Purpose & How to Run |
 | :--- | :--- | :--- | :--- |
 | **`hackingtool`** | UV Tool (`~/.local/bin/hackingtool`) | [GitHub Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) | Ethical hacking all-in-one suite. Installed via `uv tool install hackingtool`. |
 | **`mvt` (Mobile Verification Toolkit)** | UV Tool (`~/.local/bin/mvt-*`) | [mvt-project/mvt](https://github.com/mvt-project/mvt) | Forensic analysis toolkit to inspect Android and iOS devices for potential malware and Pegasus spyware indicators. |
-| **`pixelrag`** | UV Tool (`~/.local/bin/pixelrag`) | [PyPI pixelrag](https://pypi.org/project/pixelrag/) | Local multimodal RAG (Retrieval-Augmented Generation) document search and indexing tool. |
 
-### 8. Original Archives & Installers (`~/Documents/Apps/Archives/`)
-| Archive | Format | Description |
-| :--- | :--- | :--- |
-| `GDstudio-0.3.2-alpha-6403-linux-x86_64.tar.gz` | tar.gz | Compressed distribution tarball for GDstudio. |
-| `ngrok-v3-stable-linux-amd64.tgz` | tgz | Upstream release archive for Ngrok v3. |
-| `nuclei_3.11.1_linux_amd64.zip` | zip | Upstream distribution zip for Nuclei v3.11.1. |
-
-### 9. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
+### 7. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
 | Stack | Compose Path | Upstream Repository | Purpose |
 | :--- | :--- | :--- | :--- |
 | **OpenClaw** | `docker/OpenClaw/docker-compose.yml` | [openclaw.ai](https://openclaw.ai/) / [GitHub](https://github.com/openclaw/openclaw) | Agentic AI desktop assistant gateway container (`ghcr.io/openclaw/openclaw`). Run via `./start.sh` or `docker compose up -d`. |

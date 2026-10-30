@@ -13,6 +13,6 @@
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "claudeCode.hideOnboarding": true,
-    "editor.fontSize": 18,
-    "chat.disableAIFeatures": true
+    "chat.disableAIFeatures": true,
+    "editor.wordWrap": "on"
 }
