@@ -19,14 +19,5 @@ http_headers = { "x-openai-actor-authorization" = "local-image-extension" }
 api_key_model_discovery = true
 goals = true
 
-[mcp_servers.rea]
-command = "npx"
-args = [ "-y", "rea-agents@6.5.0", "mcp" ]
-startup_timeout_sec = 30
-
-[mcp_servers.rea.env]
-GHIDRA_INSTALL_DIR = "/opt/ghidra"
-JAVA_HOME = "/usr/lib/jvm/java-21-openjdk"
-
 [tui]
 screen_reader_detection_done = true

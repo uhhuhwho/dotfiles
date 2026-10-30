@@ -68,26 +68,6 @@
         "lastUpdated": "2026-06-11T23:03:05.308Z"
       }
     ],
-    "oh-my-mermaid@oh-my-mermaid": [
-      {
-        "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/oh-my-mermaid/oh-my-mermaid/0.2.0",
-        "version": "0.2.0",
-        "installedAt": "2026-08-11T02:43:02.785Z",
-        "lastUpdated": "2026-08-11T02:43:02.785Z",
-        "gitCommitSha": "38ccdb69298adec949177c92c88d6e3ddfb5bab7"
-      }
-    ],
-    "pixelbrowse@pixelrag-plugins": [
-      {
-        "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/pixelrag-plugins/pixelbrowse/0.1.0",
-        "version": "0.1.0",
-        "installedAt": "2026-08-12T16:25:16.092Z",
-        "lastUpdated": "2026-08-12T16:25:16.092Z",
-        "gitCommitSha": "c1dae49ba78e33ff1d02d9f8efd7b9adf9cecb22"
-      }
-    ],
     "i-have-adhd@i-have-adhd": [
       {
         "scope": "user",
