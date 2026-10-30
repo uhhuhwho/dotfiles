@@ -200,7 +200,6 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 ### 6. Python UV CLI Tools (`packages/uv.txt`)
 | Tool | Format / Path | Source / Link | Purpose & How to Run |
 | :--- | :--- | :--- | :--- |
-| **`hackingtool`** | UV Tool (`~/.local/bin/hackingtool`) | [GitHub Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) | Ethical hacking all-in-one suite. Installed via `uv tool install hackingtool`. |
 | **`mvt` (Mobile Verification Toolkit)** | UV Tool (`~/.local/bin/mvt-*`) | [mvt-project/mvt](https://github.com/mvt-project/mvt) | Forensic analysis toolkit to inspect Android and iOS devices for potential malware and Pegasus spyware indicators. |
 
 ### 7. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
