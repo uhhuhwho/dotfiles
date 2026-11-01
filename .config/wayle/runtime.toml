@@ -4,7 +4,7 @@ font-mono = "FiraCode Nerd Font Mono"
 tearing-mode = true
 
 [bar]
-scale = 0.75
+scale = 0.699999988079071
 padding = 0.5
 module-gap = 0.30000001192092896
 bg = "transparent"
@@ -21,6 +21,7 @@ show = true
 left = [
     "dashboard",
     "cpu",
+    "custom-cpu-boost",
     "ram",
     "storage",
     "hyprland-workspaces",
@@ -110,6 +111,37 @@ format = "{{ percent }}% {{free_gib}} GiB"
 
 [modules.systray]
 icon-scale = 1.5
+
+[[modules.custom]]
+id = "cpu-boost"
+command = "/home/badreddine/dotfiles/scripts/hardware/common/cpu-turbo-boost.sh wayle"
+mode = "poll"
+interval-ms = 2000
+restart-policy = "never"
+restart-interval-ms = 1000
+format = "{{ text }}"
+tooltip-format = "{{ tooltip }}"
+hide-if-empty = false
+icon-name = "ld-zap-symbolic"
+icon-show = true
+icon-color = "auto"
+icon-bg-color = "auto"
+label-show = true
+label-color = "auto"
+label-max-length = 0
+button-bg-color = "bg-surface-elevated"
+border-show = false
+border-color = "auto"
+left-click = "/home/badreddine/dotfiles/scripts/hardware/common/cpu-turbo-boost.sh toggle"
+right-click = ""
+middle-click = ""
+scroll-up = ""
+scroll-down = ""
+on-action = "/home/badreddine/dotfiles/scripts/hardware/common/cpu-turbo-boost.sh wayle"
+
+[modules.custom.icon-map]
+off = "ld-leaf-symbolic"
+on = "ld-zap-symbolic"
 
 [osd]
 enabled = true

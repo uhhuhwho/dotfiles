@@ -12,6 +12,7 @@ libvirtd-ro.socket
 libvirtd.service
 libvirtd.socket
 lm_sensors.service
+paccache.timer
 power-profiles-daemon.service
 proton.VPN.service
 reflector.service

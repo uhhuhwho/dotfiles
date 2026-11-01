@@ -13,6 +13,6 @@
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "claudeCode.hideOnboarding": true,
-    "chat.disableAIFeatures": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "git.openRepositoryInParentFolders": "never"
 }
