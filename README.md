@@ -109,14 +109,8 @@ A high-performance, minimalist, zero-copy configuration and multi-machine system
 │   ├── flatpak-overrides/           # Custom Flatseal permission profiles
 │   ├── hyprpm.txt                   # Tracked Hyprland plugin repositories
 │   ├── npm.txt                      # Global NPM packages
-│   ├── uv.txt                       # Python UV CLI tools
 │   ├── services-system.txt          # Shared enabled systemd system services
 │   └── services-user.txt            # Shared enabled systemd user services
-├── ai/
-│   ├── agents/                      # Universal agent skill lockfile & rules
-│   ├── claude/                      # Claude Code plugins & sanitized settings
-│   ├── gemini/                      # Gemini hooks, plugins & Antigravity MCP config
-│   └── codex/                       # Codex model configurations
 ├── sync.sh                          # Multi-machine snapshot & push script (aliased to `dotsync`)
 ├── bootstrap.sh                     # Hardware-aware installer for fresh machines
 └── .gitignore                       # Ignores secrets, caches, and machine-local files
@@ -197,12 +191,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | **RAR / UnRAR** | CLI Binaries (`CLI/rar/rar`, `CLI/rar/unrar`) | [rarlab.com](https://www.rarlab.com/) | Official archive manager for `.rar` compression and extraction. |
 | **Ngrok** | CLI Binary (`/usr/sbin/ngrok`) | [ngrok.com](https://ngrok.com/) | Secure public URLs for exposing local development servers. |
 
-### 6. Python UV CLI Tools (`packages/uv.txt`)
-| Tool | Format / Path | Source / Link | Purpose & How to Run |
-| :--- | :--- | :--- | :--- |
-| **`mvt` (Mobile Verification Toolkit)** | UV Tool (`~/.local/bin/mvt-*`) | [mvt-project/mvt](https://github.com/mvt-project/mvt) | Forensic analysis toolkit to inspect Android and iOS devices for potential malware and Pegasus spyware indicators. |
-
-### 7. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
+### 6. Docker Stacks (`~/Documents/Docker/` ➔ `~/dotfiles/docker/`)
 | Stack | Compose Path | Upstream Repository | Purpose |
 | :--- | :--- | :--- | :--- |
 | **OpenClaw** | `docker/OpenClaw/docker-compose.yml` | [openclaw.ai](https://openclaw.ai/) / [GitHub](https://github.com/openclaw/openclaw) | Agentic AI desktop assistant gateway container (`ghcr.io/openclaw/openclaw`). Run via `./start.sh` or `docker compose up -d`. |

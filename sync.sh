@@ -177,19 +177,7 @@ if os.path.exists(usr_node):
             npm_pkgs.add(item)
 write_list(os.path.join(pkg_dir, 'npm.txt'), npm_pkgs, union_existing=True)
 
-# 4. UV tools
-uv_pkgs = set()
-try:
-    uv_out = subprocess.check_output(['uv', 'tool', 'list'], stderr=subprocess.DEVNULL).decode().splitlines()
-    for line in uv_out:
-        parts = line.strip().split()
-        if len(parts) >= 2 and parts[1].startswith('v'):
-            uv_pkgs.add(parts[0])
-except Exception:
-    pass
-write_list(os.path.join(pkg_dir, 'uv.txt'), uv_pkgs, union_existing=True)
-
-# 5. Hyprland hyprpm plugins
+# 4. Hyprland hyprpm plugins
 hyprpm_repos = set()
 try:
     cache_user = os.getenv('USER', 'badreddine')
@@ -329,80 +317,13 @@ if [[ -d "$HOME/Documents/Docker" ]]; then
     done
 fi
 
-# 5. AI Assistant Configurations & Manifests Snapshot
-python3 - << 'PY_EOF'
-import json, os, re, shutil, subprocess
-
-dotfiles = os.path.expanduser('~/dotfiles')
-ai_dir = os.path.join(dotfiles, 'ai')
-os.makedirs(os.path.join(ai_dir, 'agents', 'rules'), exist_ok=True)
-os.makedirs(os.path.join(ai_dir, 'claude'), exist_ok=True)
-os.makedirs(os.path.join(ai_dir, 'gemini'), exist_ok=True)
-os.makedirs(os.path.join(ai_dir, 'codex'), exist_ok=True)
-home = os.path.expanduser('~')
-
-# Agents skill lock & rules
-f_lock = os.path.join(home, '.agents', '.skill-lock.json')
-if os.path.isfile(f_lock):
-    shutil.copy(f_lock, os.path.join(ai_dir, 'agents', '.skill-lock.json'))
-f_rule = os.path.join(home, '.agents', 'rules', 'claude-mem-context.md')
-if os.path.isfile(f_rule):
-    shutil.copy(f_rule, os.path.join(ai_dir, 'agents', 'rules', 'claude-mem-context.md'))
-
-# Claude plugins & sanitized settings
-f_cplug = os.path.join(home, '.claude', 'plugins', 'installed_plugins.json')
-if os.path.isfile(f_cplug):
-    shutil.copy(f_cplug, os.path.join(ai_dir, 'claude', 'installed_plugins.json'))
-f_cset = os.path.join(home, '.claude', 'settings.json')
-if os.path.isfile(f_cset):
-    try:
-        with open(f_cset) as f:
-            c_data = json.load(f)
-        if 'env' in c_data and 'ANTHROPIC_AUTH_TOKEN' in c_data['env']:
-            del c_data['env']['ANTHROPIC_AUTH_TOKEN']
-        with open(os.path.join(ai_dir, 'claude', 'settings.json'), 'w') as f:
-            json.dump(c_data, f, indent=2)
-    except Exception:
-        pass
-
-# Gemini / Antigravity
-f_gset = os.path.join(home, '.gemini', 'settings.json')
-if os.path.isfile(f_gset):
-    shutil.copy(f_gset, os.path.join(ai_dir, 'gemini', 'settings.json'))
-f_gmcp = os.path.join(home, '.gemini', 'antigravity', 'mcp_config.json')
-if os.path.isfile(f_gmcp):
-    shutil.copy(f_gmcp, os.path.join(ai_dir, 'gemini', 'mcp_config.json'))
-try:
-    agy_out = subprocess.check_output(['agy', 'plugin', 'list'], stderr=subprocess.DEVNULL).decode()
-    with open(os.path.join(ai_dir, 'gemini', 'plugins.json'), 'w') as f:
-        f.write(agy_out)
-except Exception:
-    pass
-
-# Codex CLI (inline credentials are redacted: this copy is committed and pushed)
-f_codex = os.path.join(home, '.codex', 'config.toml')
-if os.path.isfile(f_codex):
-    try:
-        with open(f_codex) as f:
-            t_codex = f.read()
-        t_codex = re.sub(
-            r'(?mi)^(\s*(?:experimental_bearer_token|bearer_token|api_key|auth_token)\s*=\s*)".*"',
-            r'\1"<redacted-by-dotsync>"',
-            t_codex,
-        )
-        with open(os.path.join(ai_dir, 'codex', 'config.toml'), 'w') as f:
-            f.write(t_codex)
-    except Exception:
-        pass
-PY_EOF
-
 echo -e "\033[1;32m✓ State snapshot complete for profile [$MACHINE_PROFILE]:\033[0m"
-echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/uv.txt") UV, $(wc -l < "$DOTFILES_DIR/packages/hyprpm.txt" 2>/dev/null || echo 0) Hyprland plugins."
+echo -e "  - Shared Packages : $(wc -l < "$DOTFILES_DIR/packages/pacman.txt") Arch, $(wc -l < "$DOTFILES_DIR/packages/blackarch.txt") BlackArch, $(wc -l < "$DOTFILES_DIR/packages/aur.txt") AUR, $(wc -l < "$DOTFILES_DIR/packages/flatpak.txt") Flatpak, $(wc -l < "$DOTFILES_DIR/packages/npm.txt") NPM, $(wc -l < "$DOTFILES_DIR/packages/hyprpm.txt" 2>/dev/null || echo 0) Hyprland plugins."
 echo -e "  - Machine Profile : $(wc -l < "$MACHINE_DIR/pacman.txt") hardware Arch pkgs, $(wc -l < "$MACHINE_DIR/aur.txt") hardware AUR pkgs in machines/$MACHINE_PROFILE/."
 echo -e "  - Services        : $(wc -l < "$DOTFILES_DIR/packages/services-system.txt") shared system, $(wc -l < "$MACHINE_DIR/services-system.txt") machine system, $(wc -l < "$DOTFILES_DIR/packages/services-user.txt") user."
-echo -e "  - Docker & AI     : Compose stacks in docker/ + Claude, Gemini & Codex configs snapshotted."
+echo -e "  - Docker          : Compose stacks in docker/ snapshotted."
 
-# 6. Git commit & push
+# 5. Git commit & push
 git add -A
 
 if git diff-index --quiet HEAD --; then

@@ -61,7 +61,7 @@ Packages and services are split into **Shared Core (`packages/`)** and **Machine
 | **Shared AUR** | `packages/aur.txt` | Shared foreign packages installed via `yay` (`wayle-bin`, `vicinae-bin`, `waypaper`, etc.). |
 | **Machine AUR** | `machines/<profile>/aur.txt` | Hardware-specific AUR packages (`thinkfan` on `thinkpad`, `optimus-manager` on `hp-omen`). |
 | **Flatpaks** | `packages/flatpak.txt` | Flatpak application IDs + Flatseal permissions in `packages/flatpak-overrides/`. |
-| **Global NPM & UV** | `packages/npm.txt`, `packages/uv.txt` | Globally installed NPM packages (`~/.npm-global`) and Python UV tools (`uv tool`). |
+| **Global NPM** | `packages/npm.txt` | Globally installed NPM packages (`~/.npm-global`). |
 | **Services** | `packages/services-*.txt` & `machines/<profile>/services-system.txt` | Shared vs hardware-specific systemd services. |
 
 ---

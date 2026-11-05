@@ -24,3 +24,7 @@ docker/**/mysql/
 docker/**/config/
 docker/**/plugins/
 docker/**/extensions/
+
+# Ignore AI manifests, plugin snapshots & UV tools
+ai/
+packages/uv.txt

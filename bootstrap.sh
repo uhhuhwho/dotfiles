@@ -113,19 +113,6 @@ LOCAL_EOF
     echo -e "${GREEN}[CREATED]${NC} Clean ~/.bashrc.local template created for private keys."
 fi
 
-# Restore AI Assistant configs & skills manifests
-if [[ -d "$DOTFILES_DIR/ai" ]]; then
-    echo -e "${BLUE}:: Restoring AI Assistant configurations & manifests...${NC}"
-    mkdir -p "$HOME/.agents/rules" "$HOME/.claude/plugins" "$HOME/.gemini/antigravity" "$HOME/.codex"
-    [[ -f "$DOTFILES_DIR/ai/agents/.skill-lock.json" ]] && cp "$DOTFILES_DIR/ai/agents/.skill-lock.json" "$HOME/.agents/.skill-lock.json"
-    [[ -f "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" ]] && cp "$DOTFILES_DIR/ai/agents/rules/claude-mem-context.md" "$HOME/.agents/rules/claude-mem-context.md"
-    [[ -f "$DOTFILES_DIR/ai/claude/installed_plugins.json" ]] && cp "$DOTFILES_DIR/ai/claude/installed_plugins.json" "$HOME/.claude/plugins/installed_plugins.json"
-    [[ -f "$DOTFILES_DIR/ai/claude/settings.json" ]] && [[ ! -f "$HOME/.claude/settings.json" ]] && cp "$DOTFILES_DIR/ai/claude/settings.json" "$HOME/.claude/settings.json"
-    [[ -f "$DOTFILES_DIR/ai/gemini/settings.json" ]] && [[ ! -f "$HOME/.gemini/settings.json" ]] && cp "$DOTFILES_DIR/ai/gemini/settings.json" "$HOME/.gemini/settings.json"
-    [[ -f "$DOTFILES_DIR/ai/gemini/mcp_config.json" ]] && cp "$DOTFILES_DIR/ai/gemini/mcp_config.json" "$HOME/.gemini/antigravity/mcp_config.json"
-    [[ -f "$DOTFILES_DIR/ai/codex/config.toml" ]] && [[ ! -f "$HOME/.codex/config.toml" ]] && cp "$DOTFILES_DIR/ai/codex/config.toml" "$HOME/.codex/config.toml"
-    echo -e "${GREEN}[RESTORED]${NC} AI Assistant configurations deployed."
-fi
 
 # Restore Docker compose configurations
 if [[ -d "$DOTFILES_DIR/docker" ]]; then
@@ -303,13 +290,6 @@ case "$choice" in
             fi
         fi
 
-        # Python UV tools
-        if [[ -s "$DOTFILES_DIR/packages/uv.txt" ]] && command -v uv &>/dev/null; then
-            echo -e "${BLUE}:: Restoring Python UV tools...${NC}"
-            while IFS= read -r tool; do
-                [[ -n "$tool" ]] && uv tool install "$tool" 2>/dev/null || true
-            done < "$DOTFILES_DIR/packages/uv.txt"
-        fi
 
         # Hyprland hyprpm plugins
         if [[ -s "$DOTFILES_DIR/packages/hyprpm.txt" ]] && command -v hyprpm &>/dev/null; then
