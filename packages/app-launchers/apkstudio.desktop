@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=APK Studio
+Name[en]=APK Studio
+Comment=Android APK reverse engineering tool
+Comment[en]=Android APK reverse engineering tool
+Exec=/home/badreddine/Documents/Apps/AppImages/ApkStudio-v6.3.0-x86_64.AppImage %F
+Icon=/home/badreddine/.local/share/icons/apkstudio.png
+Terminal=false
+Categories=Development;Utility;
+StartupNotify=true
+StartupWMClass=apkstudio

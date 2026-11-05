@@ -7,6 +7,7 @@
     "claudeCode.preferredLocation": "panel",
     "python.languageServer": "Default",
     "editor.fontFamily": "'Fira Code', monospace",
+    "window.zoomLevel": 1.3,
     "workbench.editor.empty.hint": "hidden",
     "workbench.secondarySideBar.showLabels": false,
     "explorer.confirmDragAndDrop": false,
@@ -14,5 +15,8 @@
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "claudeCode.hideOnboarding": true,
     "editor.wordWrap": "on",
-    "git.openRepositoryInParentFolders": "never"
+    "git.openRepositoryInParentFolders": "never",
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "chatgpt.openOnStartup": true
 }

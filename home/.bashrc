@@ -166,9 +166,10 @@ alias dupdate='docker compose pull'
 alias v='nvim'
 alias sv='sudo nvim'
 
-# Fastfetch system info
-alias ff='fastfetch'
-alias FF='fastfetch'
+# Fastfetch system info (randomized layout & logo)
+alias ff='"$HOME/dotfiles/scripts/desktop/random-fastfetch.sh"'
+alias FF='"$HOME/dotfiles/scripts/desktop/random-fastfetch.sh"'
+alias ffd='fastfetch' # Fastfetch default (static custom config)
 
 # NoiseTorch (Microphone noise suppression)
 alias nt='noisetorch -i'

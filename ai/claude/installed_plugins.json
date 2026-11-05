@@ -4,11 +4,11 @@
     "claude-mem@thedotmack": [
       {
         "scope": "user",
-        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/15.7.0",
-        "version": "15.7.0",
+        "installPath": "/home/badreddine/.claude/plugins/cache/thedotmack/claude-mem/15.10.0",
+        "version": "15.10.0",
         "installedAt": "2026-06-07T22:56:40.428Z",
-        "lastUpdated": "2026-10-30T17:27:40.729Z",
-        "gitCommitSha": "35d8557840fc4105b55d8aeb499e6795d08afa65"
+        "lastUpdated": "2026-11-05T21:45:32.630Z",
+        "gitCommitSha": "3e48810ecc12ac93fbcda1068c89a78eda237f82"
       }
     ],
     "clangd-lsp@claude-plugins-official": [

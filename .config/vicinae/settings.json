@@ -15,7 +15,7 @@
    },
    "font": {
       "normal": {
-         "size": 15.5
+         "size": 16
       }
    },
    "theme": {
@@ -28,14 +28,15 @@
       "system_info": false
    },
    "launcher_window": {
-      "rounding": 15,
+      "rounding": 18,
       "opacity": 0.8,
       "client_side_decorations": {
          "border_width": 2
       },
       "compact_mode": {
          "enabled": false
-      }
+      },
+      "material": "blur"
    },
    "providers": {
       "browser-extension": {
