@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Mister Download Manager
+Comment=Download manager
+Exec="/home/badreddine/Documents/Apps/AppImages/MisterDownloadManager-0.5.2-linux-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/misterdownloadmanager.png
+Terminal=false
+Categories=Network;FileTransfer;
+MimeType=x-scheme-handler/magnet;application/x-bittorrent;
+X-AppImage-Version=MisterDownloadManager-0.5.2-linux-x86_64.AppImage

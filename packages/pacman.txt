@@ -93,6 +93,7 @@ gvfs
 gvfs-gphoto2
 gvfs-mtp
 handbrake
+hashcat
 httrack
 hugo
 hypridle

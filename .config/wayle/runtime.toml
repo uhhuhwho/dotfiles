@@ -38,7 +38,6 @@ right = [
     "systray",
     "microphone",
     "volume",
-    "network",
     "idle-inhibit",
     "keyboard-input",
     "hyprsunset",

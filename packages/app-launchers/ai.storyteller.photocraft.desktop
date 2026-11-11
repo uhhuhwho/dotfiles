@@ -2,7 +2,7 @@
 Type=Application
 Name=PhotoCraft
 Comment=Image editing
-Exec="/home/badreddine/Applications/photocraft-0.20.1-linux-x86_64.AppImage" %F
+Exec="/home/badreddine/Applications/photocraft-0.22.0-linux-x86_64.AppImage" %F
 Icon=ai.storyteller.photocraft
 Terminal=false
 Categories=Graphics;2DGraphics;RasterGraphics;Photography;

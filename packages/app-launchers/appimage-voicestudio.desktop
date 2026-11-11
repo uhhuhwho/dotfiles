@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=VoiceStudio
+Comment=VoiceStudio desktop shell (Electron) - local voice cloning, no cloud.
+Exec="/home/badreddine/Documents/Apps/AppImages/VoiceStudio-Electron-0.5.6-linux-x64.AppImage" --no-sandbox %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/voicestudio.png
+Terminal=false
+Categories=AudioVideo;Audio;
+StartupWMClass=VoiceStudio
+X-AppImage-Version=VoiceStudio-Electron-0.5.6-linux-x64.AppImage

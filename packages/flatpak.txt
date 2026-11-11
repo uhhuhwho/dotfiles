@@ -46,6 +46,7 @@ io.github.screwys.Rufin
 io.github.shonebinu.Brief
 io.github.shonebinu.Defuse
 io.github.sugarycandybar.Crucible
+io.github.TheThirdOne.rars
 io.github.wojciech_graj.OrbVis
 io.gitlab.liferooter.TextPieces
 io.gitlab.metadatacleaner.metadatacleaner

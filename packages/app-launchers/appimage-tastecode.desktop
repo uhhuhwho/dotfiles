@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Taste Code
+Comment=A local desktop workspace for coding agents.
+Exec="/home/badreddine/Documents/Apps/AppImages/TasteCode-0.1.1-linux-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/tastecode.png
+Terminal=false
+Categories=Development;IDE;
+Keywords=coding;agents;ai;development;
+StartupWMClass=dev.tastecode.desktop
+X-AppImage-Version=TasteCode-0.1.1-linux-x86_64.AppImage

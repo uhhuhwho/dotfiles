@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Comfy Desktop
+Comment=ComfyUI Desktop application
+Exec="/home/badreddine/Documents/Apps/AppImages/comfyui-desktop-2-1.1.8x86_64.AppImage" --no-sandbox %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/comfyui-desktop.png
+Terminal=false
+Categories=Graphics;
+StartupWMClass=Comfy Desktop
+X-AppImage-Version=comfyui-desktop-2-1.1.8x86_64.AppImage

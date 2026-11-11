@@ -145,7 +145,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | Tool | Format / Path | Description |
 | :--- | :--- | :--- |
 | **ArtCraft Launcher** | AppImage (`AppImages/ArtCraft/artcraft-launcher-0.3.2-linux-x86_64.AppImage`) | Central launcher and manager for the ArtCraft creative suite. |
-| **ArtCraft Apps** | Installed AppImages (`~/Applications/*craft*.AppImage`) | 13 specialized creative apps (DesignCraft, PhotoCraft, VectorCraft, FilmCraft, EffectCraft, LightCraft, PDFCraft, CADCraft, DeckCraft, FigCraft, GridCraft, SoundCraft, WordCraft) managed by ArtCraft Launcher. |
+| **ArtCraft Apps** | Installed AppImages (`~/Applications/*.AppImage`) | 17 specialized creative apps (DesignCraft, PhotoCraft, VectorCraft, FilmCraft, EffectCraft, LightCraft, PDFCraft, CADCraft, DeckCraft, FigCraft, GridCraft, SoundCraft, WordCraft, SolidCraft, Craft Anything, MaterialCraft, TextureCraft) managed by ArtCraft Launcher. |
 
 ### 3. Game Development & Graphics Programming
 | Tool | Format / Path | Source / Link | Purpose & Notes |
@@ -159,6 +159,7 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | Tool | Format / Path | Source / Link | Purpose & How to Run |
 | :--- | :--- | :--- | :--- |
 | **IDA Free 9.3** | Standalone Binary (`Standalone/ida-free-9.3/ida`) | [hex-rays.com/ida-free](https://hex-rays.com/ida-free/) | Interactive Disassembler & Decompiler for x86-64 binary analysis. |
+| **APK Studio** | AppImage (`AppImages/ApkStudio-v6.3.0-x86_64.AppImage`) | `AppImage` | IDE for decompiling, editing, and recompiling Android APK binaries (`apkstudio.desktop`). |
 | **Social-Engineer Toolkit (SEToolkit)** | Python Tool (`GitHub/Security/setoolkit/`) | [GitHub trustedsec/social-engineer-toolkit](https://github.com/trustedsec/social-engineer-toolkit) | Advanced social engineering attack vector framework. Run via `sudo ./setoolkit/.venv/bin/setoolkit`. |
 | **God's Eye View** | Node.js Dashboard (`GitHub/Security/gods-eye-view/`) | [GitHub bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) | Real-time geospatial imagery and situational awareness dashboard. Run via `npm run dev`. |
 | **HackingTool** | Python Framework (`GitHub/Security/hackingtool/`) | [GitHub Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) | All-in-one hacking tool installer and manager for ethical hacking. |
@@ -175,6 +176,13 @@ All custom and portable applications located in `~/Documents/Apps/` are categori
 | Tool | Format / Path | Source / Link | Purpose & Notes |
 | :--- | :--- | :--- | :--- |
 | **LM Studio** | AppImage (`AppImages/LM-Studio-0.4.26-4-x64.AppImage`) | [lmstudio.ai](https://lmstudio.ai/) | Run local LLMs (DeepSeek, Llama 3, Qwen) with hardware acceleration. |
+| **Taste Code** | AppImage (`AppImages/TasteCode-0.1.1-linux-x86_64.AppImage`) | `AppImage` | Local desktop workspace for AI coding agents. |
+| **Comfy Desktop** | AppImage (`AppImages/comfyui-desktop-2-1.1.8x86_64.AppImage`) | `AppImage` | ComfyUI Desktop application for node-based generative AI workflows. |
+| **VoiceStudio** | AppImage (`AppImages/VoiceStudio-Electron-0.5.6-linux-x64.AppImage`) | `AppImage` | Local voice cloning Electron desktop shell (`--no-sandbox` enabled). |
+| **HyperFrames** | AppImage (`AppImages/HyperFrames-x86_64.AppImage`) | `AppImage` | Video creation studio desktop client. |
+| **Mister Download Manager** | AppImage (`AppImages/MisterDownloadManager-0.5.2-linux-x86_64.AppImage`) | `AppImage` | Native download manager supporting HTTP, magnet links, and `.torrent` files. |
+| **AI Website Cloner** | Next.js Clone (`GitHub/ai-website-cloner-template/`) | [GitHub JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) | Template to clone websites into Next.js using AI coding agents. |
+| **Filee** | Standalone App (`Standalone/Filee-2.1.0-linux-x64/` -> `~/.local/share/filee/`) | [filee.sh](https://filee.sh/) | File converter GUI and CLI (`filee`) installed to `~/.local/share/filee/application/`. |
 | **GenOffice** | AppImage (`AppImages/GenOffice-0.8.440.AppImage`) | [GitHub](https://github.com/) | Generative AI document and workspace client. |
 | **Hydra Launcher** | AppImage (`AppImages/hydralauncher-4.0.3.AppImage`) | [hydralinks.cloud](https://hydralinks.cloud/) / [GitHub](https://github.com/hydralauncher/hydra) | Open-source gaming client and catalog launcher. |
 | **Epic Games Launcher** | AppImage (`AppImages/EpicGamesLauncher-x86_64.AppImage`) | [GitHub egl-v2](https://github.com/) / [epicgames.com](https://store.epicgames.com/) | Portable Epic Games Launcher & Unreal store client. Launches via `epic-games-launcher` or Vicinae launcher. |

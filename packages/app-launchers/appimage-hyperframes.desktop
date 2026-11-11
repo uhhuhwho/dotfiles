@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=HyperFrames
+Comment=HyperFrames video creation studio
+Exec="/home/badreddine/Documents/Apps/AppImages/HyperFrames-x86_64.AppImage" %U
+Icon=/home/badreddine/.local/share/icons/custom-apps/hyperframes.png
+Terminal=false
+Categories=AudioVideo;Video;
+X-AppImage-Version=HyperFrames-x86_64.AppImage
