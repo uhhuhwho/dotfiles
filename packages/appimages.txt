@@ -21,7 +21,7 @@
 ~/Documents/Apps/AppImages/EpicGamesLauncher-x86_64.AppImage
 ~/Documents/Apps/AppImages/GenOffice-0.8.440.AppImage
 ~/Documents/Apps/AppImages/HyperFrames-x86_64.AppImage
-~/Documents/Apps/AppImages/Kando-3.0.0-x86_64.AppImage
+~/Documents/Apps/AppImages/Kando-3.0.1-x86_64.AppImage
 ~/Documents/Apps/AppImages/LM-Studio-0.4.26-4-x64.AppImage
 ~/Documents/Apps/AppImages/Mesh2Motion_0.1.6_amd64.AppImage
 ~/Documents/Apps/AppImages/MisterDownloadManager-0.5.2-linux-x86_64.AppImage

@@ -128,4 +128,4 @@ fi
 # ------------------------------------------------------------------------------
 # 3. Execute Fastfetch
 # ------------------------------------------------------------------------------
-exec fastfetch "${preset_args[@]}" "${logo_args[@]}" "$@"
+exec fastfetch "${preset_args[@]}" "${logo_args[@]}" --publicip-url disable "$@"

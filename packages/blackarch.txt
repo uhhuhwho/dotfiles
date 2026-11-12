@@ -7,16 +7,7 @@ blackarch-mirrorlist
 detect-it-easy
 dmde
 dotpeek
-email2phonenumber
-maigret
 mimikatz
 mobsf
 ngrok
-phoneinfoga
 recon-ng
-seekr
-sherlock
-social-analyzer
-trape
-user-scanner
-whatbreach

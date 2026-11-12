@@ -38,7 +38,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
     -- Others
-    hl.exec_cmd("waypaper --restore & while true; do sleep 300; waypaper --random; done")
+    hl.exec_cmd("waypaper --restore & while true; do sleep 150; waypaper --random; done")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("blueman-applet")
     -- Clipboard (cliphist)
@@ -52,7 +52,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'oxygen'")
     hl.exec_cmd("kwriteconfig6 --file kdeglobals --group Icons --key Theme oxygen")
     -- Kando pie menu
-    hl.exec_cmd("$HOME/Documents/Apps/AppImages/Kando-3.0.0-x86_64.AppImage")
+    hl.exec_cmd("$HOME/Documents/Apps/AppImages/Kando-3.0.1-x86_64.AppImage")
 end)
 
 
